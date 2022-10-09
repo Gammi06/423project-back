@@ -13,19 +13,25 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 @Configuration
 @MapperScan(basePackages = "site.metacoding.miniproject1.domain")
 public class MyBatisConfig {
-    @Bean
-    public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+	@Bean
+	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
+		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
 
-        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+		sessionFactory.setDataSource(dataSource);
+		sessionFactory
+				.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
+		// Resource myBatisConfig = new
+		// PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml");
+		// sessionFactory.setConfigLocation(myBatisConfig);
 
-        sessionFactory.setDataSource(dataSource);
-        sessionFactory.setMapperLocations(
-        		new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
-        return sessionFactory.getObject();
-    }
+		org.apache.ibatis.session.Configuration config = new org.apache.ibatis.session.Configuration();
+		config.setMapUnderscoreToCamelCase(true);
+		sessionFactory.setConfiguration(config);
+		return sessionFactory.getObject();
+	}
 
-    @Bean
-    public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
-        return new SqlSessionTemplate(sqlSessionFactory);
-    }
+	@Bean
+	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory) {
+		return new SqlSessionTemplate(sqlSessionFactory);
+	}
 }

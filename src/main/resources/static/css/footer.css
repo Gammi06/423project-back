@@ -1,0 +1,68 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.footer {
+    font-family: 'GmarketSansMedium';
+    border-bottom: 1px solid #bbb;
+    height: 250px;
+    background-color: #0d0d26;
+}
+
+.footer_inner {
+    width: 1000px;
+    height: 100%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.footer_inner .top {
+    height: 70px;
+    border-bottom: 1px solid #bbb;
+}
+
+.footer_inner .top .gnb{
+    display: -webkit-flex;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    height: 100%;
+    width: 650px;
+}
+
+.footer_inner .logo {
+    font-family: 'RixInooAriDuriR';
+    color: #f4f4f4;
+    font-weight:lighter;
+    font-size: 20px;
+}
+
+.footer_inner .top li a {
+    font-size: 12px;
+    color: #f4f4f4;
+}
+
+.footer_inner .bottom {
+    padding: 30px 0 0 35px;
+}
+
+.footer_inner .bottom p {
+    font-size: 10px;
+    color: #f4f4f4;
+    line-height: 14px;
+}
+
+.footer_inner .top a:hover {
+    color: #33ffcc;
+}
