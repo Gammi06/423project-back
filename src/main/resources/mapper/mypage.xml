@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatusDao">
+
+    <insert id="insert">
+		
+	</insert>
+
+    <select id="findAll" resultType="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatus">
+		
+	</select>
+
+    <select id="findById" resultType="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatus">
+		
+	</select>
+
+    <insert id="update">
+		
+	</insert>
+
+    <insert id="deleteById">
+		
+	</insert>
+
+</mapper>

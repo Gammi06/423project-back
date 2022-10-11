@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    line-height: 1.3;
+}
+
+#wrap {
+    background-color: rgb(248, 248, 248);
+    font-family: 'GmarketSansMedium';
+}
+
+#asa_wrap {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.asa_menu {}
+
+.asa_title {
+    font-size: 20px;
+    text-align: left;
+    line-height: 1.5em;
+    font-weight: bold;
+    padding: 60px 0 0 0;
+}
+
+.asa_position {
+    padding: 10px 50px 10px 30px;
+}
+
+.asa_position a {
+    font-size: 16px;
+    font-weight: 900;
+    color: #333333;
+    box-shadow: inset 0 -10px 1px #33ffcc;
+}
+
+.asa_proposal {
+    padding: 0px 50px 0px 30px;
+}
+
+.asa_proposal a {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.asa_proposal a:hover {
+    color: #33ffcc;
+    font-weight: bold;
+}
+
+.asa_counts {
+    width: 725px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 105px 0 0 97px;
+}
+
+.asa_count_all {
+    padding: 0 0px 50px 120px;
+}
+
+.asa_count_all .asa_all_count {
+    border-right: 1.5px solid #bbb;
+    font-size: 36px;
+    padding: 0 80px 0 0;
+    text-align: center;
+    color: #33ffcc;
+}
+
+.asa_count_all .asa_all_text {
+    border-right: 1.5px solid #bbb;
+    padding: 0 80px 0 0;
+    text-align: center;
+    font-size: 16px;
+    color: #33ffcc;
+}
+
+.asa_count_c {
+    padding: 0 0 50px 70px;
+}
+
+.asa_count_c:hover a p {
+    color: #33ffcc;
+}
+
+.asa_count_c .asa_count {
+    border-right: 1.5px solid #bbb;
+    font-size: 36px;
+    padding: 0 80px 0 0;
+    color: #333333;
+    text-align: center;
+}
+
+.asa_count_c .asa_text {
+    border-right: 1.5px solid #bbb;
+    padding: 0 80px 0 0;
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+}
+
+.asa_count_final {
+    padding: 0 100px 50px 70px;
+}
+
+.asa_count_final:hover a p {
+    color: #33ffcc;
+}
+
+.asa_count_final .asa_final_count {
+    font-size: 36px;
+    color: #333333;
+    text-align: center;
+}
+
+.asa_count_final .asa_final_text {
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+}
+
+.asa_search {
+    margin: 0 0 0 115px;
+}
+
+.asa_search form {
+    position: relative;
+}
+
+.asa_search input {
+    width: 150px;
+    height: 20px;
+    border-radius: 25px;
+    border: 1px solid #BEBEBE;
+    padding: 7.5px 0 5px 18px;
+    font-size: 13px;
+    color: #333333;
+    font-family: 'GmarketSansMedium';
+}
+
+.asa_search input::placeholder {
+    color: #BEBEBE;
+    font-size: 13px;
+    font-family: 'GmarketSansMedium';
+}
+
+.asa_search .btn_search {
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    left: 133px;
+    color: #BEBEBE;
+}
+
+.btn_search::before {
+    content: "\f002";
+}
+
+.asa_table {
+    width: 700px;
+    margin: 20px 0 150px 115px;
+    border-collapse: collapse;
+}
+
+.asa_table th {
+    background: rgb(248, 248, 248);
+    height: 48px;
+    color: #333333;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    font-size: 16px;
+    text-align: center;
+    font-weight: 900;
+    vertical-align: middle;
+}
+
+.asa_table td {
+    background: #fff;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    color: #333333;
+    height: 48px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: normal;
+    vertical-align: middle;
+}
