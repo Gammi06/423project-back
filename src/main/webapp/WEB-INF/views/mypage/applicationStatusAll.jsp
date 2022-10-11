@@ -2,6 +2,10 @@
 
     <%@ include file="../layout/header.jsp" %>
 
+        <head>
+            <link href="/css/application_status_all.css" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/e264982194.js" crossorigin="anonymous"></script>
+        </head>
         <div id="wrap">
             <div id="asa_wrap">
                 <div class="asa_menu">
@@ -53,12 +57,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>지원 회사</td>
-                                    <td>지원 포지션</td>
-                                    <td>작성 시간</td>
-                                    <td>대기중</td>
-                                </tr>
+                                <c:forEach var="applicationStatusList" items="${applicationStatusList}">
+                                    <tr>
+                                        <td>${applicationStatusList.companyName}</td>
+                                        <td>${applicationStatusList.positionCodeName}</td>
+                                        <td>${applicationStatusList.created}</td>
+                                        <td>${applicationStatusList.state}</td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

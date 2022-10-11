@@ -6,12 +6,16 @@
 		
 	</insert>
 
-    <select id="findAll" resultType="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatus">
-		
-	</select>
-
-    <select id="findById" resultType="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatus">
-		
+    <select id="findAll" resultType="site.metacoding.miniproject1.web.dto.response.StatusDto">
+        SELECT apps.id id, apps.wanted_id wantedId, 
+        apps.resume_id resumeId, apps.state state, 
+        apps.created created, wan.position_code_name positionCodeName, 
+        wan.company_id companyId, com.company_name companyName
+        FROM application_status apps
+        INNER JOIN wanteds wan
+        ON apps.wanted_id = wan.id
+        INNER JOIN companys com
+        ON wan.company_id = com.id
 	</select>
 
     <insert id="update">

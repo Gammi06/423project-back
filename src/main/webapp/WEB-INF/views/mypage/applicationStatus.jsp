@@ -2,6 +2,10 @@
 
     <%@ include file="../layout/header.jsp" %>
 
+        <head>
+            <link href="/css/application_status.css" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/e264982194.js" crossorigin="anonymous"></script>
+        </head>
         <div id="wrap">
             <div id="as_wrap">
                 <div class="as_menu">

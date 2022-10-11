@@ -2,6 +2,10 @@
 
     <%@ include file="../layout/header.jsp" %>
 
+        <head>
+            <link href="/css/mypage.css" rel="stylesheet">
+        </head>
+
         <div id="wrap">
             <div id="mp_wrap">
                 <div class="mypage">

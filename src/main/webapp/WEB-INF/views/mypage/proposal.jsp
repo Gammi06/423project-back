@@ -2,6 +2,11 @@
 
     <%@ include file="../layout/header.jsp" %>
 
+        <head>
+            <link href="/css/proposal.css" rel="stylesheet">
+            <script src="https://kit.fontawesome.com/e264982194.js" crossorigin="anonymous"></script>
+        </head>
+
         <div id="wrap">
             <div id="pp_wrap">
                 <div class="pp_menu">

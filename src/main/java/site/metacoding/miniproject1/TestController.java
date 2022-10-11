@@ -15,11 +15,6 @@ public class TestController {
 		return "mypage/mypage";
 	}
 
-	@GetMapping("/applicationstatusall")
-	public String getApplicationStatusAll() {
-		return "mypage/applicationStatusAll";
-	}
-
 	@GetMapping("/applicationstatus")
 	public String getApplicationStatus() {
 		return "mypage/applicationStatus";
