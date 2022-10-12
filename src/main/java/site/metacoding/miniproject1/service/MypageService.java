@@ -9,6 +9,8 @@ import site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatusDa
 import site.metacoding.miniproject1.web.dto.response.StatusAllDto;
 import site.metacoding.miniproject1.web.dto.response.StatusCountDto;
 import site.metacoding.miniproject1.web.dto.response.StatusInfoDto;
+import site.metacoding.miniproject1.web.dto.response.StatusWaitingDto;
+import site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto;
 
 @RequiredArgsConstructor
 @Service
@@ -21,6 +23,13 @@ public class MypageService {
         List<StatusInfoDto> statusInfoDtos = applicationStatusDao.findAll(keyword);
         StatusAllDto statusAllDto = new StatusAllDto(statusCountDtos, statusInfoDtos);
         return statusAllDto;
+    }
+
+    public StatusWaitingDto viewWaiting(String keyword) {
+        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts();
+        List<StatusWaitingInfoDto> statusWaitingInfoDtos = applicationStatusDao.findWaiting(keyword);
+        StatusWaitingDto statusWaitingDto = new StatusWaitingDto(statusCountDtos, statusWaitingInfoDtos);
+        return statusWaitingDto;
     }
 
 }

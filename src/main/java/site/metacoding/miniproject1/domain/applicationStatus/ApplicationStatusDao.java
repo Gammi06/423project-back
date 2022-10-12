@@ -4,6 +4,7 @@ import java.util.List;
 
 import site.metacoding.miniproject1.web.dto.response.StatusCountDto;
 import site.metacoding.miniproject1.web.dto.response.StatusInfoDto;
+import site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto;
 
 public interface ApplicationStatusDao {
 	// 기본기능
@@ -12,6 +13,8 @@ public interface ApplicationStatusDao {
 	public List<StatusInfoDto> findAll(String keyword);
 
 	public List<StatusCountDto> findCounts();
+
+	public List<StatusWaitingInfoDto> findWaiting(String keyword);
 
 	public ApplicationStatus findById(Integer id);
 

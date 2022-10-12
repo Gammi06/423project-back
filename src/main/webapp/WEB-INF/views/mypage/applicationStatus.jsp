@@ -18,15 +18,16 @@
 
                 <div class="as_contents">
                     <div class="as_counts">
+                        <c:forEach var="statusCountDtos" items="${statusWaitingDto.statusCountDtos}"></c:forEach>
                         <div class="as_count_all">
                             <a href="/applicationstatusall">
-                                <p class="as_all_count">99</p>
+                                <p class="as_all_count">${statusCountDtos.statusAll}</p>
                                 <p class="as_all_text">전체</p>
                             </a>
                         </div>
                         <div class="as_count_c">
                             <a href="/applicationstatus">
-                                <p class="as_count">99</p>
+                                <p class="as_count">${statusCountDtos.statusC}s</p>
                                 <p class="as_text">지원 완료</p>
                             </a>
                         </div>

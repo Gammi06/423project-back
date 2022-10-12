@@ -33,6 +33,23 @@
         FROM application_status
     </select>
 
+    <select id="findWaiting" resultType="site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto">
+        SELECT apps.id id, apps.wanted_id wantedId, 
+        apps.resume_id resumeId, apps.state state, 
+        apps.created created, wan.position_code_name positionCodeName, 
+        wan.company_id companyId, com.company_name companyName
+        FROM application_status apps
+        INNER JOIN wanteds wan
+        ON apps.wanted_id = wan.id
+        INNER JOIN companys com
+        ON wan.company_id = com.id 
+        WHERE apps.state = 0 
+        <if test="keyword != null">
+            AND com.company_name LIKE CONCAT('%',#{keyword},'%')
+        </if>
+        ORDER BY apps.id DESC
+	</select>
+
     <insert id="update">
 		
 	</insert>

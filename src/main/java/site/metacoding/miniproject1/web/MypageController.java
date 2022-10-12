@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.MypageService;
 import site.metacoding.miniproject1.web.dto.response.StatusAllDto;
+import site.metacoding.miniproject1.web.dto.response.StatusWaitingDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -28,6 +29,16 @@ public class MypageController {
         referer.put("keyword", statusAllDto.getKeyword());
         session.setAttribute("referer", referer);
         return "mypage/applicationStatusAll";
+    }
+
+    @GetMapping("/applicationstatus")
+    public String getWaiting(Model model, String keyword) {
+        StatusWaitingDto statusWaitingDto = mypageService.viewWaiting(keyword);
+        model.addAttribute("statusWaitingDto", statusWaitingDto);
+        Map<String, Object> referer = new HashMap<>();
+        referer.put("keyword", statusWaitingDto.getKeyword());
+        session.setAttribute("referer", referer);
+        return "mypage/applicationStatus";
     }
 
 }
