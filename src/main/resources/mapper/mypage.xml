@@ -6,7 +6,7 @@
 		
 	</insert>
 
-    <select id="findAll" resultType="site.metacoding.miniproject1.web.dto.response.StatusDto">
+    <select id="findAll" resultType="site.metacoding.miniproject1.web.dto.response.StatusInfoDto">
         SELECT apps.id id, apps.wanted_id wantedId, 
         apps.resume_id resumeId, apps.state state, 
         apps.created created, wan.position_code_name positionCodeName, 
@@ -21,6 +21,17 @@
         </if>
         ORDER BY apps.id DESC
 	</select>
+
+    <select id="findCounts" resultType="site.metacoding.miniproject1.web.dto.response.StatusCountDto">
+        SELECT count((IFNULL(state, 0))) AS statusAll, 
+        (SELECT count((IFNULL(state, 0))) AS statusC
+        FROM application_status
+        WHERE state = 0) statusC,
+        (SELECT count((IFNULL(state, 0))) AS statusFinal
+        FROM application_status
+        WHERE state = 1) statusFinal
+        FROM application_status
+    </select>
 
     <insert id="update">
 		

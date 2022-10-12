@@ -18,29 +18,31 @@
 
                 <div class="asa_contents">
                     <div class="asa_counts">
-                        <div class="asa_count_all">
-                            <a href="/applicationstatusall">
-                                <p class="asa_all_count">99</p>
-                                <p class="asa_all_text">전체</p>
-                            </a>
-                        </div>
-                        <div class="asa_count_c">
-                            <a href="/applicationstatus">
-                                <p class="asa_count">99</p>
-                                <p class="asa_text">지원 완료</p>
-                            </a>
-                        </div>
-                        <div class="asa_count_final">
-                            <a href="/applicationstatusfinal">
-                                <p class="asa_final_count">99</p>
-                                <p class="asa_final_text">최종합격</p>
-                            </a>
-                        </div>
+                        <c:forEach var="statusCountDtos" items="${statusAllDto.statusCountDtos}">
+                            <div class="asa_count_all">
+                                <a href="/applicationstatusall">
+                                    <p class="asa_all_count">${statusCountDtos.statusAll}</p>
+                                    <p class="asa_all_text">전체</p>
+                                </a>
+                            </div>
+                            <div class="asa_count_c">
+                                <a href="/applicationstatus">
+                                    <p class="asa_count">${statusCountDtos.statusC}</p>
+                                    <p class="asa_text">지원 완료</p>
+                                </a>
+                            </div>
+                            <div class="asa_count_final">
+                                <a href="/applicationstatusfinal">
+                                    <p class="asa_final_count">${statusCountDtos.statusFinal}</p>
+                                    <p class="asa_final_text">최종합격</p>
+                                </a>
+                            </div>
+                        </c:forEach>
                     </div>
 
                     <div class="asa_search">
-                        <form>
-                            <input type="text" placeholder="회사명 검색">
+                        <form method="get" action="/applicationstatusall">
+                            <input type="text" placeholder="회사명 검색" name="keyword" value="${referer.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
@@ -57,20 +59,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <c:forEach var="applicationStatusList" items="${applicationStatusList}">
+                                <c:forEach var="statusInfoDtos" items="${statusAllDto.statusInfoDtos}">
                                     <tr>
-                                        <td>${applicationStatusList.companyName}</td>
-                                        <td>${applicationStatusList.positionCodeName}</td>
-                                        <td>${applicationStatusList.created}</td>
+                                        <td>${statusInfoDtos.companyName}</td>
+                                        <td>${statusInfoDtos.positionCodeName}</td>
+                                        <td>${statusInfoDtos.created}</td>
                                         <td>
                                             <c:choose>
-                                                <c:when test="${applicationStatusList.state == 0}">
+                                                <c:when test="${statusInfoDtos.state == 0}">
                                                     <p class="waiting">대기중</p>
                                                 </c:when>
-                                                <c:when test="${applicationStatusList.state == 1}">
+                                                <c:when test="${statusInfoDtos.state == 1}">
                                                     <p class="pass">합격</p>
                                                 </c:when>
-                                                <c:when test="${applicationStatusList.state == 2}">
+                                                <c:when test="${statusInfoDtos.state == 2}">
                                                     <p class="fail">불합격</p>
                                                 </c:when>
                                                 <c:otherwise>
