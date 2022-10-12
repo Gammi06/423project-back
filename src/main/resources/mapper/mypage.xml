@@ -16,6 +16,10 @@
         ON apps.wanted_id = wan.id
         INNER JOIN companys com
         ON wan.company_id = com.id
+        <if test="keyword != null">
+            WHERE com.company_name LIKE CONCAT('%',#{keyword},'%')
+        </if>
+        ORDER BY apps.id DESC
 	</select>
 
     <insert id="update">

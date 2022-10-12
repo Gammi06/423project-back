@@ -16,11 +16,6 @@ public class MypageService {
 
     public List<StatusDto> viewall() {
         List<StatusDto> applicationStatusList = applicationStatusDao.findAll();
-        System.out.println("========================");
-        System.out.println("서비스 실행됨");
-        System.out.println(applicationStatusList.size());
-        System.out.println(applicationStatusList.isEmpty());
-        System.out.println("========================");
         return applicationStatusList;
     }
 

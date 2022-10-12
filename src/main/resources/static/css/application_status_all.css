@@ -203,3 +203,15 @@ body {
     font-weight: normal;
     vertical-align: middle;
 }
+
+.asa_table td .waiting {
+    color: #333333;
+}
+
+.asa_table td .pass {
+    color: #0000ee;
+}
+
+.asa_table td .fail {
+    color: red;
+}

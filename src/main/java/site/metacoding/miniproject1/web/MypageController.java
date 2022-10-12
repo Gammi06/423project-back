@@ -19,17 +19,7 @@ public class MypageController {
     @GetMapping("/applicationstatusall")
     public String getAll(Model model) {
         List<StatusDto> applicationStatusList = mypageService.viewall();
-        System.out.println("========================");
-        System.out.println("컨트롤러 실행됨");
-        System.out.println(applicationStatusList.size());
-        System.out.println(applicationStatusList.isEmpty());
-        System.out.println("========================");
         model.addAttribute("applicationStatusList", applicationStatusList);
-        System.out.println("========================");
-        System.out.println("컨트롤러 실행됨2");
-        System.out.println(model.toString());
-        System.out.println(model.equals(applicationStatusList));
-        System.out.println("========================");
         return "mypage/applicationStatusAll";
     }
 

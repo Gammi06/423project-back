@@ -62,7 +62,22 @@
                                         <td>${applicationStatusList.companyName}</td>
                                         <td>${applicationStatusList.positionCodeName}</td>
                                         <td>${applicationStatusList.created}</td>
-                                        <td>${applicationStatusList.state}</td>
+                                        <td>
+                                            <c:choose>
+                                                <c:when test="${applicationStatusList.state == 0}">
+                                                    <p class="waiting">대기중</p>
+                                                </c:when>
+                                                <c:when test="${applicationStatusList.state == 1}">
+                                                    <p class="pass">합격</p>
+                                                </c:when>
+                                                <c:when test="${applicationStatusList.state == 2}">
+                                                    <p class="fail">불합격</p>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <p class="waiting">대기중</p>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                             </tbody>
