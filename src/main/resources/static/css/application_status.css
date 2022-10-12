@@ -204,6 +204,6 @@ body {
     vertical-align: middle;
 }
 
-.as_table td:last-child {
-    color: red;
+.as_table td .waiting {
+    color: #333333;
 }

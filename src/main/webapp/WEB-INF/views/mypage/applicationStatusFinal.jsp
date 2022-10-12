@@ -19,29 +19,31 @@
 
                 <div class="asf_contents">
                     <div class="asf_counts">
+                    <c:forEach var="statusCountDtos" items="${statusFinalDto.statusCountDtos}">
                         <div class="asf_count_all">
                             <a href="/applicationstatusall">
-                                <p class="asf_all_count">99</p>
+                                <p class="asf_all_count">${statusCountDtos.statusAll}</p>
                                 <p class="asf_all_text">전체</p>
                             </a>
                         </div>
                         <div class="asf_count_c">
                             <a href="/applicationstatus">
-                                <p class="asf_count">99</p>
+                                <p class="asf_count">${statusCountDtos.statusC}</p>
                                 <p class="asf_text">지원 완료</p>
                             </a>
                         </div>
                         <div class="asf_count_final">
                             <a href="/applicationstatusfinal">
-                                <p class="asf_final_count">99</p>
+                                <p class="asf_final_count">${statusCountDtos.statusFinal}</p>
                                 <p class="asf_final_text">최종합격</p>
                             </a>
                         </div>
+                        </c:forEach>
                     </div>
 
                     <div class="asf_search">
-                        <form>
-                            <input type="text" placeholder="회사명 검색">
+                        <form method="get" action="/applicationstatusfinal">
+                            <input type="text" placeholder="회사명 검색" name="keyword">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
@@ -58,12 +60,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>지원 회사</td>
-                                    <td>지원 포지션</td>
-                                    <td>작성 시간</td>
-                                    <td>합격</td>
-                                </tr>
+                                <c:forEach var="statusFinalInfoDtos" items="${statusFinalDto.statusFinalInfoDtos}">
+                               <tr>
+                                        <td>${statusFinalInfoDtos.companyName}</td>
+                                        <td>${statusFinalInfoDtos.positionCodeName}</td>
+                                        <td>${statusFinalInfoDtos.created}</td>
+                                        <td>
+                                           <p class="pass">합격</p>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

@@ -3,6 +3,7 @@ package site.metacoding.miniproject1.domain.applicationStatus;
 import java.util.List;
 
 import site.metacoding.miniproject1.web.dto.response.StatusCountDto;
+import site.metacoding.miniproject1.web.dto.response.StatusFinalInfoDto;
 import site.metacoding.miniproject1.web.dto.response.StatusInfoDto;
 import site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto;
 
@@ -15,6 +16,8 @@ public interface ApplicationStatusDao {
 	public List<StatusCountDto> findCounts();
 
 	public List<StatusWaitingInfoDto> findWaiting(String keyword);
+	
+	public List<StatusFinalInfoDto> findFinal(String keyword);
 
 	public ApplicationStatus findById(Integer id);
 

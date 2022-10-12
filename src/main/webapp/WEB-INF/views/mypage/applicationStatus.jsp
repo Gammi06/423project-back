@@ -18,7 +18,7 @@
 
                 <div class="as_contents">
                     <div class="as_counts">
-                        <c:forEach var="statusCountDtos" items="${statusWaitingDto.statusCountDtos}"></c:forEach>
+                        <c:forEach var="statusCountDtos" items="${statusWaitingDto.statusCountDtos}">
                         <div class="as_count_all">
                             <a href="/applicationstatusall">
                                 <p class="as_all_count">${statusCountDtos.statusAll}</p>
@@ -27,21 +27,22 @@
                         </div>
                         <div class="as_count_c">
                             <a href="/applicationstatus">
-                                <p class="as_count">${statusCountDtos.statusC}s</p>
+                                <p class="as_count">${statusCountDtos.statusC}</p>
                                 <p class="as_text">지원 완료</p>
                             </a>
                         </div>
                         <div class="as_count_final">
                             <a href="/applicationstatusfinal">
-                                <p class="as_final_count">99</p>
+                                <p class="as_final_count">${statusCountDtos.statusFinal}</p>
                                 <p class="as_final_text">최종합격</p>
                             </a>
                         </div>
+                        </c:forEach>
                     </div>
 
                     <div class="as_search">
-                        <form>
-                            <input type="text" placeholder="회사명 검색">
+                        <form method="get" action="/applicationstatus">
+                            <input type="text" placeholder="회사명 검색" name="keyword">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
@@ -58,12 +59,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>지원 회사</td>
-                                    <td>지원 포지션</td>
-                                    <td>작성 시간</td>
-                                    <td>불합격</td>
-                                </tr>
+                            <c:forEach var="statusWaitingInfoDtos" items="${statusWaitingDto.statusWaitingInfoDtos}">
+                               <tr>
+                                        <td>${statusWaitingInfoDtos.companyName}</td>
+                                        <td>${statusWaitingInfoDtos.positionCodeName}</td>
+                                        <td>${statusWaitingInfoDtos.created}</td>
+                                        <td>
+                                           <p class="waiting">대기중</p>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

@@ -42,7 +42,7 @@ CREATE TABLE users (
 CREATE TABLE companys (
    id INT PRIMARY KEY AUTO_INCREMENT,
    company_name VARCHAR(20) NOT NULL,
-   address VARCHAR(20) NOT NULL,
+   address TEXT NOT NULL,
    email VARCHAR(20) NOT NULL,
    company_number VARCHAR(20) NOT NULL UNIQUE,
    photo BLOB,

@@ -204,6 +204,6 @@ body {
     vertical-align: middle;
 }
 
-.asf_table td:last-child {
+.asf_table td .pass {
     color: #0000ee;
 }
