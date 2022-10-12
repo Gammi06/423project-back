@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class StatusInfoDto {
-    private Integer id;
+	private Integer id;
     private Integer wantedId;
     private Integer resumeId;
     private Integer state;

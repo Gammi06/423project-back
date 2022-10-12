@@ -21,6 +21,11 @@ public class MyPageController {
 
     private final HttpSession session;
     private final MyPageService myPageService;
+    
+    @GetMapping("/mypage")
+    public String getMyPage() {
+        return "mypage/myPage";
+    }
 
     @GetMapping("/applicationstatusall")
     public String getAll(Model model, String keyword) {

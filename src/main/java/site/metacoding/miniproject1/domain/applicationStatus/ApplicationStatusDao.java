@@ -6,10 +6,15 @@ import site.metacoding.miniproject1.web.dto.response.StatusCountDto;
 import site.metacoding.miniproject1.web.dto.response.StatusFinalInfoDto;
 import site.metacoding.miniproject1.web.dto.response.StatusInfoDto;
 import site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto;
+import site.metacoding.miniproject1.web.dto.response.UserInfoDto;
 
 public interface ApplicationStatusDao {
 	// 기본기능
 	public void insert(ApplicationStatus applicationStatus);
+	
+	public List<UserInfoDto> findUser();
+	
+	public List<UserInfoDto> findCompany();
 
 	public List<StatusInfoDto> findAll(String keyword);
 
