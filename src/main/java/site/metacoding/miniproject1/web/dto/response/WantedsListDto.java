@@ -22,5 +22,5 @@ public class WantedsListDto {
 	private Timestamp created;
 	private Timestamp enddate;
 	private String companyName;
-	private String companyRegion;
+	private String regionCodeName;
 }
