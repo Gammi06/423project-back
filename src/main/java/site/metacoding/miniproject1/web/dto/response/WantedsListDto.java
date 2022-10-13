@@ -1,5 +1,6 @@
 package site.metacoding.miniproject1.web.dto.response;
 
+import java.sql.Blob;
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ public class WantedsListDto {
 	private Integer viewCount;
 	private Timestamp created;
 	private Timestamp enddate;
+	private Blob photo;
 	private String companyName;
 	private String regionCodeName;
 }

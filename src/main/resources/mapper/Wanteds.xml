@@ -7,12 +7,13 @@
 	resultType="site.metacoding.miniproject1.web.dto.response.WantedsListDto">
 		SELECT w.id, w.position_code_id, w.career_code_id,
 		w.company_id, w.title, w.detail, w.view_count, w.created, w.enddate,
-		c.company_name, c.region_code_name
+		c.company_name, c.region_code_name, c.photo
 		FROM wanteds w
 		LEFT OUTER JOIN
 		companys c
 		ON w.company_id = c.id
 		ORDER BY w.view_count DESC
+		LIMIT 8
 	</select>
 	
 </mapper>

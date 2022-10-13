@@ -14,25 +14,17 @@ import site.metacoding.miniproject1.service.WantedsService;
 import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
 
 @RequiredArgsConstructor
-//@Controller
+@Controller
 //@RestController
 public class MainPageController {
 	
 	//private final HttpSession session;
 	private final WantedsService wantedsService;
 	
-	/*
-	@GetMapping("/main")
+	@GetMapping({"/", "/main"})
 	public String mainPage(Model model) {
 		List<WantedsListDto> wantedsList = wantedsService.findAllHot();
 		model.addAttribute("wantedsList", wantedsList);
 		return "all/main";
-	}
-	*/
-	
-	@GetMapping("/api")
-	public List<WantedsListDto> test(){
-		List<WantedsListDto> wantedsList = wantedsService.findAllHot();
-		return wantedsList;
 	}
 }

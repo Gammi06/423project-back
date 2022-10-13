@@ -25,7 +25,7 @@
             <p>로그인을 해서 나에게 맞는 공고를 설정해보세요!</p>
         </div>
         <div class="wanteds">
-        	<c:forEach var="wantedsList" items="${wantedsList}">
+        	<c:forEach var="wanteds" items="${wantedsList}">
 	        	<div class="wanted">
 	                <a>
 	                <div class="picture">
@@ -34,13 +34,13 @@
 	                <div class="wanted_text">
 	                    <div class="text">
 	                        <ul>
-	                            <li class="title"><h2>${wantedsList.title}</h2></li>
-	                            <li class="content_text"><p>${wantedsList.detail}</p></li>
+	                            <li class="title"><h2>${wanteds.title}</h2></li>
+	                            <li class="content_text"><p>${wanteds.detail}</p></li>
 	                        </ul>
 	                    </div>
 	                    <div class="company_intro">
-	                        <p class="company_region">${wantedsList.regionCodeName}</p>
-	                        <p class="company_name">${wantedsList.companyName}</p>
+	                        <p class="company_region">${wanteds.regionCodeName}</p>
+	                        <p class="company_name">${wanteds.companyName}</p>
 	                    </div>
 	                </div>
 	                </a>
