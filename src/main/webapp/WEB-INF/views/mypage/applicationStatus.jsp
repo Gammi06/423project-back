@@ -47,7 +47,6 @@
                         </form>
                     </div>
 
-
                     <div>
                         <table class="as_table">
                             <thead>
