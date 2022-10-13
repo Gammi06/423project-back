@@ -24,6 +24,25 @@ GRANT ALL PRIVILEGES ON 9doitdb.* TO '9doit'@'%';
 
 USE 9doitdb;
 
+DROP TABLE users;
+DROP TABLE companys;
+DROP TABLE resumes;
+DROP TABLE wanteds;
+DROP TABLE positions_code;
+DROP TABLE skills_code;
+DROP TABLE regions_code;
+DROP TABLE careers_code;
+DROP TABLE application_status;
+DROP TABLE matchings;
+DROP TABLE applys;
+DROP TABLE subscribes;
+DROP TABLE likes;
+DROP TABLE myskills;
+DROP TABLE mycareers;
+DROP TABLE educations;
+DROP TABLE requests;
+DROP TABLE recruits;
+
 CREATE TABLE users (
    id INT PRIMARY KEY AUTO_INCREMENT,
    user_id VARCHAR(20),
@@ -42,7 +61,7 @@ CREATE TABLE users (
 CREATE TABLE companys (
    id INT PRIMARY KEY AUTO_INCREMENT,
    company_name VARCHAR(20) NOT NULL,
-   address TEXT NOT NULL,
+   address VARCHAR(100) NOT NULL,
    email VARCHAR(20) NOT NULL,
    company_number VARCHAR(20) NOT NULL UNIQUE,
    photo BLOB,
@@ -119,11 +138,12 @@ CREATE TABLE matchings (
 CREATE TABLE applys (
    id INT PRIMARY KEY AUTO_INCREMENT,
    wanted_id INT,
-   status INT,
+   resume_id INT,
+   status VARCHAR(20),
    created TIMESTAMP
 );
 
-CREATE TABLE subcribes (
+CREATE TABLE subscribes (
    id INT PRIMARY KEY AUTO_INCREMENT,
    user_id INT,
    company_id INT,
@@ -167,6 +187,7 @@ CREATE TABLE educations (
 CREATE TABLE requests (
    id INT PRIMARY KEY AUTO_INCREMENT,
    resume_id INT,
+   wanted_id INT,
    status VARCHAR(20),
    created TIMESTAMP
 );
@@ -492,31 +513,31 @@ INSERT INTO likes(user_id, wanted_id, created) VALUES(10, 23, NOW());
 INSERT INTO likes(user_id, wanted_id, created) VALUES(11, 23, NOW());
 INSERT INTO likes(user_id, wanted_id, created) VALUES(11, 24, NOW());
 
-INSERT INTO subcribes(user_id, company_id, created) VALUES(1, 1, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(1, 2, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(1, 3, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(2, 1, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(2, 5, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(3, 3, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(4, 2, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(5, 1, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(5, 2, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(5, 3, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(6, 1, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(6, 3, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(6, 4, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(7, 4, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(7, 5, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(8, 5, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(9, 2, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(9, 5, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(10, 1, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(10, 2, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(10, 3, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(11, 2, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(11, 3, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(11, 4, NOW());
-INSERT INTO subcribes(user_id, company_id, created) VALUES(11, 5, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(1, 1, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(1, 2, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(1, 3, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(2, 1, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(2, 5, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(3, 3, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(4, 2, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(5, 1, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(5, 2, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(5, 3, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(6, 1, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(6, 3, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(6, 4, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(7, 4, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(7, 5, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(8, 5, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(9, 2, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(9, 5, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(10, 1, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(10, 2, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(10, 3, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 2, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 3, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 4, NOW());
+INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 5, NOW());
 
 
 INSERT INTO application_status(wanted_id, resume_id, state, created)
