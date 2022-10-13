@@ -1,6 +1,5 @@
 package site.metacoding.miniproject1.web.dto.response;
 
-import java.sql.Blob;
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
@@ -12,11 +11,14 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter
-public class UserInfoDto {
+public class RequestsInfoDto {
     private Integer id;
-    private String userName;
-    private String phoneNumber;
-    private String email;
-    private Blob photo;
+    private Integer resumeId;
+    private Integer wantedId;
+    private String status;
+    private Timestamp created;
     private String positionCodeName;
+    private Integer careerCodeId;
+    private Integer companyId;
+    private String companyName;
 }

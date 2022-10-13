@@ -1,7 +1,5 @@
 package site.metacoding.miniproject1.web.dto.response;
 
-import java.sql.Blob;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,10 +9,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter
-public class CompanyInfoDto {
-	private Integer id;
-	private String companyName;
-	private Blob photo;
-	private String title;
-	private String detail;
+public class InfoCountDto {
+    private Integer statusAll;
+    private Integer likesCount;
+    private Integer subscribesCount;
+    private Integer requestsCount;
 }

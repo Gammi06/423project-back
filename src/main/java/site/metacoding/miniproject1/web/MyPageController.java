@@ -1,6 +1,7 @@
 package site.metacoding.miniproject1.web;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.MyPageService;
+import site.metacoding.miniproject1.web.dto.response.InfoAllDto;
+import site.metacoding.miniproject1.web.dto.response.RequestsDto;
 import site.metacoding.miniproject1.web.dto.response.StatusAllDto;
 import site.metacoding.miniproject1.web.dto.response.StatusFinalDto;
 import site.metacoding.miniproject1.web.dto.response.StatusWaitingDto;
@@ -21,9 +24,11 @@ public class MyPageController {
 
     private final HttpSession session;
     private final MyPageService myPageService;
-    
+
     @GetMapping("/mypage")
-    public String getMyPage() {
+    public String getMyPage(Model model) {
+        InfoAllDto infoAllDto = myPageService.viewMyPage();
+        model.addAttribute("infoAllDto", infoAllDto);
         return "mypage/myPage";
     }
 
@@ -46,7 +51,7 @@ public class MyPageController {
         session.setAttribute("referer", referer);
         return "mypage/applicationStatus";
     }
-    
+
     @GetMapping("/applicationstatusfinal")
     public String getFinal(Model model, String keyword) {
         StatusFinalDto statusFinalDto = myPageService.viewFinal(keyword);
@@ -55,6 +60,16 @@ public class MyPageController {
         referer.put("keyword", statusFinalDto.getKeyword());
         session.setAttribute("referer", referer);
         return "mypage/applicationStatusFinal";
+    }
+
+    @GetMapping("/proposal")
+    public String getRequests(Model model, String keyword) {
+        RequestsDto requestsDto = myPageService.viewRequests(keyword);
+        model.addAttribute("requestsDto", requestsDto);
+        Map<String, Object> referer = new HashMap<>();
+        referer.put("keyword", requestsDto.getKeyword());
+        session.setAttribute("referer", referer);
+        return "mypage/proposal";
     }
 
 }

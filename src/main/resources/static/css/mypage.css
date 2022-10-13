@@ -293,6 +293,7 @@ body {
 
 .mp_recommend {
     width: 723px;
+    height: auto;
     border: 1px solid #bbb;
     margin: 0 0 100px 0;
     border-radius: 5px;
@@ -310,6 +311,8 @@ body {
 }
 
 .mp_reco1 {
+    width: 150px;
+    height: auto;
     margin: 0 15px 0 39px;
 }
 
@@ -402,6 +405,10 @@ body {
 .mp_reco_com_content {
     color: #9E9E9E;
     font-size: 12px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2 (integer);
+    overflow: hidden;
 }
 
 .mp_reco1 .mp_company {

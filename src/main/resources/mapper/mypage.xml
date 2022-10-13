@@ -10,7 +10,8 @@
 		phone_number, email, photo,
 		position_code_name, company_id,
 		mycareer_id, created
-		FROM users;
+		FROM users
+		WHERE id=1;
 	</select>
 
 	<select id="findCompany"
@@ -27,7 +28,24 @@
 		companys com
 		INNER JOIN wanteds wan
 		ON com.id = wan.company_id
+		WHERE wan.id=1 OR wan.id=3 OR wan.id=10 OR wan.id=21
 	</select>
+
+	<select id="findInfoCounts"
+	resultType="site.metacoding.miniproject1.web.dto.response.InfoCountDto">
+		SELECT count((IFNULL(state, 0))) AS statusAll,
+		(SELECT count((IFNULL(wanted_id, 0))) AS likesCount
+		FROM likes
+		WHERE user_id = 1) likesCount,
+		(SELECT count((IFNULL(company_id, 0))) AS subscribesCount
+		FROM subscribes
+		WHERE user_id = 1) subscribesCount,
+		(SELECT count((IFNULL(wanted_id, 0))) AS requestsCount
+		FROM requests
+		WHERE resume_id = 1) requestsCount
+		FROM application_status
+	</select>
+
 
 	<select id="findAll"
 		resultType="site.metacoding.miniproject1.web.dto.response.StatusInfoDto">
@@ -110,6 +128,22 @@
 			AND com.company_name LIKE CONCAT('%',#{keyword},'%')
 		</if>
 		ORDER BY apps.id DESC
+	</select>
+
+	<select id="findRequest"
+		resultType="site.metacoding.miniproject1.web.dto.response.RequestsInfoDto">
+		SELECT req.id, req.resume_id, req.wanted_id, req.status, req.created,
+		wan.position_code_name, wan.career_code_id, wan.company_id,
+		com.company_name 
+		FROM requests req
+		INNER JOIN wanteds wan
+		ON req.wanted_id = wan.id
+		INNER JOIN companys com
+		ON wan.company_id=com.id
+		<if test="keyword != null">
+			WHERE com.company_name LIKE CONCAT('%',#{keyword},'%')
+		</if>
+		ORDER BY req.id DESC
 	</select>
 
 

@@ -142,6 +142,11 @@ body {
     vertical-align: middle;
 }
 
-.pp_table td:last-child {
+.pp_table td .recruiting {
     color: #0000ee;
+
+}
+
+.pp_table td .end {
+    color: #333333;
 }

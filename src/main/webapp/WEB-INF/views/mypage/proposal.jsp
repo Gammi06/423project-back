@@ -20,8 +20,8 @@
                 <div class="pp_contents">
                     <p class="pp_sub_title">받은 요청</p>
                     <div class="pp_search">
-                        <form>
-                            <input type="text" placeholder="회사명 검색">
+                        <form method="get" action="/proposal">
+                            <input type="text" placeholder="회사명 검색" name="keyword">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
@@ -37,12 +37,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>요청 회사</td>
-                                    <td>요청 포지션</td>
-                                    <td>작성 시간</td>
-                                    <td>모집중</td>
-                                </tr>
+                                <c:forEach var="requestsInfoDtos" items="${requestsDto.requestsInfoDtos}">
+                                    <tr>
+                                        <td>${requestsInfoDtos.companyName}</td>
+                                        <td>${requestsInfoDtos.positionCodeName}</td>
+                                        <td>${requestsInfoDtos.created}</td>
+                                        <td>
+                                            <c:choose>
+                                                <c:when test="${requestsInfoDtos.status == '모집중'}">
+                                                    <p class="recruiting">모집중</p>
+                                                </c:when>
+                                                <c:when test="${requestsInfoDtos.status == '마감'}">
+                                                    <p class="end">마감</p>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <p class="end">마감</p>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>
