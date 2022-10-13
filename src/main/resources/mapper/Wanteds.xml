@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper>
+
+	<select>
+		SELECT w.id, w.position_code_id, w.career_code_id, w.company_id, w.title, w.detail, w.view_count, w.created, w.enddate,
+		c.company_name, c.region_code_name
+		FROM wanteds w
+		LEFT OUTER JOIN companys c
+		ON w.company_id = c.id
+		ORDER BY w.view_count DESC
+	</select>
+	
+	<select>
+		SELECT w.id, w.position_code_id, w.career_code_id, w.company_id, w.title, w.detail, w.view_count, w.created, w.enddate,
+		c.company_name, c.region_code_name
+		FROM wanteds w
+		LEFT OUTER JOIN companys c
+		ON w.company_id = c.id
+		WHERE w.position_code_id = ${positionCodeId}
+		ORDER BY w.view_count DESC
+	</select>
+</mapper>
