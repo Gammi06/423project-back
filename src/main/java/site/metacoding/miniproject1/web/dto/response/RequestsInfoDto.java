@@ -15,6 +15,7 @@ public class RequestsInfoDto {
     private Integer id;
     private Integer resumeId;
     private Integer wantedId;
+    private Integer positionCodeId;
     private String status;
     private Timestamp created;
     private String positionCodeName;

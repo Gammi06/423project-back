@@ -39,7 +39,7 @@
                             <tbody>
                                 <c:forEach var="requestsInfoDtos" items="${requestsDto.requestsInfoDtos}">
                                     <tr>
-                                        <td>${requestsInfoDtos.companyName}</td>
+                                        <td><a href>${requestsInfoDtos.companyName}</a></td>
                                         <td>${requestsInfoDtos.positionCodeName}</td>
                                         <td>${requestsInfoDtos.created}</td>
                                         <td>

@@ -16,19 +16,23 @@
 
 	<select id="findCompany"
 		resultType="site.metacoding.miniproject1.web.dto.response.CompanyInfoDto">
-		SELECT com.id, com.company_name, com.address, com.email,
+		SELECT @ROWNUM :=@ROWNUM+1 AS no, comrec.*
+		FROM (SELECT com.id, com.company_name, com.address, com.email,
 		com.company_number, com.photo,
 		com.region_code_name, com.intro,
 		com.years, com.member_count, com.created,
 		wan.id wanted_id,
-		wan.position_code_name, wan.career_code_id, wan.pay,
+		wan.position_code_id, wan.career_code_id, wan.pay,
 		wan.title,
-		wan.detail, wan.view_count, wan.created, wan.enddate, wan.checked
-		FROM
-		companys com
+		wan.detail, wan.view_count, wan.enddate, wan.checked
+		FROM companys com
 		INNER JOIN wanteds wan
 		ON com.id = wan.company_id
-		WHERE wan.id=1 OR wan.id=3 OR wan.id=10 OR wan.id=21
+		INNER JOIN resumes res
+		ON wan.position_code_id = res.positions_code_id
+		WHERE res.user_id = 1
+		ORDER BY RAND() LIMIT 4) comrec,
+		(SELECT @ROWNUM := 0) R
 	</select>
 
 	<select id="findInfoCounts"
@@ -52,17 +56,18 @@
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
-		apps.created created, wan.position_code_name
-		positionCodeName,
+		apps.created created, wan.position_code_id
+		positionCodeId,
 		wan.company_id companyId, com.company_name
-		companyName
+		companyName,
+		poco.name positionCodeName
 		FROM application_status apps
 		INNER JOIN wanteds wan
-		ON
-		apps.wanted_id = wan.id
+		ON apps.wanted_id = wan.id
 		INNER JOIN companys com
-		ON wan.company_id =
-		com.id
+		ON wan.company_id = com.id
+		INNER JOIN positions_code poco
+		ON wan.position_code_id = poco.id
 		<if test="keyword != null">
 			WHERE com.company_name LIKE CONCAT('%',#{keyword},'%')
 		</if>
@@ -89,10 +94,11 @@
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
-		apps.created created, wan.position_code_name
-		positionCodeName,
+		apps.created created, wan.position_code_id
+		positionCodeId,
 		wan.company_id companyId, com.company_name
-		companyName
+		companyName,
+		poco.name positionCodeName
 		FROM application_status apps
 		INNER JOIN wanteds wan
 		ON
@@ -100,6 +106,8 @@
 		INNER JOIN companys com
 		ON wan.company_id =
 		com.id
+		INNER JOIN positions_code poco
+		ON wan.position_code_id = poco.id
 		WHERE apps.state = 0
 		<if test="keyword != null">
 			AND com.company_name LIKE CONCAT('%',#{keyword},'%')
@@ -112,10 +120,11 @@
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
-		apps.created created, wan.position_code_name
-		positionCodeName,
+		apps.created created, wan.position_code_id
+		positionCodeId,
 		wan.company_id companyId, com.company_name
-		companyName
+		companyName,
+		poco.name positionCodeName
 		FROM application_status apps
 		INNER JOIN wanteds wan
 		ON
@@ -123,6 +132,8 @@
 		INNER JOIN companys com
 		ON wan.company_id =
 		com.id
+		INNER JOIN positions_code poco
+		ON wan.position_code_id = poco.id
 		WHERE apps.state = 1
 		<if test="keyword != null">
 			AND com.company_name LIKE CONCAT('%',#{keyword},'%')
@@ -133,13 +144,16 @@
 	<select id="findRequest"
 		resultType="site.metacoding.miniproject1.web.dto.response.RequestsInfoDto">
 		SELECT req.id, req.resume_id, req.wanted_id, req.status, req.created,
-		wan.position_code_name, wan.career_code_id, wan.company_id,
-		com.company_name 
+		wan.position_code_id, wan.career_code_id, wan.company_id,
+		com.company_name,
+		poco.name positionCodeName
 		FROM requests req
 		INNER JOIN wanteds wan
 		ON req.wanted_id = wan.id
 		INNER JOIN companys com
 		ON wan.company_id=com.id
+		INNER JOIN positions_code poco
+		ON wan.position_code_id = poco.id
 		<if test="keyword != null">
 			WHERE com.company_name LIKE CONCAT('%',#{keyword},'%')
 		</if>

@@ -104,9 +104,9 @@
                     <p class="mp_reco_title">추천</p>
                     <div class="mp_recos">
                         <c:forEach var="companyInfoDtos" items="${infoAllDto.companyInfoDtos}">
-                            <div class="mp_reco${i}">
+                            <div class="mp_reco${companyInfoDtos.no}">
                                 <a href="#">
-                                    <div class="mp_reco1_1">
+                                    <div class="mp_reco${companyInfoDtos.no}_1">
                                         <img src="/assets/image.png">
                                     </div>
                                     <p class="mp_reco_com_title">${companyInfoDtos.title}</p>

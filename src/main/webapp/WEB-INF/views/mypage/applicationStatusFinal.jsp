@@ -19,25 +19,25 @@
 
                 <div class="asf_contents">
                     <div class="asf_counts">
-                    <c:forEach var="statusCountDtos" items="${statusFinalDto.statusCountDtos}">
-                        <div class="asf_count_all">
-                            <a href="/applicationstatusall">
-                                <p class="asf_all_count">${statusCountDtos.statusAll}</p>
-                                <p class="asf_all_text">전체</p>
-                            </a>
-                        </div>
-                        <div class="asf_count_c">
-                            <a href="/applicationstatus">
-                                <p class="asf_count">${statusCountDtos.statusC}</p>
-                                <p class="asf_text">지원 완료</p>
-                            </a>
-                        </div>
-                        <div class="asf_count_final">
-                            <a href="/applicationstatusfinal">
-                                <p class="asf_final_count">${statusCountDtos.statusFinal}</p>
-                                <p class="asf_final_text">최종합격</p>
-                            </a>
-                        </div>
+                        <c:forEach var="statusCountDtos" items="${statusFinalDto.statusCountDtos}">
+                            <div class="asf_count_all">
+                                <a href="/applicationstatusall">
+                                    <p class="asf_all_count">${statusCountDtos.statusAll}</p>
+                                    <p class="asf_all_text">전체</p>
+                                </a>
+                            </div>
+                            <div class="asf_count_c">
+                                <a href="/applicationstatus">
+                                    <p class="asf_count">${statusCountDtos.statusC}</p>
+                                    <p class="asf_text">지원 완료</p>
+                                </a>
+                            </div>
+                            <div class="asf_count_final">
+                                <a href="/applicationstatusfinal">
+                                    <p class="asf_final_count">${statusCountDtos.statusFinal}</p>
+                                    <p class="asf_final_text">최종합격</p>
+                                </a>
+                            </div>
                         </c:forEach>
                     </div>
 
@@ -61,12 +61,12 @@
                             </thead>
                             <tbody>
                                 <c:forEach var="statusFinalInfoDtos" items="${statusFinalDto.statusFinalInfoDtos}">
-                               <tr>
-                                        <td>${statusFinalInfoDtos.companyName}</td>
+                                    <tr>
+                                        <td><a href="#">${statusFinalInfoDtos.companyName}</a></td>
                                         <td>${statusFinalInfoDtos.positionCodeName}</td>
                                         <td>${statusFinalInfoDtos.created}</td>
                                         <td>
-                                           <p class="pass">합격</p>
+                                            <p class="pass">합격</p>
                                         </td>
                                     </tr>
                                 </c:forEach>

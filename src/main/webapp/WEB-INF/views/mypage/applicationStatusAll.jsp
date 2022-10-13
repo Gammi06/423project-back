@@ -43,6 +43,7 @@
                     <div class="asa_search">
                         <form method="get" action="/applicationstatusall">
                             <input type="text" placeholder="회사명 검색" name="keyword" value="${referer.keyword}">
+                            <input id="keyword" type="hidden" value="${sessionScope.referer.keyword}" />
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
@@ -61,7 +62,7 @@
                             <tbody>
                                 <c:forEach var="statusInfoDtos" items="${statusAllDto.statusInfoDtos}">
                                     <tr>
-                                        <td>${statusInfoDtos.companyName}</td>
+                                        <td><a href="#">${statusInfoDtos.companyName}</a> </td>
                                         <td>${statusInfoDtos.positionCodeName}</td>
                                         <td>${statusInfoDtos.created}</td>
                                         <td>

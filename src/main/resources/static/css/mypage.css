@@ -405,10 +405,8 @@ body {
 .mp_reco_com_content {
     color: #9E9E9E;
     font-size: 12px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2 (integer);
-    overflow: hidden;
+    width: 150px;
+    height: 55px;
 }
 
 .mp_reco1 .mp_company {
