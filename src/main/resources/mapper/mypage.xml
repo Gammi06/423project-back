@@ -11,7 +11,7 @@
 		position_code_name, company_id,
 		mycareer_id, created
 		FROM users
-		WHERE id=1;
+		WHERE id= #{id}
 	</select>
 
 	<select id="findCompany"
@@ -30,7 +30,7 @@
 		ON com.id = wan.company_id
 		INNER JOIN resumes res
 		ON wan.position_code_id = res.positions_code_id
-		WHERE res.user_id = 1
+		WHERE res.user_id = #{id}
 		ORDER BY RAND() LIMIT 4) comrec,
 		(SELECT @ROWNUM := 0) R
 	</select>
@@ -40,14 +40,17 @@
 		SELECT count((IFNULL(state, 0))) AS statusAll,
 		(SELECT count((IFNULL(wanted_id, 0))) AS likesCount
 		FROM likes
-		WHERE user_id = 1) likesCount,
+		WHERE user_id = #{id}) likesCount,
 		(SELECT count((IFNULL(company_id, 0))) AS subscribesCount
 		FROM subscribes
-		WHERE user_id = 1) subscribesCount,
+		WHERE user_id = #{id}) subscribesCount,
 		(SELECT count((IFNULL(wanted_id, 0))) AS requestsCount
 		FROM requests
-		WHERE resume_id = 1) requestsCount
-		FROM application_status
+		WHERE resume_id = #{id}) requestsCount
+		FROM application_status appst
+		INNER JOIN resumes res
+		ON appst.resume_id = res.id
+		WHERE res.user_id = #{id}
 	</select>
 
 
@@ -60,7 +63,8 @@
 		positionCodeId,
 		wan.company_id companyId, com.company_name
 		companyName,
-		poco.name positionCodeName
+		poco.name positionCodeName,
+		res.user_id userId
 		FROM application_status apps
 		INNER JOIN wanteds wan
 		ON apps.wanted_id = wan.id
@@ -68,8 +72,11 @@
 		ON wan.company_id = com.id
 		INNER JOIN positions_code poco
 		ON wan.position_code_id = poco.id
+		INNER JOIN resumes res
+		ON apps.resume_id = res.id
+		WHERE res.user_id = #{id}
 		<if test="keyword != null">
-			WHERE com.company_name LIKE CONCAT('%',#{keyword},'%')
+			AND com.company_name LIKE CONCAT('%',#{keyword},'%')
 		</if>
 		ORDER BY apps.id DESC
 	</select>
@@ -79,14 +86,19 @@
 		SELECT count((IFNULL(state, 0))) AS statusAll,
 		(SELECT
 		count((IFNULL(state, 0))) AS statusC
-		FROM application_status
-		WHERE state
-		= 0) statusC,
+		FROM application_status appst
+		INNER JOIN resumes res
+		ON appst.resume_id = res.id
+		WHERE res.user_id = #{id} AND state = 0 ) statusC,
 		(SELECT count((IFNULL(state, 0))) AS statusFinal
-		FROM
-		application_status
-		WHERE state = 1) statusFinal
-		FROM application_status
+		FROM application_status appst
+		INNER JOIN resumes res
+		ON appst.resume_id = res.id
+		WHERE res.user_id = #{id} AND state = 1) statusFinal
+		FROM application_status appst
+		INNER JOIN resumes res
+		ON appst.resume_id = res.id
+		WHERE res.user_id = #{id}
 	</select>
 
 	<select id="findWaiting"
@@ -108,7 +120,9 @@
 		com.id
 		INNER JOIN positions_code poco
 		ON wan.position_code_id = poco.id
-		WHERE apps.state = 0
+		INNER JOIN resumes res
+		ON apps.resume_id = res.id
+		WHERE res.user_id = #{id} AND apps.state = 0
 		<if test="keyword != null">
 			AND com.company_name LIKE CONCAT('%',#{keyword},'%')
 		</if>
@@ -134,7 +148,9 @@
 		com.id
 		INNER JOIN positions_code poco
 		ON wan.position_code_id = poco.id
-		WHERE apps.state = 1
+		INNER JOIN resumes res
+		ON apps.resume_id = res.id
+		WHERE res.user_id = #{id} AND apps.state = 1
 		<if test="keyword != null">
 			AND com.company_name LIKE CONCAT('%',#{keyword},'%')
 		</if>
@@ -154,8 +170,11 @@
 		ON wan.company_id=com.id
 		INNER JOIN positions_code poco
 		ON wan.position_code_id = poco.id
+		INNER JOIN resumes res
+		ON req.resume_id = res.id
+		WHERE res.user_id = #{id}
 		<if test="keyword != null">
-			WHERE com.company_name LIKE CONCAT('%',#{keyword},'%')
+			AND com.company_name LIKE CONCAT('%',#{keyword},'%')
 		</if>
 		ORDER BY req.id DESC
 	</select>

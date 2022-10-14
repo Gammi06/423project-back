@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class StatusCountDto {
+    private Integer id;
     private Integer statusAll;
     private Integer statusC;
     private Integer statusFinal;

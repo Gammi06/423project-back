@@ -21,4 +21,5 @@ public class StatusInfoDto {
     private String positionCodeName;
     private Integer companyId;
     private String companyName;
+    private Integer userId;
 }

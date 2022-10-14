@@ -41,13 +41,12 @@
                     </div>
 
                     <div class="asa_search">
-                        <form method="get" action="/applicationstatusall">
-                            <input type="text" placeholder="회사명 검색" name="keyword" value="${referer.keyword}">
-                            <input id="keyword" type="hidden" value="${sessionScope.referer.keyword}" />
+                        <form name="searchAll">
+                            <input id="keyword" type="text" placeholder="회사명 검색" name="keyword"
+                                value="${referer.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
-
 
                     <div>
                         <table class="asa_table">
