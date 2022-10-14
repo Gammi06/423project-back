@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="as_search">
-                        <form method="get" action="/applicationstatus">
+                        <form name="search">
                             <input type="text" placeholder="회사명 검색" name="keyword">
                             <button class="btn_search" type="submit"></button>
                         </form>
@@ -75,5 +75,7 @@
                 </div>
             </div>
         </div>
+
+        <script src="/js/applicationStatus.js"></script>
 
         <%@ include file="../layout/footer.jsp" %>
