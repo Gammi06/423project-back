@@ -18,5 +18,4 @@ public interface WantedsDao {
 	public List<WantedsListDto> findAllLike(Integer userId);
 	public List<WantedsListDto> findAllByDate();
 	public List<WantedsListDto> findAllByLike();
-	public List<WantedsListDto> findByLike();
 }

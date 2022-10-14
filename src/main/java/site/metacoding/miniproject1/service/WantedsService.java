@@ -5,8 +5,12 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject1.domain.codes.CareersCodeDao;
 import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
+import site.metacoding.miniproject1.domain.codes.RegionsCodeDao;
+import site.metacoding.miniproject1.domain.codes.SkillsCodeDao;
 import site.metacoding.miniproject1.domain.wanteds.WantedsDao;
+import site.metacoding.miniproject1.web.dto.response.PositionCodeDto;
 import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
 
 @RequiredArgsConstructor
@@ -14,6 +18,11 @@ import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
 public class WantedsService {
 	private final WantedsDao wantedsDao;
 	private final PositionsCodeDao positionsCodeDao;
+
+	public List<PositionCodeDto> findAllPositionCode() {
+		List<PositionCodeDto> positionCodeDtosPS = positionsCodeDao.findAll();
+		return positionCodeDtosPS;
+	}
 
 	public List<WantedsListDto> findAllByLike() {
 		List<WantedsListDto> wantedsDtosPS = wantedsDao.findAllByLike();

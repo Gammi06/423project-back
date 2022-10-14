@@ -64,8 +64,8 @@
 										</ul>
 									</div>
 									<div class="company_intro">
-										<p class="company_region">지역</p>
-										<p class="company_name">회사이름</p>
+										<p class="company_region">${wantedsLikeList.regionCodeName}</p>
+										<p class="company_name">${wantedsLikeList.companyName}</p>
 									</div>
 								</div>
 							</a>
@@ -94,8 +94,8 @@
 									</ul>
 								</div>
 								<div class="company_intro">
-									<p class="company_region">지역</p>
-									<p class="company_name">회사이름</p>
+									<p class="company_region">${wantedsAllList.regionCodeName}</p>
+									<p class="company_name">${wantedsAllList.companyName}</p>
 								</div>
 							</div>
 						</a>
