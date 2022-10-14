@@ -18,13 +18,18 @@ import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
 //@RestController
 public class MainPageController {
 	
-	//private final HttpSession session;
+	private final HttpSession session;
 	private final WantedsService wantedsService;
 	
 	@GetMapping({"/", "/main"})
 	public String mainPage(Model model) {
+		WantedsListDto wanteds = wantedsService.findBestHot();
+		
+		// 로그인 체크
 		List<WantedsListDto> wantedsList = wantedsService.findAllHot();
+
 		model.addAttribute("wantedsList", wantedsList);
+		model.addAttribute("wanteds", wanteds);
 		return "all/main";
 	}
 }

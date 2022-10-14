@@ -13,6 +13,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class WantedsListDto {
+	private Integer totalCount;
 	private Integer id;
 	private Integer positionCodeId;
 	private Integer careerCodeId;

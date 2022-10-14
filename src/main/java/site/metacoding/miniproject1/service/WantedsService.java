@@ -14,7 +14,12 @@ public class WantedsService {
 	private final WantedsDao wantedsDao;
 
 	public List<WantedsListDto> findAllHot(){
-		List<WantedsListDto> wantedsDtos = wantedsDao.findAllHot();
-		return wantedsDtos;
+		List<WantedsListDto> wantedsDtosPS = wantedsDao.findAllHot();
+		return wantedsDtosPS;
+	}
+	
+	public WantedsListDto findBestHot() {
+		WantedsListDto wantedsDtoPS = wantedsDao.findBestHot();
+		return wantedsDtoPS;
 	}
 }

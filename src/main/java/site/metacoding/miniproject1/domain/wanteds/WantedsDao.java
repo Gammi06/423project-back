@@ -13,4 +13,5 @@ public interface WantedsDao {
 	public void deleteById(Integer id);
 	
 	public List<WantedsListDto> findAllHot();
+	public WantedsListDto findBestHot();
 }
