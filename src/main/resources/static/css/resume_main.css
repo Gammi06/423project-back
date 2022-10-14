@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+body {
+	background-color: #f4f4f4;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+
+
+/*------.resume01_sec1시작------*/
+.resume01_sec1{
+	height: 440px;
+	background-color: #5e5e5e;
+	margin: 0 auto;
+}
+
+.resume01_sec1 div p{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.resume01_sec1 div .sec1_cont1{
+	padding-top: 100px;
+	margin-bottom: 30px;
+}
+
+.resume01_sec1 div .sec1_cont1 span{
+	color: #fff;
+	font-weight: bold;
+	font-size: 56px;
+    font-family: 'GmarketSansMedium';
+}
+
+.resume01_sec1 div .sec1_cont2{
+	margin-bottom: 8px;
+}
+
+.resume01_sec1 div .sec1_cont2 span{
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Pretendard-Regular';
+}
+
+.resume01_sec1 div .sec1_cont3{
+	margin-bottom: 50px;
+}
+
+.resume01_sec1 div .sec1_cont3 span{
+	color: #fff;
+	font-size: 18px;
+	font-family: 'Pretendard-Regular';
+}
+
+.resume01_sec1 div .sec1_cont4{
+	margin-bottom: 50px;
+}
+
+.resume01_sec1 div .sec1_cont4 .btn{
+	font-weight: bold;
+	font-size: 18px;
+	border: 1px solid #0000ee;
+	border-radius: 30px;
+	width: 160px;
+	height: 45px;
+	margin-right: 20px;
+	line-height: 45px;
+	text-align: center;
+}
+
+.resume01_sec1 div .sec1_cont4 .btn_adminresume{
+	background-color: #e6e6e6;
+	color: #0000ee;
+}
+.resume01_sec1 div .sec1_cont4 .btn_adminresume:hover{
+	background-color: #0000ee;
+	color: white;
+}
+
+.resume01_sec1 div .sec1_cont4 .btn_newresume{
+	background-color: #0000ee;
+	color: white;
+}
+
+.resume01_sec1 div .sec1_cont4 .btn_newresume:hover{
+	background-color: #e6e6e6;
+	color: #0000ee;
+}
+
+.resume01_sec1 div .sec1_cont4 .btn_adminresume span,
+.resume01_sec1 div .sec1_cont4 .btn_newresume span{
+    font-family: 'GmarketSansMedium';
+}
+/*------.resume01_sec1끝------*/
+
+
+/*------.resume01_sec2시작------*/
+.resume01_sec2{
+	height: 1300px;
+	background-color: white;
+	margin-top: 50px;
+}
+
+.resume01_sec2 div {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.resume01_sec2 div span {
+	font-weight: bold;
+	font-size: 32px;
+	height: 150px;
+	line-height: 150px;
+	font-family: 'Pretendard-Regular';
+}
+
+.resume01_sec2 .sec2_box p {
+	width: 490px;
+	height: 485px;
+	background-color: #f2f2f2;
+}
+
+.resume01_sec2 .sec2_box .box_tl{
+	margin: 0 10px 10px 0;
+}
+
+.resume01_sec2 .sec2_box .box_bl{
+	margin: 0 10px 0 0;
+}
+
+.resume01_sec2 .sec2_box .box_tr{
+	margin: 0 0 10px 0;
+}
+/*------.resume01_sec2끝------*/
+
+
+/*------.resume01_sec3시작------*/
+.resume01_sec3{
+	width: 1000px;
+	height: 620px;
+	background-color: #f4f4f4;
+	padding-top: 50px;
+	padding-bottom: 60px;
+	margin: 0 auto;
+}
+
+.resume01_sec3 div{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.resume01_sec3 div span{
+	height: 120px;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 120px;
+	font-family: 'Pretendard-Regular';
+}
+
+.resume01_sec3 div p{
+	width: 800px;
+	height: 500px;
+	background-color: white;
+}
+/*------.resume01_sec3끝------*/
+
+
+/*------.resume01_sec4시작------*/
+.resume01_sec4{
+	width: 1000px;
+	background-color: #f4f4f4;
+	padding-bottom: 70px;
+	margin: 0 auto;
+}
+
+.resume01_sec4 .sec4_btn{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.resume01_sec4 .sec4_btn div{
+	margin-right: 20px;
+}
+
+.resume01_sec4 .btn_newresume{
+	background-color: #0000ee;
+	border: 1px solid #0000ee;
+	border-radius: 30px;
+	height: 50px;
+	width: 160px;
+	text-align: center;
+	margin-right: 0;
+	color: white;
+}
+
+.resume01_sec4 .btn_newresume:hover{
+	background-color: white;
+	color: #0000ee;
+}
+
+.resume01_sec4 .btn_newresume span{
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 18px;
+    font-family: 'GmarketSansMedium';
+}
+/*------.resume01_sec4끝------*/
