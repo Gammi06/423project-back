@@ -15,6 +15,25 @@ public class WantedsService {
 	private final WantedsDao wantedsDao;
 	private final PositionsCodeDao positionsCodeDao;
 
+	public List<WantedsListDto> findAllByLike() {
+		List<WantedsListDto> wantedsDtosPS = wantedsDao.findAllByLike();
+		return wantedsDtosPS;
+	}
+	
+	public List<WantedsListDto> findAllByDate() {
+		List<WantedsListDto> wantedsDtosPS = wantedsDao.findAllByDate();
+		return wantedsDtosPS;
+	}
+	
+	public List<WantedsListDto> findByLike(Integer userId){
+		//유저가 있는지 확인하기
+		//findById로 확인할것, 없으면 null넘기기
+		if(userId == 0) return null;
+		
+		List<WantedsListDto> wantedsDtosPS = wantedsDao.findAllLike(userId);
+		return wantedsDtosPS;
+	}
+	
 	public WantedsListDto findBestHot() {
 		WantedsListDto wantedsDtoPS = wantedsDao.findBestHot();
 		return wantedsDtoPS;

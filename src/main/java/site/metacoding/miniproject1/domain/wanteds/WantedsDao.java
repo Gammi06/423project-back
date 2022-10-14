@@ -15,4 +15,8 @@ public interface WantedsDao {
 	public WantedsListDto findBestHot();
 	public List<WantedsListDto> findAllHot();
 	public List<WantedsListDto> findAllByposition(Integer positionCodeId);
+	public List<WantedsListDto> findAllLike(Integer userId);
+	public List<WantedsListDto> findAllByDate();
+	public List<WantedsListDto> findAllByLike();
+	public List<WantedsListDto> findByLike();
 }
