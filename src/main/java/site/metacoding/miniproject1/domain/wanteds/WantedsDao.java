@@ -12,6 +12,7 @@ public interface WantedsDao {
 	public void update(Integer id, Wanteds wanteds);
 	public void deleteById(Integer id);
 	
-	public List<WantedsListDto> findAllHot();
 	public WantedsListDto findBestHot();
+	public List<WantedsListDto> findAllHot();
+	public List<WantedsListDto> findAllByposition(Integer positionCodeId);
 }
