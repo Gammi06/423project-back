@@ -27,9 +27,9 @@
                     <li class="menu_bottom">구직은 구해줘용과 함께</li>
                 </ul>
             </div>
-            <h1 class="logo"><a href="#">구해줘용</a></h1>
+            <h1 class="logo"><a href="/">구해줘용</a></h1>
             <ul class="gnb">
-                <li><a href="#">채용</a></li>
+                <li><a href="/wanteds">채용</a></li>
                 <li><a href="#">이력서</a></li>
             </ul>
             <ul class="login">

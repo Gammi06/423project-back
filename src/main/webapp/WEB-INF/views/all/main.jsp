@@ -48,7 +48,7 @@
         	</c:forEach>
         </div>
         <div class="more">
-            <h2><a href="#">더 많은 채용공고 보기 ></a></h2>
+            <h2><a href="/wanteds">더 많은 채용공고 보기 ></a></h2>
         </div>
     </div>
 </div>
@@ -82,10 +82,10 @@
         </div>
         <div class="service_nav">
             <ul class="buttons">
-                <li><a href="#">채용공고</a></li>
+                <li><a href="/wanteds">채용공고</a></li>
                 <li><a href="#">프로필</a></li>
                 <li><a href="#">이력서</a></li>
-                <li><a href="#">고객센터</a></li>
+                <li><a href="/">고객센터</a></li>
             </ul>
         </div>
     </div>
