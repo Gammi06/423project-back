@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Empty;
+
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.domain.codes.CareersCodeDao;
 import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
@@ -15,6 +17,7 @@ import site.metacoding.miniproject1.web.dto.response.codes.CareersCodeDto;
 import site.metacoding.miniproject1.web.dto.response.codes.PositionsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.codes.RegionsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.codes.SkillsCodeDto;
+import site.metacoding.miniproject1.web.dto.response.mySkills.WantedsSkillsDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingWantedsListDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
@@ -27,9 +30,8 @@ public class WantedsService {
 	private final SkillsCodeDao skillsCodeDao;
 	private final RegionsCodeDao regionsCodeDao;
 	private final CareersCodeDao careersCodeDao;
+	private final MySkillsService mySkillsService;
 	
-	//통합해서 부르는거 하나 짤 수 있으면 짜기
-
 	public PagingWantedsListDto pagingWantedsList(Integer page, Integer state) {
 		if(page == null) page = 0;
 		int startNum = page * 16;
@@ -64,6 +66,13 @@ public class WantedsService {
 	public List<WantedsListDto> findAllToSort(Integer state, Integer startNum){
 		if(state == null) state = 0;
 		List<WantedsListDto> wantedsListPS = wantedsDao.findAllToSort(state, startNum);
+		
+		for(int i = 0; i < wantedsListPS.size(); i++) {
+			List<WantedsSkillsDto> wantedsSkillsPS = mySkillsService.findMySkillByWantedId(i);
+			if(wantedsSkillsPS != null) {
+				wantedsListPS.get(i).setMySkills(wantedsSkillsPS);
+			}
+		}
 		return wantedsListPS;
 	}
 	
