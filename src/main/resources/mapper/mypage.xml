@@ -30,9 +30,9 @@
 		FROM companys com
 		INNER JOIN wanteds wan
 		ON com.id = wan.company_id
-		INNER JOIN resumes res
-		ON wan.position_code_id = res.positions_code_id
-		WHERE res.user_id = #{id}
+		LEFT OUTER JOIN users us
+		ON wan.position_code_id = us.position_code_id
+		WHERE us.id = #{id}
 		ORDER BY RAND() LIMIT 4) comrec,
 		(SELECT @ROWNUM := 0) R
 	</select>
