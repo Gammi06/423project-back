@@ -2,6 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.miniproject1.domain.wanteds.WantedsDao">
 	
+	<select id="paging"
+		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto">
+		SELECT totalCount,
+		totalPage,
+		currentPage,
+		decode(currentPage, 0, 1, 0) first,
+		decode(currentPage, totalPage-1, 1, 0) last
+		FROM
+		(
+		select count(*) totalCount, ceil(count(*)/16) totalPage,
+		#{page} currentPage, 0 first, 0 last
+		FROM boards
+		)
+	</select>
+	
 	<select id="findAllByDate"
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto">
 		SELECT l.like_count + w.view_count total_count ,w.id, w.position_code_id, w.career_code_id, w.company_id, w.title, w.detail, w.view_count, w.created, w.enddate,
@@ -15,6 +30,7 @@
 		ON l.wanted_id = w.id
 		WHERE w.enddate > NOW()
 		ORDER BY w.created DESC
+		OFFSET #{startNum} ROWS FETCH NEXT 16 ROWS ONLY
 	</select>
 	
 	<select id="findAllByLike"
@@ -32,6 +48,7 @@
 		ONl.wanted_id = w.id
 		WHERE w.enddate > NOW()
 		ORDER BY total_count DESC
+		OFFSET #{startNum} ROWS FETCH NEXT 16 ROWS ONLY
 	</select>
 	
 	<select id="findAllLike"
