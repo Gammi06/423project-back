@@ -15,7 +15,7 @@
 		) result
 	</select>
 	
-	<select id="findAllByDate"
+	<select id="findAllToSort"
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto">
 		SELECT l.like_count + w.view_count total_count ,w.id, w.position_code_id, w.career_code_id, w.company_id, w.title, w.detail, w.view_count, w.created, w.enddate,
 		c.company_name, c.region_code_name, c.photo
@@ -27,25 +27,14 @@
 		GROUP BY wanted_id) l
 		ON l.wanted_id = w.id
 		WHERE w.enddate > NOW()
-		ORDER BY w.created DESC
-		OFFSET #{startNum} ROWS FETCH NEXT 16 ROWS ONLY
-	</select>
-	
-	<select id="findAllByLike"
-		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto">
-		SELECT l.like_count + w.view_count total_count ,w.id, w.position_code_id,
-		w.career_code_id, w.company_id, w.title, w.detail, w.view_count, w.created, w.enddate,
-		c.company_name, c.region_code_name, c.photo
-		FROM wanteds w
-		LEFT OUTER JOIN companys c
-		ON w.company_id
-		= c.id
-		LEFT OUTER JOIN
-		(SELECT *, COUNT(user_id) like_count FROM likes
-		GROUP BY wanted_id) l
-		ONl.wanted_id = w.id
-		WHERE w.enddate > NOW()
-		ORDER BY total_count DESC
+		<choose>
+		    <when test="state == 1">
+		      ORDER BY w.created DESC
+		    </when>
+		    <otherwise>
+		      ORDER BY total_count DESC
+		    </otherwise>
+	  	</choose>
 		OFFSET #{startNum} ROWS FETCH NEXT 16 ROWS ONLY
 	</select>
 	

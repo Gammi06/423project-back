@@ -6,7 +6,7 @@
 		<div class="all_position">
 			<div class="select_all">
 				<select class="all">
-					<c:forEach var="positions" items="${positions}">
+					<c:forEach var="positions" items="${allCodes.positionsCodeDtos}">
 						<option>${positions.name}</option>
 					</c:forEach>
 				</select>
@@ -17,7 +17,7 @@
 			<div class="select_region">
 				<select class="region">
 					<option selected>지역</option>
-					<c:forEach var="regions" items="${regions}">
+					<c:forEach var="regions" items="${allCodes.regionsCodeDtos}">
 						<option>${regions.name}</option>
 					</c:forEach>
 				</select>
@@ -25,7 +25,7 @@
 			<div class="select_career">
 				<select class="career">
 					<option selected>경력</option>
-					<c:forEach var="careers" items="${careers}">
+					<c:forEach var="careers" items="${allCodes.careersCodeDtos}">
 						<option>${careers.name}</option>
 					</c:forEach>
 				</select>
@@ -33,7 +33,7 @@
 			<div class="select_skill">
 				<select class="skill">
 					<option selected>기술스택</option>
-					<c:forEach var="skills" items="${skills}">
+					<c:forEach var="skills" items="${allCodes.skillsCodeDtos}">
 						<option>${skills.name}</option>
 					</c:forEach>
 				</select>
@@ -82,7 +82,7 @@
 		</div>
 		<div class="all_wanteds">
 			<div class="wanteds">
-				<c:forEach var="wantedsAllList" items="${wantedsAllList}">
+				<c:forEach var="wantedsAllList" items="${pagingWantedsList.wantedsListDtos}">
 					<div class="wanted">
 						<a href="#">
 							<div class="picture">
@@ -112,12 +112,12 @@
 	</div>
 	<div class="paging">
 		<ul class="pagaination">
-			<li class='page-item-prev${page.first ? "-hidden" : ""}'><a href="/wanteds/?page=${page.currentPage - 1}">이전</a></li>
-			<c:forEach var="num" begin="${page.startPageNum}" end="${page.lastPageNum}">
-				<li class='page-item${page.currentPage + 1 == num ? "-select" : ""}'>
+			<li class='page-item-prev${pagingWantedsList.pagingDto.first ? "-hidden" : ""}'><a href="/wanteds/?page=${pagingWantedsList.pagingDto.currentPage - 1}">이전</a></li>
+			<c:forEach var="num" begin="${pagingWantedsList.pagingDto.startPageNum}" end="${pagingWantedsList.pagingDto.lastPageNum}">
+				<li class='page-item${pagingWantedsList.pagingDto.currentPage + 1 == num ? "-select" : ""}'>
 				<a href="/wanteds/?page= ${num-1}">${num}</a></li>
 			</c:forEach>
-			<li class='page-item-next${page.last ? "-hidden" : ""}'><a href="/wanteds/?page=${page.currentPage + 1}">다음</a></li>
+			<li class='page-item-next${pagingWantedsList.pagingDto.last ? "-hidden" : ""}'><a href="/wanteds/?page=${pagingWantedsList.pagingDto.currentPage + 1}">다음</a></li>
 		</ul>
 	</div>
 </div>

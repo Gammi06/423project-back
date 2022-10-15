@@ -10,11 +10,13 @@ import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
 import site.metacoding.miniproject1.domain.codes.RegionsCodeDao;
 import site.metacoding.miniproject1.domain.codes.SkillsCodeDao;
 import site.metacoding.miniproject1.domain.wanteds.WantedsDao;
+import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
 import site.metacoding.miniproject1.web.dto.response.codes.CareersCodeDto;
 import site.metacoding.miniproject1.web.dto.response.codes.PositionsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.codes.RegionsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.codes.SkillsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.PagingWantedsListDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
 @RequiredArgsConstructor
@@ -27,7 +29,17 @@ public class WantedsService {
 	private final CareersCodeDao careersCodeDao;
 	
 	//통합해서 부르는거 하나 짤 수 있으면 짜기
-	
+
+	public PagingWantedsListDto pagingWantedsList(Integer page, Integer state) {
+		if(page == null) page = 0;
+		int startNum = page * 16;
+		
+		PagingWantedsListDto pagingWantedsListDtoPS = new PagingWantedsListDto();
+		pagingWantedsListDtoPS.setPagingDto(paging(page));
+		pagingWantedsListDtoPS.setWantedsListDtos(findAllToSort(state, startNum));
+		
+		return pagingWantedsListDtoPS;
+	}
 	
 	public PagingDto paging(Integer page) {
 		PagingDto pagingPS = wantedsDao.paging(page);
@@ -48,35 +60,20 @@ public class WantedsService {
 		
 		return pagingPS;
 	}
-
-	public List<PositionsCodeDto> findAllPositionsCode() {
-		List<PositionsCodeDto> positionsCodeDtosPS = positionsCodeDao.findAll();
-		return positionsCodeDtosPS;
+	
+	public List<WantedsListDto> findAllToSort(Integer state, Integer startNum){
+		if(state == null) state = 0;
+		List<WantedsListDto> wantedsListPS = wantedsDao.findAllToSort(state, startNum);
+		return wantedsListPS;
 	}
 	
-	public List<SkillsCodeDto> findAllSkillsCode() {
-		List<SkillsCodeDto> skillsCodeDtosPS = skillsCodeDao.findAll();
-		return skillsCodeDtosPS;
-	}
-	
-	public List<RegionsCodeDto> findAllRegionsCode(){
-		List<RegionsCodeDto> regionsCodeDtosPS = regionsCodeDao.findAll();
-		return regionsCodeDtosPS;
-	}
-	
-	public List<CareersCodeDto> findAllCareersCode() {
-		List<CareersCodeDto> careersCodeDtosPS = careersCodeDao.findAll();
-		return careersCodeDtosPS;
-	}
-
-	public List<WantedsListDto> findAllByLike(Integer startNum) {
-		List<WantedsListDto> wantedsDtosPS = wantedsDao.findAllByLike(startNum);
-		return wantedsDtosPS;
-	}
-	
-	public List<WantedsListDto> findAllByDate(Integer startNum) {
-		List<WantedsListDto> wantedsDtosPS = wantedsDao.findAllByDate(startNum);
-		return wantedsDtosPS;
+	public AllCodesDto findAllCodes() {
+		AllCodesDto allCodesDto = new AllCodesDto();
+		allCodesDto.setPositionsCodeDtos(positionsCodeDao.findAll());
+		allCodesDto.setCareersCodeDtos(careersCodeDao.findAll());
+		allCodesDto.setRegionsCodeDtos(regionsCodeDao.findAll());
+		allCodesDto.setSkillsCodeDtos(skillsCodeDao.findAll());
+		return allCodesDto;
 	}
 	
 	public List<WantedsListDto> findByLike(Integer userId){
