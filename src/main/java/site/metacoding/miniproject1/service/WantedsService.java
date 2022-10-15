@@ -10,7 +10,10 @@ import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
 import site.metacoding.miniproject1.domain.codes.RegionsCodeDao;
 import site.metacoding.miniproject1.domain.codes.SkillsCodeDao;
 import site.metacoding.miniproject1.domain.wanteds.WantedsDao;
-import site.metacoding.miniproject1.web.dto.response.codes.PositionCodeDto;
+import site.metacoding.miniproject1.web.dto.response.codes.CareersCodeDto;
+import site.metacoding.miniproject1.web.dto.response.codes.PositionsCodeDto;
+import site.metacoding.miniproject1.web.dto.response.codes.RegionsCodeDto;
+import site.metacoding.miniproject1.web.dto.response.codes.SkillsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
@@ -19,6 +22,12 @@ import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 public class WantedsService {
 	private final WantedsDao wantedsDao;
 	private final PositionsCodeDao positionsCodeDao;
+	private final SkillsCodeDao skillsCodeDao;
+	private final RegionsCodeDao regionsCodeDao;
+	private final CareersCodeDao careersCodeDao;
+	
+	//통합해서 부르는거 하나 짤 수 있으면 짜기
+	
 	
 	public PagingDto paging(Integer page) {
 		PagingDto pagingPS = wantedsDao.paging(page);
@@ -40,9 +49,24 @@ public class WantedsService {
 		return pagingPS;
 	}
 
-	public List<PositionCodeDto> findAllPositionCode() {
-		List<PositionCodeDto> positionCodeDtosPS = positionsCodeDao.findAll();
-		return positionCodeDtosPS;
+	public List<PositionsCodeDto> findAllPositionsCode() {
+		List<PositionsCodeDto> positionsCodeDtosPS = positionsCodeDao.findAll();
+		return positionsCodeDtosPS;
+	}
+	
+	public List<SkillsCodeDto> findAllSkillsCode() {
+		List<SkillsCodeDto> skillsCodeDtosPS = skillsCodeDao.findAll();
+		return skillsCodeDtosPS;
+	}
+	
+	public List<RegionsCodeDto> findAllRegionsCode(){
+		List<RegionsCodeDto> regionsCodeDtosPS = regionsCodeDao.findAll();
+		return regionsCodeDtosPS;
+	}
+	
+	public List<CareersCodeDto> findAllCareersCode() {
+		List<CareersCodeDto> careersCodeDtosPS = careersCodeDao.findAll();
+		return careersCodeDtosPS;
 	}
 
 	public List<WantedsListDto> findAllByLike(Integer startNum) {

@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.WantedsService;
+import site.metacoding.miniproject1.web.dto.response.codes.CareersCodeDto;
+import site.metacoding.miniproject1.web.dto.response.codes.PositionsCodeDto;
+import site.metacoding.miniproject1.web.dto.response.codes.RegionsCodeDto;
+import site.metacoding.miniproject1.web.dto.response.codes.SkillsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
@@ -28,9 +32,20 @@ public class WantedsPageController {
 		PagingDto pagingPS = wantedsService.paging(page);
 		List<WantedsListDto> wantedsListPS = wantedsService.findAllByDate(startNum);
 		
+		List<PositionsCodeDto> positionsPS = wantedsService.findAllPositionsCode();
+		List<SkillsCodeDto> skillsPS = wantedsService.findAllSkillsCode();
+		List<RegionsCodeDto> regionsPS = wantedsService.findAllRegionsCode();
+		List<CareersCodeDto> careersPS = wantedsService.findAllCareersCode();
+		
+		
 		model.addAttribute("wantedsLikeList", wantedsLikeList);
 		model.addAttribute("wantedsAllList", wantedsListPS);
 		model.addAttribute("page", pagingPS);
+		
+		model.addAttribute("positions", positionsPS);
+		model.addAttribute("skills", skillsPS);
+		model.addAttribute("regions", regionsPS);
+		model.addAttribute("careers", careersPS);
 		return "wanteds/wanted";
 	}
 }

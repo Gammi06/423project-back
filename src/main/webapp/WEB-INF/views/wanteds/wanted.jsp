@@ -6,10 +6,9 @@
 		<div class="all_position">
 			<div class="select_all">
 				<select class="all">
-					<option selected>전체</option>
-					<option>백앤드 개발자</option>
-					<option>웹 퍼블리셔</option>
-					<option>프론트앤드 개발자</option>
+					<c:forEach var="positions" items="${positions}">
+						<option>${positions.name}</option>
+					</c:forEach>
 				</select>
 			</div>
 			<div class="select_position">직군을 선택해주세요</div>
@@ -17,20 +16,26 @@
 		<div class="selects">
 			<div class="select_region">
 				<select class="region">
-					<option selected>전체</option>
-					<option>부산</option>
+					<option selected>지역</option>
+					<c:forEach var="regions" items="${regions}">
+						<option>${regions.name}</option>
+					</c:forEach>
 				</select>
 			</div>
 			<div class="select_career">
 				<select class="career">
-					<option selected>전체</option>
-					<option>신입</option>
+					<option selected>경력</option>
+					<c:forEach var="careers" items="${careers}">
+						<option>${careers.name}</option>
+					</c:forEach>
 				</select>
 			</div>
 			<div class="select_skill">
 				<select class="skill">
 					<option selected>기술스택</option>
-					<option>Java</option>
+					<c:forEach var="skills" items="${skills}">
+						<option>${skills.name}</option>
+					</c:forEach>
 				</select>
 			</div>
 			<div class="select_sort">
@@ -118,3 +123,9 @@
 </div>
 </body>
 </html>
+
+<script>
+
+	
+
+</script>

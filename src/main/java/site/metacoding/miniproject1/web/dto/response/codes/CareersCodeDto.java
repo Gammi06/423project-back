@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter
-public class PositionCodeDto {
+public class CareersCodeDto {
 	private Integer id;
 	private String name;
 }
