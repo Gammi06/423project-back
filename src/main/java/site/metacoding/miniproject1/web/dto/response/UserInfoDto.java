@@ -18,5 +18,6 @@ public class UserInfoDto {
     private String phoneNumber;
     private String email;
     private Blob photo;
+    private Integer positionCodeId;
     private String positionCodeName;
 }

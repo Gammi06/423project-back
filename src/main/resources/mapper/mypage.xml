@@ -5,13 +5,15 @@
 
 	<select id="findUser"
 		resultType="site.metacoding.miniproject1.web.dto.response.UserInfoDto">
-		SELECT id, user_id, user_password,
-		user_name, age,
-		phone_number, email, photo,
-		position_code_name, company_id,
-		mycareer_id, created
-		FROM users
-		WHERE id= #{id}
+		SELECT us.id, us.user_id, us.user_password,
+		us.user_name, US.AGE,
+		us.phone_number, us.email, us.photo,
+		us.position_code_id, us.company_id,
+		us.mycareer_id, us.created, pc.name positionCodeName
+		FROM users us
+		INNER JOIN positions_code pc
+		ON us.position_code_id = pc.id
+		WHERE us.id = #{id}
 	</select>
 
 	<select id="findCompany"
