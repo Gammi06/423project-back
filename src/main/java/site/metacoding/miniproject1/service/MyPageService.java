@@ -30,6 +30,9 @@ public class MyPageService {
         List<UserInfoDto> userInfoDtos = applicationStatusDao.findUser(id);
         List<InfoCountDto> infoCountDtos = applicationStatusDao.findInfoCounts(id);
         List<CompanyInfoDto> companyInfoDtos = applicationStatusDao.findCompany(id);
+        if(companyInfoDtos.size() == 0) {
+        	companyInfoDtos = applicationStatusDao.findCompanyIfNull();
+        }
         List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
         InfoAllDto infoAllDto = new InfoAllDto(userInfoDtos, infoCountDtos, companyInfoDtos, statusCountDtos);
         return infoAllDto;

@@ -95,9 +95,15 @@
                     <p class="mp_position_title">프로필</p>
                     <div class="mp_pro_contents">
                         <c:forEach var="userInfoDtos" items="${infoAllDto.userInfoDtos}">
-                            <p class="mp_profile_position">
-                                현재 구직중인 포지션은 <span>${userInfoDtos.positionCodeName}</span>
-                            </p>
+                        <c:choose>
+                              <c:when test="${userInfoDtos.positionCodeName eq null}">
+                                  <p class="mp_profile_position">현재 구직중인 <span>포지션을</span> 설정해주세요</p>
+                             </c:when>
+                            <c:otherwise>
+                                   <p class="mp_profile_position">
+                                현재 구직중인 포지션은 <span>${userInfoDtos.positionCodeName}</span></p>
+                                    </c:otherwise>
+                         </c:choose>
                             <button>
                                 <a href="#">프로필 수정하기</a>
                             </button>
