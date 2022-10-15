@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구해줘용</title>
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/header.css" rel="stylesheet">
-    <link href="css/footer.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/wanted.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/wanted.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">

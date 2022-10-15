@@ -226,3 +226,54 @@ a {
 .wanteds_page .wanteds .company_intro .company_name {
     font-size: 13px;
 }
+
+/* //////////////////// paging //////////////////// */
+.wanteds_page .paging {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0 100px 0;
+}
+
+.wanteds_page .paging .pagaination {
+    font-family: 'Pretendard-Regular';
+    display: flex;
+    justify-content: center;
+}
+
+.wanteds_page .paging .pagaination .page-item a {
+    color: #888;
+}
+
+
+.wanteds_page .paging .pagaination .page-item-select {
+    padding: 0 10px;
+}
+
+.wanteds_page .paging .pagaination .page-item-select a {
+    color: #33ffcc;
+    font-weight: bold;
+}
+
+.wanteds_page .paging .pagaination .page-item,
+.wanteds_page .paging .pagaination .page-item-prev ,
+.wanteds_page .paging .pagaination .page-item-next {
+    padding: 0 10px;
+}
+
+.wanteds_page .paging .pagaination .page-item-prev a,
+.wanteds_page .paging .pagaination .page-item-next a {
+    color: #191819;
+}
+
+.wanteds_page .paging .pagaination .page-item-prev-hidden,
+.wanteds_page .paging .pagaination .page-item-next-hidden {
+    color: #888;
+    padding: 0 10px;
+    pointer-events: none;
+    cursor: default;
+}
+
+.wanteds_page .paging .pagaination .page-item-prev-hidden a,
+.wanteds_page .paging .pagaination .page-item-next-hidden a {
+	color: #888;
+}

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp"%>
 <div class="wanteds_page">
 	<div class="search_wanted">
@@ -103,6 +104,16 @@
 				</c:forEach>
 			</div>
 		</div>
+	</div>
+	<div class="paging">
+		<ul class="pagaination">
+			<li class='page-item-prev${page.first ? "-hidden" : ""}'><a href="/wanteds/?page=${page.currentPage - 1}">이전</a></li>
+			<c:forEach var="num" begin="${page.startPageNum}" end="${page.lastPageNum}">
+				<li class='page-item${page.currentPage + 1 == num ? "-select" : ""}'>
+				<a href="/wanteds/?page= ${num-1}">${num}</a></li>
+			</c:forEach>
+			<li class='page-item-next${page.last ? "-hidden" : ""}'><a href="/wanteds/?page=${page.currentPage + 1}">다음</a></li>
+		</ul>
 	</div>
 </div>
 </body>
