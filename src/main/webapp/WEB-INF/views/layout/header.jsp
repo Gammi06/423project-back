@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,9 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구해줘용</title>
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/header.css" rel="stylesheet">
-    <link href="css/footer.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/resume_main.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/resume_update.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -27,7 +30,7 @@
             <h1 class="logo"><a href="#">구해줘용</a></h1>
             <ul class="gnb">
                 <li><a href="#">채용</a></li>
-                <li><a href="#">이력서</a></li>
+                <li><a href="../resume/resume_main">이력서</a></li>
             </ul>
             <ul class="login">
                 <!--로그인시-->

@@ -27,6 +27,7 @@ body {
 	background-color: #f4f4f4;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+    position: relative;
 }
 
 body::-webkit-scrollbar {
@@ -38,19 +39,29 @@ body::-webkit-scrollbar {
 /*------.resume01_sec1시작------*/
 .resume01_sec1{
 	height: 440px;
-	background-color: #5e5e5e;
+	width: 100%;
+	background:url(././assets/banner_resume01.jpg) no-repeat center;
 	margin: 0 auto;
+}
+
+.resume01_sec1 .sec1_banner{
+	width: 700px;
+	height: 450px;
 }
 
 .resume01_sec1 div p{
 	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
+
 }
 
 .resume01_sec1 div .sec1_cont1{
 	padding-top: 100px;
 	margin-bottom: 30px;
+    width: 100%;
+	height: 440px;
+    background: url(././assets/banner_test.jpg) no-repeat center;
 }
 
 .resume01_sec1 div .sec1_cont1 span{

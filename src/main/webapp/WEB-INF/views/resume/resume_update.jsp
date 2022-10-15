@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<link href="/css/company_applicant.css" rel="stylesheet">
 
 <%@ include file="../layout/header.jsp" %>
 
@@ -8,7 +7,7 @@
 <section class="resume02_sec1">
     <div class="sec1_box">
         <p class="sec1_cont1">
-            <span>이력서 제목</span>
+            <span>${resumeUpdateDtoPS.title}</span>
         </p>
         <div>
             <div class="sec1_cont2">
@@ -16,9 +15,9 @@
             </div>
             <div class="sec1_cont3">
                 <ul>
-                    <li><div class="cont3_key">이름</div><div class="cont3_data">이름입력값</div></li>
-                    <li><div class="cont3_key">이메일</div><div class="cont3_data">이메일입력값</div></li>
-                    <li><div class="cont3_key">전화번호</div><div class="cont3_data">전화번호입력값</div></li>
+                    <li><div class="cont3_key">이름</div><div class="cont3_data">${resumeUpdateDtoPS.userName}</div></li>
+                    <li><div class="cont3_key">이메일</div><div class="cont3_data">${resumeUpdateDtoPS.email}</div></li>
+                    <li><div class="cont3_key">전화번호</div><div class="cont3_data">${resumeUpdateDtoPS.phoneNumber}</div></li>
                 </ul>
             </div>
         </div>
@@ -41,7 +40,7 @@
                 </li>
             </ul>
         </div>
-        <div class="sec2_cont2"><textarea></textarea></div>
+        <div class="sec2_cont2"><textarea>${resumeUpdateDtoPS.intro}</textarea></div>
     </div>
 </section>
 <!------.resume02_sec2끝------>

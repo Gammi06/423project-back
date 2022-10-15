@@ -5,7 +5,8 @@
 
 <!------.resume01_sec1시작------>
 <section class="resume01_sec1">
-    <div>
+    <div class = "sec1_banner">
+<!--	<img src="././assets/banner_test.jpg" alt="배너이미지" height="440px" width="1000px">  -->    
         <p class="sec1_cont1">
             <span>합격을 부르는 이력서</span>
         </p>
@@ -16,10 +17,10 @@
             <span>일반 이력서보다 서류 합격률이 2배 높아집니다.</span>
         </p>
         <p class="sec1_cont4">
-            <a href="#" class="btn btn_adminresume">
+            <a href="resume_list" class="btn btn_adminresume">
                 <span>이력서 관리</span>
             </a>
-            <a href="#" class="btn btn_newresume">
+            <a href="resume_update" class="btn btn_newresume">
                 <span>새 이력서 작성</span>
             </a>
         </p>
@@ -57,7 +58,7 @@
 <!------.resume01_sec4시작------>
 <section class="resume01_sec4">
     <div class="sec4_btn">
-        <a href="#" class="btn btn_newresume">
+        <a href="resume_update" class="btn btn_newresume">
             <span>새 이력서 작성</span>
         </a>
     </div>
