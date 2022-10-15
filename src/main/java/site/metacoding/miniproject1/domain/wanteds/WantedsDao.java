@@ -2,6 +2,7 @@ package site.metacoding.miniproject1.domain.wanteds;
 
 import java.util.List;
 
+import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
 public interface WantedsDao {
@@ -16,6 +17,7 @@ public interface WantedsDao {
 	public List<WantedsListDto> findAllHot();
 	public List<WantedsListDto> findAllByposition(Integer positionCodeId);
 	public List<WantedsListDto> findAllLike(Integer userId);
-	public List<WantedsListDto> findAllByDate();
-	public List<WantedsListDto> findAllByLike();
+	public List<WantedsListDto> findAllByDate(Integer startNum);
+	public List<WantedsListDto> findAllByLike(Integer startNum);
+	public PagingDto paging(Integer page);
 }

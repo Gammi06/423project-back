@@ -4,17 +4,15 @@
 	
 	<select id="paging"
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto">
-		SELECT totalCount,
-		totalPage,
-		currentPage,
-		decode(currentPage, 0, 1, 0) first,
-		decode(currentPage, totalPage-1, 1, 0) last
+		SELECT totalCount, totalPage, currentPage,
+		if(currentPage = 0, 1, 0) first,
+		if(currentPage = totalPage - 1, 1, 0) last
 		FROM
 		(
-		select count(*) totalCount, ceil(count(*)/16) totalPage,
-		#{page} currentPage, 0 first, 0 last
-		FROM boards
-		)
+			SELECT COUNT(*) totalCount, CEIL(COUNT(*)/16) totalPage,
+			#{page} currentPage, 0 FIRST, 0 last
+			FROM wanteds
+		) result
 	</select>
 	
 	<select id="findAllByDate"
