@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.WantedsService;
-import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
 @RequiredArgsConstructor
 @Controller

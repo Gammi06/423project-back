@@ -1,4 +1,4 @@
-package site.metacoding.miniproject1.web.dto.response;
+package site.metacoding.miniproject1.web.dto.response.wanteds;
 
 import java.sql.Blob;
 import java.sql.Timestamp;

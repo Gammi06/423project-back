@@ -10,8 +10,8 @@ import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
 import site.metacoding.miniproject1.domain.codes.RegionsCodeDao;
 import site.metacoding.miniproject1.domain.codes.SkillsCodeDao;
 import site.metacoding.miniproject1.domain.wanteds.WantedsDao;
-import site.metacoding.miniproject1.web.dto.response.PositionCodeDto;
-import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
+import site.metacoding.miniproject1.web.dto.response.codes.PositionCodeDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
 @RequiredArgsConstructor
 @Service
