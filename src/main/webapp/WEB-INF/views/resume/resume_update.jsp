@@ -61,7 +61,7 @@
             </ul>
         </div>
         <div class="sec3_add">
-            <img src="/img/icon_add.png" alt="추가이미지"><span>추가</span>
+            <img src="../../assets/icon_add.png" alt="추가이미지"><span>추가</span>
         </div>
         <div class="sec3_work">
             <div class=work_term>YYYY. MM - YYYY. MM</div>
@@ -84,7 +84,7 @@
             </ul>
         </div>
         <div class="sec4_add">
-            <img src="/img/icon_add.png" alt="추가이미지"><span>추가</span>
+            <img src="../../assets/icon_add.png" alt="추가이미지"><span>추가</span>
         </div>
         <div class="sec4_work">
             <div class=work_term>YYYY. MM - YYYY. MM</div>
@@ -110,7 +110,7 @@
             </ul>
         </div>
         <div class="sec5_add">
-            <img src="/img/icon_add.png" alt="추가이미지"><span>추가</span>
+            <img src="../../assets/icon_add.png" alt="추가이미지"><span>추가</span>
         </div>
         <div class="sec5_skill">
             <form>
@@ -134,12 +134,15 @@
         <span><label for="cb_resume">이력서 외 개인정보를 조회하는 것을 동의합니다.</label></span>
     </div>
     <div class="sec6_btn">
-        <a href="#" class="btn btn_completed">
+        <a href="resume_list" class="btn btn_completed">
             <span>작성 완료</span>
         </a>
     </div>
 </section>
 <!------.resume02_sec6끝------>
+
+
+<script src="/js/resume_update.js"></script>
 
 
 <%@ include file="../layout/footer.jsp" %>

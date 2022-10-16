@@ -2,6 +2,7 @@ package site.metacoding.miniproject1.domain.resumes;
 
 import java.util.List;
 
+import site.metacoding.miniproject1.web.dto.response.resume.ResumeListDto;
 import site.metacoding.miniproject1.web.dto.response.resume.ResumeUpdateDto;
 
 public interface ResumesDao {
@@ -11,4 +12,5 @@ public interface ResumesDao {
 	public ResumeUpdateDto findById(Integer id);
 	public void update(Integer id, Resumes resumes);
 	public void deleteById(Integer id);
+	public ResumeListDto findByUserId(Integer id);
 }

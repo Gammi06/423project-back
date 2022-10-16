@@ -1,67 +1,59 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: 'RixInooAriDuriR';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'RixInooAriDuriR';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
+	font-family: 'Pretendard-Regular';
+	src:
+		url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+		format('woff');
+	font-weight: 400;
+	font-style: normal;
 }
-
-
 
 body {
-	background-color: #f4f4f4;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    position: relative;
+	font-family: 'Pretendard-Regular';
 }
 
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
 }
 
-
-
 /*------.resume01_sec1시작------*/
 .resume01_sec1{
 	height: 440px;
 	width: 100%;
-	background:url(././assets/banner_resume01.jpg) no-repeat center;
+	background: url(../assets/banner_resume01.jpg) no-repeat center;
 	margin: 0 auto;
-}
-
-.resume01_sec1 .sec1_banner{
-	width: 700px;
-	height: 450px;
 }
 
 .resume01_sec1 div p{
 	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
-
 }
 
 .resume01_sec1 div .sec1_cont1{
 	padding-top: 100px;
 	margin-bottom: 30px;
-    width: 100%;
-	height: 440px;
-    background: url(././assets/banner_test.jpg) no-repeat center;
 }
 
 .resume01_sec1 div .sec1_cont1 span{

@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+
+
+/*------.resume_sec시작------*/
+.resume03_sec{
+	width: 1000px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.resume03_sec .sec_box{
+	padding-top: 50px;
+	padding-bottom: 500px;
+	padding-left: 35px;
+	background-color: #f2f2f2;
+}
+
+.resume03_sec .sec_box .box_title{
+	width: 1000px;
+	height: 20px;
+	margin-bottom: 20px;
+}
+
+.resume03_sec .sec_box .box_title span{
+	font-size: 20px;
+	line-height: 20px;
+	color: rgb(50, 50, 50);
+}
+
+.resume03_sec .box_cont{
+	background-color: #e2f1ff;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.resume03_sec .sec_box .box_cont ul li{
+	float: left;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumenew{
+	padding-top: 20px;
+	text-align: center;
+	width: 220px;
+	height: 120px;
+	border: 1px solid #bbb;
+	border-radius: 10px;
+	background-color: white;
+	margin-right: 14px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumenew .resumenew_img{
+	padding-bottom: 5px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumenew .resumenew_img img{
+	width: 70px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumenew .resumenew_text a{
+	color: rgb(50, 50, 50);
+    font-size: 18px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumelist{
+	width: 220px;
+	height: 140px;
+	border: 1px solid #bbb;
+	border-radius: 10px;
+	background-color: white;
+	margin-right: 14px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumelist:last-child{
+	margin-right: 0;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumelist{
+	color: #bbb;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_name,
+.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_date{
+	padding-left: 20px;
+    font-size: 18px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_name{
+	padding-top: 15px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_date{
+	padding-bottom: 35px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_img{
+	border-top: 1px solid #bbb;
+	text-align: right;
+	padding-top: 5px;
+}
+
+.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_img img{
+	width: 25px;
+	margin-right: 10px;
+}
+/*------.resume_sec끝------*/

@@ -1,68 +1,71 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<link href="/css/company_applicant.css" rel="stylesheet">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ include file="../layout/header.jsp" %>
+<%@ include file="../layout/header.jsp"%>
 
 <!------.resume01_sec1시작------>
 <section class="resume01_sec1">
-    <div class = "sec1_banner">
-<!--	<img src="././assets/banner_test.jpg" alt="배너이미지" height="440px" width="1000px">  -->    
-        <p class="sec1_cont1">
-            <span>합격을 부르는 이력서</span>
-        </p>
-        <p class="sec1_cont2">
-            <span>원티드 이력서로 지원 시</span>
-        </p>
-        <p class="sec1_cont3">
-            <span>일반 이력서보다 서류 합격률이 2배 높아집니다.</span>
-        </p>
-        <p class="sec1_cont4">
-            <a href="resume_list" class="btn btn_adminresume">
-                <span>이력서 관리</span>
-            </a>
-            <a href="resume_update" class="btn btn_newresume">
-                <span>새 이력서 작성</span>
-            </a>
-        </p>
-    </div>
+	<div class="sec1_banner">
+		<!--	<img src="././assets/banner_test.jpg" alt="배너이미지" height="440px" width="1000px">  -->
+		<p class="sec1_cont1">
+			<span>합격을 부르는 이력서</span>
+		</p>
+		<p class="sec1_cont2">
+			<span>원티드 이력서로 지원 시<br>일반 이력서보다 서류 합격률이 2배 높아집니다.</span>
+		</p>
+		<!-- 
+		<p class="sec1_cont3">
+			<span>일반 이력서보다 서류 합격률이 2배 높아집니다.</span>
+		</p>
+		 -->
+		<p class="sec1_cont4">
+			<a href="resume/list" class="btn btn_adminresume">이력서
+					관리
+			</a>
+			<a href="resume/update" class="btn btn_newresume">새
+					이력서 작성
+			</a>
+		</p>
+	</div>
 </section>
 <!------.resume01_sec1끝------>
 
 <!------.resume01_sec2시작------>
 <section class="resume01_sec2">
-    <div><span>(이름) 이력서는 이런 점이 좋아요!</span></div>
-    <div class="sec2_box">
-        <ul>
-            <p class="box_tl"></p>
-            <p class="box_bl"></p>
-        </ul>
-        <ul>
-            <p class="box_tr"></p>
-            <p class="box_br"></p>
-        </ul>
-    </div>
+	<div>
+		<span>(이름) 이력서는 이런 점이 좋아요!</span>
+	</div>
+	<div class="sec2_box">
+		<ul>
+			<p class="box_tl"></p>
+			<p class="box_bl"></p>
+		</ul>
+		<ul>
+			<p class="box_tr"></p>
+			<p class="box_br"></p>
+		</ul>
+	</div>
 </section>
 <!------.resume01_sec2끝------>
 
 <!------.resume01_sec3시작------>
 <section class="resume01_sec3">
-    <div>
-        <span>쓰는 사람도 보는 사람도 편하게</span>
-    </div>
-    <div>
-        <p></p>
-    </div>
+	<div>
+		<span>쓰는 사람도 보는 사람도 편하게</span>
+	</div>
+	<div>
+		<p></p>
+	</div>
 </section>
 <!------.resume01_sec3끝------>
 
 <!------.resume01_sec4시작------>
 <section class="resume01_sec4">
-    <div class="sec4_btn">
-        <a href="resume_update" class="btn btn_newresume">
-            <span>새 이력서 작성</span>
-        </a>
-    </div>
+	<div class="sec4_btn">
+		<button type="button" onclick="location.href='resume/update'" class="btn btn_newresume">
+			새 이력서 작성
+		</button>
+	</div>
 </section>
 <!------.resume01_sec4끝------>
 
-<%@ include file="../layout/footer.jsp" %>
+<%@ include file="../layout/footer.jsp"%>

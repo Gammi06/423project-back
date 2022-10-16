@@ -9,9 +9,14 @@
 	WHERE r.id = #{id}
 </select>
 
+<select id="findByUserId" resultType="site.metacoding.miniproject1.web.dto.response.resume.ResumeListDto">
+	SELECT r.id, r.title, r.created, r.status_id FROM resumes r
+	WHERE r.user_id = #{id}
+</select>
 
-
-
+<delete id="deleteById">
+	DELETE FROM resumes WHERE id = #{id};
+</delete>
 
 
 
