@@ -176,7 +176,7 @@
     border-radius: 10px;
     z-index: 1;
     width: 230px;
-    height: 70px;
+    height: auto;
     padding: 10px;
     position: absolute;
     left: -350%;
@@ -185,21 +185,20 @@
 
 .header_inner .login .alert .alert_item_list .alert_item {
     width: 215px;
-    height: 70px;
+    height: auto;
     line-height: 0px;
 }
 
 .header_inner .login .alert .alert_item_list .alert_item .messages {
-    font-size: 12px;
-    line-height: 25px;
+    
 }
 
-.header_inner .login .alert .alert_item_list .alert_item p {
-    color: #333333;
+.header_inner .login .alert .alert_item_list .alert_item .messages p{
+	color: #333333;
     font-size: 13px;
     line-height: 13px;
-    height: 40px;
-    padding : 5px;
+    padding : 10px;
+    border-bottom : 1px solid #BEBEBE;
 }
 
 .header_inner .login .profile {

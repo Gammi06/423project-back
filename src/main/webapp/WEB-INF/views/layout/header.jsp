@@ -38,11 +38,13 @@
                     </ul>
                     <ul class="login">
                         <!--로그인시-->
+                       
                         <li class="alert">
                         <p class="notifications"></p>
                             <a href="#">알림</a>
                             
                             <ul class="alert_item_list">
+                            
                                 <li><a class="alert_item">
                                         <div class="messages"></div>
                                       

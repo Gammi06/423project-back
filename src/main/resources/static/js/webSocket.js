@@ -51,8 +51,7 @@ function showMessage(message) {
 function sendMessage() {
     console.log("sending message");
     var alarm = {
-    userId: "1"
-    , message: "지금 새로운 공고를 확인해보세요!"
+    message: "지금 새로운 공고를 확인해보세요!"
     , date: new Date()
 };
     stompClient.send("/ws/message", {}, JSON.stringify(alarm));
