@@ -8,10 +8,10 @@
                 <div class="picture">
                     <img src="https://picsum.photos/1000">
                 </div>
-                <div class="text">${wantedDetail.detail}</div>
+                <div class="text">${wantedDetailAndCompany.wantedDetailDtoPS.detail}</div>
                 <div class="skills">
                     <ul>
-						<c:forEach var="mySkills" items="${wantedDetail.mySkills}">
+						<c:forEach var="mySkills" items="${wantedDetailAndCompany.wantedDetailDtoPS.mySkills}">
                         	<li class="skill_items">${mySkills.skillsCodeName}</li>
                         </c:forEach>
                     </ul>
@@ -69,10 +69,10 @@
                     <!--기본-->
                     <div class="right_default">
                         <div class="text">
-                            <h2>${wantedDetail.title}</h2>
-                            <h3>${wantedDetail.companyName}</h3>
-                            <strong>${wantedDetail.positionCodeName}</strong>
-                            <p>${wantedDetail.careerCodeName}</p>
+                            <h2>${wantedDetailAndCompany.wantedDetailDtoPS.title}</h2>
+                            <h3>${wantedDetailAndCompany.wantedDetailDtoPS.companyName}</h3>
+                            <strong>${wantedDetailAndCompany.wantedDetailDtoPS.positionCodeName}</strong>
+                            <p>${wantedDetailAndCompany.wantedDetailDtoPS.careerCodeName}</p>
                         </div>
                         <div class="buttons">
                             <div class="default">
@@ -98,10 +98,10 @@
             이름님, 이 포지션을 찾고 계셨나요?
         </h3>
         <div class="wanteds">
-        	<c:forEach var="wantedsList" items="${wantedsList}">
+        	<c:forEach var="wantedsList" items="${wantedDetailAndCompany.wantedsListDtosPS}">
 	        	<div class="wanted">
 	                <div class="wanted">
-	                    <a href="#">
+	                    <a href="/wanteds/${wantedsList.id}">
 	                    <div class="picture">
 	                        <img src="https://picsum.photos/seed/picsum/200/300">
 	                    </div>

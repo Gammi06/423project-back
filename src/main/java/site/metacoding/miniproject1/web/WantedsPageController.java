@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.WantedsService;
 import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingWantedsListDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailAndCompanyDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
@@ -35,10 +36,8 @@ public class WantedsPageController {
 	
 	@GetMapping("/wanteds/{id}")
 	public String wantedsDetailPage(Model model, @PathVariable Integer id) {
-		WantedDetailDto wantedDetailDtoPS = wantedsService.findByIdToDetail(id);
-		List<WantedsListDto> wantedsListDtosPS = wantedsService.findAllByCompanyId(id);
-		model.addAttribute("wantedDetail", wantedDetailDtoPS);
-		model.addAttribute("wantedsList", wantedsListDtosPS);
+		WantedDetailAndCompanyDto wantedDetailAndCompanyDtoPS = wantedsService.findByCompanyIdAndAllWanteds(id); 
+		model.addAttribute("wantedDetailAndCompany", wantedDetailAndCompanyDtoPS);
 		return "wanteds/wanted-detail";
 	}
 }

@@ -29,7 +29,7 @@
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto">
 		SELECT w.id, pc.name position_code_name, cc.name career_code_name,
 		w.title, w.detail, w.view_count, w.created, w.enddate, c.photo,
-		c.company_name, c.region_code_name
+		c.company_name, c.id company_id, c.region_code_name
 		FROM wanteds w
 		LEFT OUTER JOIN companys c
 		ON w.company_id = c.id

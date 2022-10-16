@@ -19,7 +19,6 @@ public class WantedsListDto {
 	private Integer id;
 	private Integer positionCodeId;
 	private Integer careerCodeId;
-	private Integer companyId;
 	private String title;
 	private String detail;
 	private Integer viewCount;

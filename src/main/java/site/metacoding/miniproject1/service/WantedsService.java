@@ -20,6 +20,7 @@ import site.metacoding.miniproject1.web.dto.response.codes.SkillsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.mySkills.WantedsSkillsDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingWantedsListDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailAndCompanyDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
@@ -32,6 +33,17 @@ public class WantedsService {
 	private final RegionsCodeDao regionsCodeDao;
 	private final CareersCodeDao careersCodeDao;
 	private final MySkillsService mySkillsService;
+	
+	public WantedDetailAndCompanyDto findByCompanyIdAndAllWanteds(Integer id) {
+		WantedDetailAndCompanyDto wantedDetailAndCompanyDtoPS = new WantedDetailAndCompanyDto();
+		wantedDetailAndCompanyDtoPS.setWantedDetailDtoPS(findByIdToDetail(id));
+		int companyNum = wantedDetailAndCompanyDtoPS.getWantedDetailDtoPS().getCompanyId();
+		
+		if(wantedDetailAndCompanyDtoPS.getWantedDetailDtoPS() == null) return null;
+		
+		wantedDetailAndCompanyDtoPS.setWantedsListDtosPS(findAllByCompanyId(companyNum));
+		return wantedDetailAndCompanyDtoPS;
+	}
 	
 	public List<WantedsListDto> findAllByCompanyId(Integer id) {
 		List<WantedsListDto> wantedsListDtosPS = wantedsDao.findAllByCompanyId(id);

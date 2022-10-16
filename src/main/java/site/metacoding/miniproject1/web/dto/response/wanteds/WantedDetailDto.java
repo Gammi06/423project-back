@@ -25,6 +25,8 @@ public class WantedDetailDto {
 	private Timestamp enddate;
 	private Blob photo;
 	private String companyName;
+	private Integer companyId;
 	private String regionCodeName;
+	private Integer careerCodeId;
 	private List<WantedsSkillsDto> mySkills;
 }
