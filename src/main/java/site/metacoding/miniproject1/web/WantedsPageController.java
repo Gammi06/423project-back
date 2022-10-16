@@ -36,7 +36,9 @@ public class WantedsPageController {
 	@GetMapping("/wanteds/{id}")
 	public String wantedsDetailPage(Model model, @PathVariable Integer id) {
 		WantedDetailDto wantedDetailDtoPS = wantedsService.findByIdToDetail(id);
+		List<WantedsListDto> wantedsListDtosPS = wantedsService.findAllByCompanyId(id);
 		model.addAttribute("wantedDetail", wantedDetailDtoPS);
+		model.addAttribute("wantedsList", wantedsListDtosPS);
 		return "wanteds/wanted-detail";
 	}
 }

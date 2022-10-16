@@ -33,14 +33,18 @@ public class WantedsService {
 	private final CareersCodeDao careersCodeDao;
 	private final MySkillsService mySkillsService;
 	
+	public List<WantedsListDto> findAllByCompanyId(Integer id) {
+		List<WantedsListDto> wantedsListDtosPS = wantedsDao.findAllByCompanyId(id);
+		if(wantedsListDtosPS == null) return null;
+		return wantedsListDtosPS;
+	}
+	
 	public WantedDetailDto findByIdToDetail(Integer id) {
 		WantedDetailDto wantedDetailDtoPS = wantedsDao.findByIdToDetail(id);
-		System.out.println(wantedDetailDtoPS.getCareerCodeName());
 		if(wantedDetailDtoPS == null) return null;
 		
 		List<WantedsSkillsDto> wantedsSkillsDtosPS = mySkillsService.findMySkillByWantedId(id);
 		wantedDetailDtoPS.setMySkills(wantedsSkillsDtosPS);
-		
 		return wantedDetailDtoPS;
 	}
 	

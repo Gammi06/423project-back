@@ -98,27 +98,29 @@
             이름님, 이 포지션을 찾고 계셨나요?
         </h3>
         <div class="wanteds">
-            <div class="wanted">
-                <div class="wanted">
-                    <a href="#">
-                    <div class="picture">
-                        <img src="https://picsum.photos/seed/picsum/200/300">
-                    </div>
-                    <div class="wanted_text">
-                        <div class="text">
-                            <ul>
-                                <li class="title"><h2>채용공고 타이틀 입니다 채용공고 타이틀 입니다</h2></li>
-                                <li class="content"><p>설명글입니다. 설명글입니다. 설명글입니다. 설명글입니다.</p></li>
-                            </ul>
-                        </div>
-                        <div class="company_intro">
-                            <p class="company_region">지역</p>
-                            <p class="company_name">회사이름</p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
+        	<c:forEach var="wantedsList" items="${wantedsList}">
+	        	<div class="wanted">
+	                <div class="wanted">
+	                    <a href="#">
+	                    <div class="picture">
+	                        <img src="https://picsum.photos/seed/picsum/200/300">
+	                    </div>
+	                    <div class="wanted_text">
+	                        <div class="text">
+	                            <ul>
+	                                <li class="title"><h2>${wantedsList.title}</h2></li>
+	                                <li class="content"><p>${wantedsList.detail}</p></li>
+	                            </ul>
+	                        </div>
+	                        <div class="company_intro">
+	                            <p class="company_region">${wantedsList.regionCodeName}</p>
+	                            <p class="company_name">${wantedsList.companyName}</p>
+	                        </div>
+	                    </div>
+	                    </a>
+	                </div>
+	            </div>
+        	</c:forEach>
         </div>
     </div>
 </div>

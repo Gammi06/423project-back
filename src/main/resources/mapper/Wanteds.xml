@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper
-	namespace="site.metacoding.miniproject1.domain.wanteds.WantedsDao">
+<mapper namespace="site.metacoding.miniproject1.domain.wanteds.WantedsDao">
 
+	<select id="findAllByCompanyId"
+		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto">
+		SELECT l.like_count + w.view_count total_count ,w.id,
+		w.position_code_id,
+		w.career_code_id, w.company_id, w.title, w.detail,
+		w.view_count, w.created, w.enddate,
+		c.company_name, c.region_code_name,
+		c.photo
+		FROM wanteds w
+		LEFT OUTER JOIN companys c
+		ON w.company_id
+		= c.id
+		LEFT OUTER JOIN
+		(SELECT *, COUNT(user_id) like_count FROM likes
+		GROUP BY
+		wanted_id) l
+		ON
+		l.wanted_id = w.id
+		WHERE w.enddate > NOW() AND c.id = #{id}
+		ORDER BY RAND()
+		LIMIT 8
+	</select>
+	
 	<select id="findByIdToDetail"
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto">
 		SELECT w.id, pc.name position_code_name, cc.name career_code_name,
