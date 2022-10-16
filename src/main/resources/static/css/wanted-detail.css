@@ -341,9 +341,11 @@
     font-weight: bold;
     padding-top: 10px;
     width: 230px;
-    height: 30px;
+    height: 40px;
     line-height: 20px;
-    margin-bottom: 20px;
+    text-overflow: clip;
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+  	display: block;     /* ie6이상 현재요소를 블럭처리합니다. */
 }
 
 .wanted_detail_wrap .container .wanteds .wanted_text .content p {
@@ -352,6 +354,10 @@
     width: 230px;
     height: 40px;
     line-height: 16px;
+    text-overflow: ellipsis;  /* 위에 설정한 100px 보다 길면 말줄임표처럼 표시합니다. */
+  	white-space: nowrap;    /* 줄바꿈을 하지 않습니다. */
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+  	display: block;     /* ie6이상 현재요소를 블럭처리합니다. */
 }
 
 .wanted_detail_wrap .container .wanteds .company_intro .company_region {

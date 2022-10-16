@@ -207,7 +207,7 @@ a {
     font-size: 13px;
     color: #888;
     width: 230px;
-    height: 20px;
+    height: 40px;
     line-height: 16px;
     text-overflow: ellipsis;  /* 위에 설정한 100px 보다 길면 말줄임표처럼 표시합니다. */
   	white-space: nowrap;    /* 줄바꿈을 하지 않습니다. */
