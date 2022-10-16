@@ -18,10 +18,10 @@
 		</p>
 		 -->
 		<p class="sec1_cont4">
-			<a href="resume/list" class="btn btn_adminresume">이력서
+			<a href="/resume/list" class="btn btn_adminresume">이력서
 					관리
 			</a>
-			<a href="resume/update" class="btn btn_newresume">새
+			<a href="/resume/update" class="btn btn_newresume">새
 					이력서 작성
 			</a>
 		</p>
@@ -61,7 +61,7 @@
 <!------.resume01_sec4시작------>
 <section class="resume01_sec4">
 	<div class="sec4_btn">
-		<button type="button" onclick="location.href='resume/update'" class="btn btn_newresume">
+		<button type="button" onclick="location.href='/resume/update'" class="btn btn_newresume">
 			새 이력서 작성
 		</button>
 	</div>

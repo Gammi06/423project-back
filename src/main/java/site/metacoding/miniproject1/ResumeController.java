@@ -1,5 +1,7 @@
 package site.metacoding.miniproject1;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,8 +42,8 @@ public class ResumeController {
 	
 	@GetMapping("/resume/list/{id}")
 	public String 이력서관리(@PathVariable Integer id, Model model) {
-		ResumeListDto resumeListDtoPS = resumeService.findByUserId(id);
-		model.addAttribute("resumeListDtoPS", resumeListDtoPS);
+		List<ResumeListDto> resumeListDtoPS = resumeService.findByUserId(id);
+		model.addAttribute("resume", resumeListDtoPS);
 		return "/resume/resume_list";
 	}
 

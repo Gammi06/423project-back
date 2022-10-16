@@ -12,5 +12,5 @@ public interface ResumesDao {
 	public ResumeUpdateDto findById(Integer id);
 	public void update(Integer id, Resumes resumes);
 	public void deleteById(Integer id);
-	public ResumeListDto findByUserId(Integer id);
+	public List<ResumeListDto> findByUserId(Integer id);
 }

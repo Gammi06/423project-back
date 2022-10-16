@@ -1,5 +1,7 @@
 package site.metacoding.miniproject1.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -17,7 +19,7 @@ public class ResumeService {
 		return resumesDao.findById(id);
 	}
 	
-	public ResumeListDto findByUserId(Integer id) {
+	public List<ResumeListDto> findByUserId(Integer id) {
 		return resumesDao.findByUserId(id);
 	}
 }

@@ -35,17 +35,18 @@ body::-webkit-scrollbar {
 
 
 /*------.resume_sec시작------*/
-.resume03_sec{
-	width: 1000px;
+.resume03_sec {
+	width: 100%;
 	margin: 0 auto;
-	background-color: white;
+	background-color: #f2f2f2;
 }
 
-.resume03_sec .sec_box{
+.resume03_sec .sec_box {
+	width: 1000px;
+	margin: 0 auto;
 	padding-top: 50px;
 	padding-bottom: 500px;
 	padding-left: 35px;
-	background-color: #f2f2f2;
 }
 
 .resume03_sec .sec_box .box_title{
