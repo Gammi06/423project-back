@@ -4,6 +4,7 @@
 <div class="wanteds_page">
 	<div class="search_wanted">
 		<div class="all_position">
+			<div class="select_head">포지션 선택</div>
 			<div class="select_all">
 				<select class="all">
 					<c:forEach var="positions" items="${allCodes.positionsCodeDtos}">
@@ -11,7 +12,7 @@
 					</c:forEach>
 				</select>
 			</div>
-			<div class="select_position">직군을 선택해주세요</div>
+			<div class="select_position"><a><i class="fa fa-search"></i></a></div>
 		</div>
 		<div class="selects">
 			<div class="select_region">
@@ -38,6 +39,22 @@
 					</c:forEach>
 				</select>
 			</div>
+			<div class="selected_skills">
+                    <ul>
+                        <li class="selected_skills_items">
+                            <strong class="skill_name">스킬명스킬명스킬명</strong>
+                            <p class="select_delete"><a>x</a></p>
+                        </li>
+                        <li class="selected_skills_items">
+                            <strong class="skill_name">스킬명</strong>
+                            <p class="select_delete"><a>x</a></p>
+                        </li>
+                        <li class="selected_skills_items">
+                            <strong class="skill_name">스킬명</strong>
+                            <p class="select_delete"><a>x</a></p>
+                        </li>
+                    </ul>
+                </div>
 			<div class="select_sort">
 				<select class="sort">
 					<option selected>정렬</option>

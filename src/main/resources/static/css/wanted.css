@@ -29,10 +29,9 @@
 .search_wanted {
     font-family: 'Pretendard-Regular';
     width: 100%;
-    height: 90px;
-    padding: 35px 0;
+    height: 140px;
+    padding: 15px 0 50px 0;
     z-index: 1;
-    background-color: #fff;
     border-bottom: 1px solid #bbb;
 }
 
@@ -48,13 +47,25 @@ a {
 	cursor:pointer;
 }
 
+i {
+	color: #fff;
+}
+
 /* //////////////////// all_position //////////////////// */
 
 .search_wanted .all_position {
     width: 1000px;
     margin: 0 auto;
     display: flex;
-    padding-bottom: 20px;
+    padding: 20px 0;
+}
+
+.search_wanted .all_position .select_head {
+    width: 185px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
 }
 
 .search_wanted .all_position .select_all .all {
@@ -63,9 +74,12 @@ a {
     font-size: 24px;
     font-weight: bold;
     text-align: left;
-    width: 120px;
-    line-height: 25px;
-    margin-right: 20px;
+    width: 720px;
+    line-height: 50px;
+    height: 52px;
+    border: 1px solid #bbb;
+    padding: 0 10px;
+    background-color: #fff;
 }
 
 .select_all option {
@@ -73,12 +87,25 @@ a {
 }
 
 .search_wanted .all_position .select_position {
-    border-left: 2px solid #bbb;
-    text-indent: 20px;
     color: #bbb;
     font-size: 24px;
+    width: 90px;
+    background-color: #bbb;
+    border: 1px solid #bbb;
+    border-left: none;
+}
+
+.search_wanted .all_position .select_position a {
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
     width: 100%;
-    line-height: 30px;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+}
+
+.fa-regular fa-magnifying-glass {
+    color: #0d0d12;
 }
 
 /* //////////////////// selects //////////////////// */
@@ -99,16 +126,51 @@ a {
     border-radius: 5px;
 }
 
+.search_wanted .selected_skills {
+    width: 580px;
+}
+
+.search_wanted .selected_skills ul {
+    display: flex;
+    justify-content: left;
+}
+
+.search_wanted .selected_skills ul li {
+    display: flex;
+    width: 120px;
+    padding: 12px 10px;
+    background-color: #e6e6e6;
+    margin-right: 10px;
+    border-radius: 30px;
+}
+
+.search_wanted .selected_skills ul li .skill_name {
+    font-size: 14px;
+    display: block;
+    width: 100px;
+    text-align: center;
+    text-overflow: ellipsis;  /* 위에 설정한 100px 보다 길면 말줄임표처럼 표시합니다. */
+  	white-space: nowrap;    /* 줄바꿈을 하지 않습니다. */
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+}
+
+.search_wanted .selected_skills ul li .select_delete a {
+    text-align: center;
+    width: 20px;
+    padding: 10px 10px 10px 5px;
+}
+
 .search_wanted .selects .skill {
+    font-size: 14px;
     width: 120px;
     height: 40px;
     border: 1px solid #bbb;
     border-radius: 5px;
-    margin-right: 600px;
 }
 
 .search_wanted .selects .sort {
-    width: 70px;
+    font-size: 14px;
+    width: 90px;
     height: 40px;
     border: 1px solid #bbb;
     border-radius: 5px;
@@ -129,6 +191,7 @@ a {
 .selects option:nth-child(1) {
     display: none;
 }
+
 
 /* //////////////////// liked_wanted //////////////////// */
 .wanteds_page .liked {

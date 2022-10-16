@@ -14,6 +14,7 @@
     <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/wanted.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/wanted-detail.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e264982194.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
