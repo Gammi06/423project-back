@@ -2,10 +2,10 @@ var stompClient = null;
 var notificationCount = 0;
 
 $(document).ready(function () {
-    console.log("Index page is ready");
+    console.log("page is ready");
     connect();
 
-    $("#send").click(function () {
+    $(".btn_proposal").click(function () {
         sendMessage();
     });
 
@@ -13,7 +13,7 @@ $(document).ready(function () {
         sendPrivateMessage();
     });
 
-    $("#notifications").click(function () {
+    $(".notifications").click(function () {
         resetNotificationCount();
     });
 });
@@ -45,12 +45,17 @@ function connect() {
 }
 
 function showMessage(message) {
-    $("#messages").append("<tr><td>" + message + "</td></tr>");
+    $(".messages").append("<p>"+message+"</p>");
 }
 
 function sendMessage() {
     console.log("sending message");
-    stompClient.send("/ws/message", {}, JSON.stringify({ 'messageContent': $("#message").val() }));
+    var alarm = {
+    userId: "1"
+    , message: "지금 새로운 공고를 확인해보세요!"
+    , date: new Date()
+};
+    stompClient.send("/ws/message", {}, JSON.stringify(alarm));
 }
 
 function sendPrivateMessage() {
@@ -60,10 +65,10 @@ function sendPrivateMessage() {
 
 function updateNotificationDisplay() {
     if (notificationCount == 0) {
-        $("#notifications").hide();
+        $(".notifications").hide();
     } else {
-        $("#notifications").show();
-        $("#notifications").text(notificationCount);
+        $(".notifications").show();
+        $(".notifications").text(notificationCount);
     }
 }
 

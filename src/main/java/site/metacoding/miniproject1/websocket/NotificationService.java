@@ -18,13 +18,12 @@ public class NotificationService {
 
     public void sendGlobalNotification() {
         TestMessage message = new TestMessage("Global Notification");
-
         messagingTemplate.convertAndSend("/topic/global-notifications", message);
     }
 
-    public void sendPrivateNotification(final String userId) {
+    public void sendPrivateNotification(String id) {
         TestMessage message = new TestMessage("Private Notification");
 
-        messagingTemplate.convertAndSendToUser(userId, "/topic/private-notifications", message);
+        messagingTemplate.convertAndSendToUser(id, "/topic/private-notifications", message);
     }
 }

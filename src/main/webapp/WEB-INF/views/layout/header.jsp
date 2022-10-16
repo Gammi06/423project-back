@@ -11,6 +11,11 @@
             <link href="/css/reset.css" rel="stylesheet">
             <link href="/css/header.css" rel="stylesheet">
             <link href="/css/footer.css" rel="stylesheet">
+            <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		    <script src="/webjars/jquery/jquery.min.js"></script>
+		    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+		    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+		    <script src="/js/webSocket.js"></script>
         </head>
 
         <body>
@@ -34,11 +39,13 @@
                     <ul class="login">
                         <!--로그인시-->
                         <li class="alert">
+                        <p class="notifications"></p>
                             <a href="#">알림</a>
+                            
                             <ul class="alert_item_list">
                                 <li><a class="alert_item">
-                                        <strong>알림제목</strong>
-                                        <p>알림내용</p>
+                                        <div class="messages"></div>
+                                      
                                     </a></li>
                             </ul>
                         </li>

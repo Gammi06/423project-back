@@ -65,8 +65,10 @@
 		FROM subscribes
 		WHERE user_id = #{id}) subscribesCount,
 		(SELECT count((IFNULL(wanted_id, 0))) AS requestsCount
-		FROM requests
-		WHERE resume_id = #{id}) requestsCount
+		FROM requests req
+		INNER JOIN resumes res
+		ON req.resume_id = res.id
+		WHERE res.user_id = #{id}) requestsCount
 		FROM application_status appst
 		INNER JOIN resumes res
 		ON appst.resume_id = res.id

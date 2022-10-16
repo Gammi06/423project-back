@@ -1,7 +1,5 @@
 package site.metacoding.miniproject1.websocket;
 
-import java.security.Principal;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -21,19 +19,19 @@ public class MessageController {
 
     @MessageMapping("/message")
     @SendTo("/topic/messages")
-    public TestMessage getMessage(final Message message) throws InterruptedException {
+    public TestMessage getMessage() throws Exception {
         notificationService.sendGlobalNotification();
-        return new TestMessage(HtmlUtils.htmlEscape(message.getMessageContent()));
+        return new TestMessage("회사로부터 입사 요청을 받았어요! 지금 마이페이지를 확인해보세요!");
 
     }
 
     @MessageMapping("/private-message")
     @SendToUser("/topic/private-messages")
-    public TestMessage getPrivateMessage(final Message message, final Principal principal) throws InterruptedException {
+    public TestMessage getPrivateMessage(Message message, String id) throws InterruptedException {
         Thread.sleep(1000);
-        notificationService.sendPrivateNotification(principal.getName());
+        notificationService.sendPrivateNotification(id);
         return new TestMessage(HtmlUtils.htmlEscape(
-                "Sending private message to user " + principal.getName() + " : " + message.getMessageContent()));
+                "Sending private message to user " + id + " : " + message.getMessageContent()));
     }
 
     @GetMapping("/wstest")

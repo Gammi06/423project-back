@@ -4,11 +4,10 @@
 
         <head>
             <link href="/css/mypage.css" rel="stylesheet">
-            <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		    <script src="/webjars/jquery/jquery.min.js"></script>
 		    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
 		    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-		    <script src="/webSocket.js"></script>
+		    <script src="/js/webSocket.js"></script>
         </head>
 
         <div id="wrap">
@@ -46,11 +45,12 @@
                                         </a></li>
                                     <li><a href="/proposal">
                                             <div class="mp_status_li3">받은 요청</div>
-                                            <div>${infoCountDtos.subscribesCount}</div>
+                                            <p class="notifications"></p>
+                                            <div>${infoCountDtos.requestsCount}</div>
                                         </a></li>
                                     <li><a href="#">
                                             <div class="mp_status_li4">구독</div>
-                                            <div>${infoCountDtos.requestsCount}</div>
+                                            <div>${infoCountDtos.subscribesCount}</div>
                                         </a></li>
                                 </ul>
                             </c:forEach>
@@ -62,7 +62,13 @@
                             <a href="#">로그아웃</a>
                         </button>
                     </div>
-                </div>
+                    <div class="btn_proposal"><button>
+                            <a href="#">제안하기</a>
+                        </button></div>
+                      <div class="btn_application"><button>
+                            <a href="#">지원하기</a>
+                        </button></div>
+              </div>
 
                 <div class="mp_contents">
                     <div class="mp_applications">
