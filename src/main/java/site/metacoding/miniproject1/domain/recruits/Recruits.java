@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class Recruits {
 	private Integer id;
-	private Integer resume_id;
-	private Integer wanted_id;
+	private Integer resumeId;
+	private Integer wantedId;
 	private Timestamp created;
 }

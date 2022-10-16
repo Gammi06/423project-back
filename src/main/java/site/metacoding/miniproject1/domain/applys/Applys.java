@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class Applys {
 	private Integer id;
-	private Integer wanted_id;
+	private Integer wantedId;
 	private Integer status;
 	private Timestamp created;
 }
