@@ -13,6 +13,7 @@
     <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/wanted.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/wanted-detail.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
