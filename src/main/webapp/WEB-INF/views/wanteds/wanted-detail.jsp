@@ -80,6 +80,7 @@
                             <h2>공고제목공고제목공고제목</h2>
                             <h3>회사이름</h3>
                             <strong>포지션 이름</strong>
+                            <p>경력</p>
                         </div>
                         <div class="buttons">
                             <div class="default">

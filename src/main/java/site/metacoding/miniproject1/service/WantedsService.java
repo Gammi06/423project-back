@@ -20,6 +20,7 @@ import site.metacoding.miniproject1.web.dto.response.codes.SkillsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.mySkills.WantedsSkillsDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingWantedsListDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
 @RequiredArgsConstructor
@@ -31,6 +32,12 @@ public class WantedsService {
 	private final RegionsCodeDao regionsCodeDao;
 	private final CareersCodeDao careersCodeDao;
 	private final MySkillsService mySkillsService;
+	
+	public WantedDetailDto findByIdToDetail(Integer id) {
+		WantedDetailDto wantedDetailDtoPS = wantedsDao.findByIdToDetail(id);
+		if(wantedDetailDtoPS == null) return null;
+		return wantedDetailDtoPS;
+	}
 	
 	public PagingWantedsListDto pagingWantedsList(Integer page, Integer state) {
 		if(page == null) page = 0;

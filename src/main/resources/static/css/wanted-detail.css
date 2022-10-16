@@ -39,6 +39,7 @@
 }
 
 .explain .intro_wanted .left {
+	margin-top: 30px;
     width: 490px;
 }
 
@@ -283,6 +284,12 @@
     top: 30px
 }
 
+.right .right_default p {
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+
 /*///////////////////////// wanteds /////////////////////////*/
 .wanted_detail_wrap .container h3 {
     margin-top: 50px;
@@ -310,6 +317,7 @@
     padding: 10px;
     width: 230px;
     height: 330px;
+    margin-bottom: 120px;
 }
 
 .wanted_detail_wrap .container .wanteds .picture {

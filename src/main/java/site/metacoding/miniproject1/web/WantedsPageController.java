@@ -30,4 +30,9 @@ public class WantedsPageController {
 		model.addAttribute("allCodes", allCodesPS);
 		return "wanteds/wanted";
 	}
+	
+	@GetMapping("/wanteds/{id}")
+	public String wantedsDetailPage(Integer id) {
+		return "wanteds/wanted-detail";
+	}
 }
