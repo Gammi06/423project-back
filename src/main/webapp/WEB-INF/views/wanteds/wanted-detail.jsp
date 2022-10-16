@@ -8,20 +8,12 @@
                 <div class="picture">
                     <img src="https://picsum.photos/1000">
                 </div>
-                <div class="text">
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                </div>
+                <div class="text">${wantedDetail.detail}</div>
                 <div class="skills">
                     <ul>
-                        <li class="skill_items">스킬명</li>
-                        <li class="skill_items">스킬명</li>
-                        <li class="skill_items">스킬명</li>
-                        <li class="skill_items">스킬명</li>
-                        <li class="skill_items">스킬명</li>
+						<c:forEach var="mySkills" items="${wantedDetail.mySkills}">
+                        	<li class="skill_items">${mySkills.skillsCodeName}</li>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -77,10 +69,10 @@
                     <!--기본-->
                     <div class="right_default">
                         <div class="text">
-                            <h2>공고제목공고제목공고제목</h2>
-                            <h3>회사이름</h3>
-                            <strong>포지션 이름</strong>
-                            <p>경력</p>
+                            <h2>${wantedDetail.title}</h2>
+                            <h3>${wantedDetail.companyName}</h3>
+                            <strong>${wantedDetail.positionCodeName}</strong>
+                            <p>${wantedDetail.careerCodeName}</p>
                         </div>
                         <div class="buttons">
                             <div class="default">

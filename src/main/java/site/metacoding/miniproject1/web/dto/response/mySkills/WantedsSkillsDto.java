@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 public class WantedsSkillsDto {
 	private Integer id;
-	private Integer wanted_id;
-	private Integer skills_code_id;
+	private Integer wantedId;
+	private Integer skillsCodeId;
+	private String skillsCodeName;
 }

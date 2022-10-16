@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.WantedsService;
@@ -33,7 +34,7 @@ public class WantedsPageController {
 	}
 	
 	@GetMapping("/wanteds/{id}")
-	public String wantedsDetailPage(Model model, Integer id) {
+	public String wantedsDetailPage(Model model, @PathVariable Integer id) {
 		WantedDetailDto wantedDetailDtoPS = wantedsService.findByIdToDetail(id);
 		model.addAttribute("wantedDetail", wantedDetailDtoPS);
 		return "wanteds/wanted-detail";

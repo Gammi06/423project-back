@@ -35,7 +35,12 @@ public class WantedsService {
 	
 	public WantedDetailDto findByIdToDetail(Integer id) {
 		WantedDetailDto wantedDetailDtoPS = wantedsDao.findByIdToDetail(id);
+		System.out.println(wantedDetailDtoPS.getCareerCodeName());
 		if(wantedDetailDtoPS == null) return null;
+		
+		List<WantedsSkillsDto> wantedsSkillsDtosPS = mySkillsService.findMySkillByWantedId(id);
+		wantedDetailDtoPS.setMySkills(wantedsSkillsDtosPS);
+		
 		return wantedDetailDtoPS;
 	}
 	
