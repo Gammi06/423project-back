@@ -7,7 +7,7 @@
             <img src="https://picsum.photos/1000">
             <div class="intro">
                 <div class="title">
-                    <a href="#">
+                    <a href="/wanteds/${wanteds.id}">
                         <div class="wanted_info">
                             <strong>${wanteds.title}</strong>
                             <p>${wanteds.detail}</p>
@@ -27,7 +27,7 @@
         <div class="wanteds">
         	<c:forEach var="wantedsAllList" items="${wantedsList}">
 	        	<div class="wanted">
-	                <a>
+	                <a href="/wanteds/${wantedsAllList.id}">
 	                <div class="picture">
 	                    <img src="https://picsum.photos/seed/picsum/200/300">
 	                </div>
