@@ -54,7 +54,7 @@
 				<div class="wanteds">
 					<c:forEach var="wantedsLikeList" items="${wantedsLikeList}">
 						<div class="wanted">
-							<a href="#">
+							<a href="/wanteds/${wantedsLikeList.id}">
 								<div class="picture">
 									<img src="https://picsum.photos/seed/picsum/200/300">
 								</div>
@@ -84,7 +84,7 @@
 			<div class="wanteds">
 				<c:forEach var="wantedsAllList" items="${pagingWantedsList.wantedsListDtos}">
 					<div class="wanted">
-						<a href="#">
+						<a href="/wanteds/${wantedsAllList.id}">
 							<div class="picture">
 								<img src="https://picsum.photos/seed/picsum/200/300">
 							</div>
