@@ -38,12 +38,14 @@ public class MyPageService {
         return infoAllDto;
     }
 
+
     public StatusAllDto viewAll(Integer id, String keyword) {
         List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
         List<StatusInfoDto> statusInfoDtos = applicationStatusDao.findAll(id, keyword);
         StatusAllDto statusAllDto = new StatusAllDto(statusCountDtos, statusInfoDtos);
         return statusAllDto;
     }
+
 
     public StatusWaitingDto viewWaiting(Integer id, String keyword) {
         List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
@@ -52,12 +54,14 @@ public class MyPageService {
         return statusWaitingDto;
     }
 
+
     public StatusFinalDto viewFinal(Integer id, String keyword) {
         List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
         List<StatusFinalInfoDto> statusFinalInfoDtos = applicationStatusDao.findFinal(id, keyword);
         StatusFinalDto statusFinalDto = new StatusFinalDto(statusCountDtos, statusFinalInfoDtos);
         return statusFinalDto;
     }
+
 
     public RequestsDto viewRequests(Integer id, String keyword) {
         List<RequestsInfoDto> requestsInfoDtos = applicationStatusDao.findRequest(id, keyword);

@@ -88,7 +88,5 @@
                 </div>
             </div>
         </div>
-
         <script src="/js/applicationStatus.js"></script>
-
         <%@ include file="../layout/footer.jsp" %>

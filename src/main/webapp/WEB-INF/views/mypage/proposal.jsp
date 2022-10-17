@@ -63,7 +63,6 @@
                 </div>
             </div>
         </div>
-
+        
         <script src="/js/proposal.js"></script>
-
         <%@ include file="../layout/footer.jsp" %>

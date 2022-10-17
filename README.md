@@ -570,7 +570,6 @@ INSERT INTO requests(resume_id, wanted_id, status, created) VALUES(1, 13, '모�
 INSERT INTO requests(resume_id, wanted_id, status, created) VALUES(1, 15, '모집중',NOW());
 INSERT INTO requests(resume_id, wanted_id, status, created) VALUES(1, 23, '모집중',NOW());
 
-
 UPDATE users SET company_id = 1 WHERE id = 2;
 UPDATE users SET company_id = 2 WHERE id = 6;
 UPDATE users SET company_id = 3 WHERE id = 7;
