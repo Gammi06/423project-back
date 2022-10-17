@@ -131,17 +131,17 @@ body {
     font-family: 'GmarketSansMedium';
 }
 
-.mp_status ul li .notifications {
-    width: 25px;
-    height: 17px;
+.mp_status ul li .proposal_notifications {
+    width: 22px;
+    height: 20px;
     color: #0d0d26;
     background-color: #33ffcc;
     border-radius: 5px;
     text-align: center;
     vertical-align: middle;
-    line-height: 20.8px;
-    font-size: 13px;
-    margin: 0 115px 3px 0;
+    line-height: 20px;
+    font-size: 12px;
+    margin: 0 115px 0 0;
 }
 
 .mypage .logout button {
@@ -162,6 +162,17 @@ body {
 
 .mypage .logout button a:hover {
     color: #0d0d12;
+}
+
+.application_notifications {
+    width: 22px;
+    height: 20px;
+    color: #0d0d26;
+    background-color: #33ffcc;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
 }
 
 .mp_applications {

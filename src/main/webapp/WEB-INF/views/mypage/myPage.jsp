@@ -41,7 +41,7 @@
                                         </a></li>
                                     <li><a href="/proposal">
                                             <div class="mp_status_li3">받은 요청</div>
-                                            <p class="notifications"></p>
+                                            <p class="proposal_notifications"></p>
                                             <div>${infoCountDtos.requestsCount}</div>
                                         </a></li>
                                     <li><a href="#">
@@ -64,6 +64,7 @@
                     <div class="btn_application"><button>
                             <a href="#">지원하기</a>
                         </button></div>
+                    <p class="application_notifications"></p>
                 </div>
 
                 <div class="mp_contents">

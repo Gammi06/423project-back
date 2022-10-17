@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
-import site.metacoding.miniproject1.web.dto.response.TestMessage;
+import site.metacoding.miniproject1.web.dto.response.PushMessage;
 
 @Service
 public class WebSocketService {
@@ -19,14 +19,14 @@ public class WebSocketService {
     }
 
     public void notifyFrontend(final String message) {
-        TestMessage response = new TestMessage(message);
+        PushMessage response = new PushMessage(message);
         notificationService.sendGlobalNotification();
         messagingTemplate.convertAndSend("/topic/messages", response);
 
     }
 
     public void notifyUser(final String id, final String message) {
-        TestMessage response = new TestMessage(message);
+        PushMessage response = new PushMessage(message);
         notificationService.sendPrivateNotification(id);
         messagingTemplate.convertAndSendToUser(id, "/topic/private-messages", response);
 

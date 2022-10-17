@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class TestMessage {
+public class PushMessage {
     private String content;
 
 }
