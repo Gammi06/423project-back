@@ -68,7 +68,8 @@
 
 .explain .skills ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-direction: row;
 }
 
 .explain .skills ul li {
@@ -77,6 +78,7 @@
     padding: 10px 30px;
     font-size: 14px;
     color: #888;
+    display: block;
 }
 
 .explain .intro_wanted .right .right_default{
@@ -291,6 +293,10 @@
 
 
 /*///////////////////////// wanteds /////////////////////////*/
+.wanted_detail_wrap .container {
+	padding-top : 50px;	
+}
+
 .wanted_detail_wrap .container h3 {
     margin-top: 50px;
     font-family: 'GmarketSansMedium';
