@@ -10,8 +10,4 @@ public class TestController {
 		return "all/test";
 	}
 	
-	@GetMapping("/loginpage")
-	public String login () {
-		return "users/loginpage";
-	}
 }
