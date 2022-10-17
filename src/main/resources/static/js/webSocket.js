@@ -7,6 +7,11 @@ function connect() {
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
         updateNotificationDisplay();
+
+        stompClient.subscribe('/topic/all', function (message) {
+            showMessage(JSON.parse(message.body).content);
+        });
+
         stompClient.subscribe('/topic/messages', function (message) {
             showMessage(JSON.parse(message.body).content);
         });
@@ -40,13 +45,9 @@ function sendMessage() {
     stompClient.send("/ws/message", {}, JSON.stringify(alarm));
 }
 
-function sendAppMessage() {
+function sendFirstAlarm() {
     console.log("sending message");
-    var alarm = {
-        message: "앱 센드메세지"
-        , date: new Date()
-    };
-    stompClient.send("/ws/message", {}, JSON.stringify(alarm));
+    stompClient.send("/ws/firstalarm");
 }
 
 function sendPrivateMessage() {
@@ -85,3 +86,6 @@ $(".notifications").click(function () {
 });
 
 connect();
+setTimeout(function () {
+    sendFirstAlarm();
+}, 3000);
