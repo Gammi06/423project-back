@@ -11,10 +11,6 @@
             <link href="/css/reset.css" rel="stylesheet">
             <link href="/css/header.css" rel="stylesheet">
             <link href="/css/footer.css" rel="stylesheet">
-            <script src="/webjars/jquery/jquery.min.js"></script>
-            <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-            <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-            <script src="/js/webSocket.js"></script>
         </head>
 
         <body>

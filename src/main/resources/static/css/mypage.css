@@ -119,6 +119,10 @@ body {
     padding-bottom: 18px;
 }
 
+.mp_status ul li:last-child {
+    padding-bottom: 10px;
+}
+
 .mp_status ul li a {
     display: flex;
     justify-content: space-between;
@@ -135,7 +139,7 @@ body {
     border-radius: 5px;
     text-align: center;
     vertical-align: middle;
-    line-height: 20px;
+    line-height: 20.8px;
     font-size: 13px;
     margin: 0 115px 3px 0;
 }

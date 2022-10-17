@@ -4,10 +4,6 @@
 
         <head>
             <link href="/css/mypage.css" rel="stylesheet">
-            <script src="/webjars/jquery/jquery.min.js"></script>
-            <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-            <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-            <script src="/js/webSocket.js"></script>
         </head>
 
         <div id="wrap">

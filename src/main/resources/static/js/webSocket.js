@@ -1,27 +1,6 @@
 var stompClient = null;
 var notificationCount = 0;
 
-$(document).ready(function () {
-    console.log("page is ready");
-    connect();
-
-    $(".btn_proposal").click(function () {
-        sendMessage();
-    });
-
-    $(".btn_application").click(function () {
-        sendAppMessage();
-    });
-
-    $("#send-private").click(function () {
-        sendPrivateMessage();
-    });
-
-    $(".notifications").click(function () {
-        resetNotificationCount();
-    });
-});
-
 function connect() {
     var socket = new SockJS('/our-websocket');
     stompClient = Stomp.over(socket);
@@ -36,7 +15,7 @@ function connect() {
             showMessage(JSON.parse(message.body).content);
         });
 
-        stompClient.subscribe('/topic/global-notifications', function (message) {
+        stompClient.subscribe('/topic/global-notifications', function () {
             notificationCount = notificationCount + 1;
             updateNotificationDisplay();
         });
@@ -88,3 +67,21 @@ function resetNotificationCount() {
     notificationCount = 0;
     updateNotificationDisplay();
 }
+
+$(".btn_proposal").click(function () {
+    sendMessage();
+});
+
+$(".btn_application").click(function () {
+    sendAppMessage();
+});
+
+$("#send-private").click(function () {
+    sendPrivateMessage();
+});
+
+$(".notifications").click(function () {
+    resetNotificationCount();
+});
+
+connect();

@@ -27,7 +27,7 @@ public class MessageController {
 
     @MessageMapping("/private-message")
     @SendToUser("/topic/private-messages")
-    public TestMessage getPrivateMessage(Message message, String id) throws InterruptedException {
+    public TestMessage getPrivateMessage(Message message, String id) throws Exception {
         Thread.sleep(1000);
         notificationService.sendPrivateNotification(id);
         return new TestMessage(HtmlUtils.htmlEscape(
