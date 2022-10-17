@@ -8,9 +8,9 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>구해줘용</title>
-            <link href="css/reset.css" rel="stylesheet">
-            <link href="css/header.css" rel="stylesheet">
-            <link href="css/footer.css" rel="stylesheet">
+            <link href="/css/reset.css" rel="stylesheet">
+            <link href="/css/header.css" rel="stylesheet">
+            <link href="/css/footer.css" rel="stylesheet">
         </head>
 
         <body>
@@ -33,14 +33,21 @@
                     </ul>
                     <ul class="login">
                         <!--로그인시-->
+
                         <li class="alert">
+
                             <a href="#">알림</a>
+
                             <ul class="alert_item_list">
+
                                 <li><a class="alert_item">
-                                        <strong>알림제목</strong>
-                                        <p>알림내용</p>
+                                        <div class="messages"></div>
+
                                     </a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <p class="notifications"></p>
                         </li>
                         <li class="profile">
                             <a href="#">프로필</a>

@@ -13,6 +13,7 @@ import lombok.Setter;
 @Getter
 public class CompanyInfoDto {
 	private Integer id;
+	private Integer no;
 	private String companyName;
 	private Blob photo;
 	private String title;

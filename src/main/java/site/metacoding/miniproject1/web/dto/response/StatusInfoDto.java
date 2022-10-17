@@ -12,12 +12,15 @@ import lombok.Setter;
 @Setter
 @Getter
 public class StatusInfoDto {
-	private Integer id;
+
+    private Integer id;
     private Integer wantedId;
     private Integer resumeId;
     private Integer state;
+    private Integer positionCodeId;
     private Timestamp created;
     private String positionCodeName;
     private Integer companyId;
     private String companyName;
+    private Integer userId;
 }

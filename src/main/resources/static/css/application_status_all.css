@@ -204,6 +204,10 @@ body {
     vertical-align: middle;
 }
 
+.asa_table td a:hover {
+    color: #33ffcc;
+}
+
 .asa_table td .waiting {
     color: #333333;
 }
@@ -213,5 +217,5 @@ body {
 }
 
 .asa_table td .fail {
-    color: red;
+    color: #BEBEBE;
 }
