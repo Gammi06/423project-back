@@ -34,9 +34,4 @@ public class MessageController {
                 "Sending private message to user " + id + " : " + message.getMessageContent()));
     }
 
-    @GetMapping("/wstest")
-    public String getTestPage() {
-        return "websocket/wstest";
-    }
-
 }

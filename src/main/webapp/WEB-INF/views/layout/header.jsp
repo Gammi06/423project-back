@@ -11,11 +11,10 @@
             <link href="/css/reset.css" rel="stylesheet">
             <link href="/css/header.css" rel="stylesheet">
             <link href="/css/footer.css" rel="stylesheet">
-            <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		    <script src="/webjars/jquery/jquery.min.js"></script>
-		    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-		    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-		    <script src="/js/webSocket.js"></script>
+            <script src="/webjars/jquery/jquery.min.js"></script>
+            <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+            <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+            <script src="/js/webSocket.js"></script>
         </head>
 
         <body>
@@ -38,18 +37,21 @@
                     </ul>
                     <ul class="login">
                         <!--로그인시-->
-                       
+
                         <li class="alert">
-                        <p class="notifications"></p>
+
                             <a href="#">알림</a>
-                            
+
                             <ul class="alert_item_list">
-                            
+
                                 <li><a class="alert_item">
                                         <div class="messages"></div>
-                                      
+
                                     </a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <p class="notifications"></p>
                         </li>
                         <li class="profile">
                             <a href="#">프로필</a>

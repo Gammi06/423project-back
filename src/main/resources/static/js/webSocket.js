@@ -9,6 +9,10 @@ $(document).ready(function () {
         sendMessage();
     });
 
+    $(".btn_application").click(function () {
+        sendAppMessage();
+    });
+
     $("#send-private").click(function () {
         sendPrivateMessage();
     });
@@ -45,15 +49,24 @@ function connect() {
 }
 
 function showMessage(message) {
-    $(".messages").append("<p>"+message+"</p>");
+    $(".messages").append("<p>" + message + "</p>");
 }
 
 function sendMessage() {
     console.log("sending message");
     var alarm = {
-    message: "지금 새로운 공고를 확인해보세요!"
-    , date: new Date()
-};
+        message: "그냥 센드메세지"
+        , date: new Date()
+    };
+    stompClient.send("/ws/message", {}, JSON.stringify(alarm));
+}
+
+function sendAppMessage() {
+    console.log("sending message");
+    var alarm = {
+        message: "앱 센드메세지"
+        , date: new Date()
+    };
     stompClient.send("/ws/message", {}, JSON.stringify(alarm));
 }
 

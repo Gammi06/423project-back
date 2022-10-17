@@ -136,15 +136,16 @@
     color: #0d0d12;
 }
 
-.header_inner .alert .notifications{
-	width:30px;
-	height:20px;
-	color: #0d0d26;
+.header_inner .login .notifications {
+    width: 25px;
+    height: 15px;
+    color: #0d0d26;
     background-color: #33ffcc;
-    border-radius : 5px;
-    text-align : center;
-    vertical-align: middle;
-    line-height : 20px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 15px;
+    font-size: 12px;
+    margin: 17px 15px 0 0px;
 }
 
 .header_inner .companyservice a {
@@ -189,16 +190,14 @@
     line-height: 0px;
 }
 
-.header_inner .login .alert .alert_item_list .alert_item .messages {
-    
-}
+.header_inner .login .alert .alert_item_list .alert_item .messages {}
 
-.header_inner .login .alert .alert_item_list .alert_item .messages p{
-	color: #333333;
+.header_inner .login .alert .alert_item_list .alert_item .messages p {
+    color: #333333;
     font-size: 13px;
     line-height: 13px;
-    padding : 10px;
-    border-bottom : 1px solid #BEBEBE;
+    padding: 10px;
+    border-bottom: 1px solid #BEBEBE;
 }
 
 .header_inner .login .profile {

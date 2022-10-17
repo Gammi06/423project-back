@@ -52,7 +52,7 @@ CREATE TABLE users (
    phone_number VARCHAR(20),
    email VARCHAR(20),
    photo BLOB,
-   position_code_name VARCHAR(20),
+   position_code_id INT,
    company_id INT,
    mycareer_id INT,
    created TIMESTAMP
@@ -84,7 +84,7 @@ CREATE TABLE resumes (
 
 CREATE TABLE wanteds (
    id INT PRIMARY KEY AUTO_INCREMENT,
-   position_code_name VARCHAR(20) NOT NULL,
+   position_code_id INT NOT NULL,
    career_code_id INT,
    pay VARCHAR(20) NOT NULL,
    company_id INT NOT NULL,
@@ -202,28 +202,28 @@ CREATE TABLE recruits (
 
 ### 더미데이터 생성 (MariaDB)
 ```sql
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('garam1234', '1234', '박가람', 26, '01011112222', 'garam12@naver.com', NULL, '프론트 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('garam1234', '1234', '박가람', 26, '01011112222', 'garam12@naver.com', NULL, 3, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
 VALUES('Lzm1992', '1234', '이재모', 80, '01024551478', 'Lzm1992@hanmail.com', NULL, NULL, NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('lazyIn94', '1234', '한가인', 29, '01034567890', 'lazyIn94@naver.com', NULL, '백앤드 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('hand0728', '1234', '손재영', 35, '01022223333', 'hand0728@naver.com', NULL, '웹 퍼블리셔', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('dragon5k', '1234', '김용오', 32, '01035567770', 'dragon5k@naver.com', NULL, '백앤드 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('lazyIn94', '1234', '한가인', 29, '01034567890', 'lazyIn94@naver.com', NULL, 1, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('hand0728', '1234', '손재영', 35, '01022223333', 'hand0728@naver.com', NULL, 2, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('dragon5k', '1234', '김용오', 32, '01035567770', 'dragon5k@naver.com', NULL, 1, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
 VALUES('samsung1', '1234', '이건희', 82, '01023998293', 'samsung1@samsung.com', NULL, NULL, NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
 VALUES('goodLg', '1234', '구광모', 44, '01928382992', 'goodLg@lg.com', NULL, NULL, NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
 VALUES('apple', '1234', '스티븐잡스', 58, '0828112456', 'apple@apple.com', NULL, NULL, NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('kongG', '1234', '홍콩지', 27, '01098776543', 'kongG@nate.com', NULL, '백앤드 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('1DongA', '1234', '한동아', 20, '01098722921', '1DongA@gmail.com', NULL, '프론트 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('newSui', '1234', '신류이수', 31, '01056821345', 'newSui@gmail.com', NULL, '웹 퍼블리셔', NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('kongG', '1234', '홍콩지', 27, '01098776543', 'kongG@nate.com', NULL, 1, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('1DongA', '1234', '한동아', 20, '01098722921', '1DongA@gmail.com', NULL, 3, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('newSui', '1234', '신류이수', 31, '01056821345', 'newSui@gmail.com', NULL, 2, NULL, NULL, NOW());
 
 INSERT INTO companys(company_name, address, email, company_number, photo, region_code_name, intro, years, member_count, created)
 VALUES('이재모피자', '부산광역시 중구 광복중앙로 31', 'Lzm1992@hanmail.com', '98700123456', NULL, '부산', '정성 가득한 피자를 만듭니다.', 1992, 20, NOW());
@@ -249,54 +249,54 @@ VALUES(10, 3, '프론트 개발자인 한동아입니다.', '한동아씨의 자
 INSERT INTO resumes(user_id, positions_code_id, title, intro, status_id, created)
 VALUES(11, 1, '백앤드 개발자인 신류이수입니다.', '신류이수씨의 자기소개서, 우리 회사에 입사시키면 일을 무난히 할 것 같은 내용이 쓰여있다.', NULL, NOW());
 
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('백앤드 개발자', 4, 5000, 1, '서버 개발자 구인', '이재모 피자 홈페이지를 개발하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 4, 4000, 1, '프론트 개발자 구인', '이재모 피자 홈페이지를 개발하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('백앤드 개발자', 5, 8000, 2, '서버 개발자 구인', '삼성에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('백앤드 개발자', 1, 3200, 2, '서버 개발자 구인', '삼성에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 5, 7000, 2, '프론트 개발자 구인', '삼성에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 1, 3000, 2, '프론트 개발자 구인', '삼성에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('웹 퍼블리셔', 5, 6000, 2, '웹 퍼블리셔 구인', '삼성에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('웹 퍼블리셔', 1, 2900, 2, '웹 퍼블리셔 구인', '삼성에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('백앤드 개발자', 5, 8000, 3, '서버 개발자 구인', 'LG에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('백앤드 개발자', 1, 3200, 3, '서버 개발자 구인', 'LG에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 5, 7000, 3, '프론트 개발자 구인', 'LG에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 1, 3000, 3, '프론트 개발자 구인', 'LG에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('웹 퍼블리셔', 5, 6000, 3, '웹 퍼블리셔 구인', 'LG에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('웹 퍼블리셔', 1, 2900, 3, '웹 퍼블리셔 구인', 'LG에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('백앤드 개발자', 5, 8000, 4, '서버 개발자 구인', '애플코리아에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('백앤드 개발자', 1, 3200, 4, '서버 개발자 구인', '애플코리아에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 5, 7000, 4, '프론트 개발자 구인', '애플코리아에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 1, 3000, 4, '프론트 개발자 구인', '애플코리아에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('웹 퍼블리셔', 5, 6000, 4, '웹 퍼블리셔 구인', '애플코리아에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('웹 퍼블리셔', 1, 2900, 4, '웹 퍼블리셔 구인', '애플코리아에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 3, 5000, 5, '프론트 개발자 구인', '굿디자인에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('프론트 개발자', 1, 3000, 5, '프론트 개발자 구인', '굿디자인에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('웹 퍼블리셔', 3, 4000, 5, '웹 퍼블리셔 구인', '굿디자인에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
-INSERT INTO wanteds(position_code_name, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
-VALUES('웹 퍼블리셔', 1, 2900, 5, '웹 퍼블리셔 구인', '굿디자인에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(1, 4, 5000, 1, '서버 개발자 구인', '이재모 피자 홈페이지를 개발하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 4, 4000, 1, '프론트 개발자 구인', '이재모 피자 홈페이지를 개발하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(1, 5, 8000, 2, '서버 개발자 구인', '삼성에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(1, 1, 3200, 2, '서버 개발자 구인', '삼성에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 5, 7000, 2, '프론트 개발자 구인', '삼성에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 1, 3000, 2, '프론트 개발자 구인', '삼성에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(2, 5, 6000, 2, '웹 퍼블리셔 구인', '삼성에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(2, 1, 2900, 2, '웹 퍼블리셔 구인', '삼성에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(1, 5, 8000, 3, '서버 개발자 구인', 'LG에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(1, 1, 3200, 3, '서버 개발자 구인', 'LG에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 5, 7000, 3, '프론트 개발자 구인', 'LG에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 1, 3000, 3, '프론트 개발자 구인', 'LG에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(2, 5, 6000, 3, '웹 퍼블리셔 구인', 'LG에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(2, 1, 2900, 3, '웹 퍼블리셔 구인', 'LG에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(1, 5, 8000, 4, '서버 개발자 구인', '애플코리아에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 1, 3200, 4, '서버 개발자 구인', '애플코리아에서 함께 일하실 서버 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 5, 7000, 4, '프론트 개발자 구인', '애플코리아에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 1, 3000, 4, '프론트 개발자 구인', '애플코리아에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(2, 5, 6000, 4, '웹 퍼블리셔 구인', '애플코리아에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(2, 1, 2900, 4, '웹 퍼블리셔 구인', '애플코리아에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 3, 5000, 5, '프론트 개발자 구인', '굿디자인에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(3, 1, 3000, 5, '프론트 개발자 구인', '굿디자인에서 함께 일하실 프론트 개발자를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(2, 3, 4000, 5, '웹 퍼블리셔 구인', '굿디자인에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
+INSERT INTO wanteds(position_code_id, career_code_id, pay, company_id, title, detail, view_count, created, enddate, checked)
+VALUES(2, 1, 2900, 5, '웹 퍼블리셔 구인', '굿디자인에서 함께 일하실 웹 퍼블리셔를 구인합니다. 회사에 대한 설명이 쓰여있다.', 0, NOW(), LAST_DAY(NOW()), FALSE);
 
 INSERT INTO positions_code(name, created) VALUES('백앤드 개발자', NOW());
 INSERT INTO positions_code(name, created) VALUES('웹 퍼블리셔', NOW());
@@ -538,7 +538,6 @@ INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 2, NOW());
 INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 3, NOW());
 INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 4, NOW());
 INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 5, NOW());
-
 
 INSERT INTO application_status(wanted_id, resume_id, state, created)
 VALUES(1, 1, 0 , NOW());
