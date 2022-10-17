@@ -28,6 +28,13 @@ public class WantedsService {
 	private final RegionsCodeDao regionsCodeDao;
 	private final CareersCodeDao careersCodeDao;
 	private final MySkillsService mySkillsService;
+	private final CompanysService companysService;
+	
+	public List<WantedsListDto> findAllByCompanyId(Integer id) {
+		if(companysService.findByIdToDetail(id) == null) return null;
+		List<WantedsListDto> wantedsListDtosPS = wantedsDao.findAllByCompanyId(id);
+		return wantedsListDtosPS;
+	}
 	
 	public WantedDetailAndCompanyDto findByCompanyIdAndAllWanteds(Integer id) {
 		WantedDetailAndCompanyDto wantedDetailAndCompanyDtoPS = new WantedDetailAndCompanyDto();
@@ -38,12 +45,6 @@ public class WantedsService {
 		
 		wantedDetailAndCompanyDtoPS.setWantedsListDtosPS(findAllByCompanyId(companyNum));
 		return wantedDetailAndCompanyDtoPS;
-	}
-	
-	public List<WantedsListDto> findAllByCompanyId(Integer id) {
-		List<WantedsListDto> wantedsListDtosPS = wantedsDao.findAllByCompanyId(id);
-		if(wantedsListDtosPS == null) return null;
-		return wantedsListDtosPS;
 	}
 	
 	public WantedDetailDto findByIdToDetail(Integer id) {
