@@ -8,38 +8,31 @@
                 <div class="picture">
                     <img src="https://picsum.photos/1000">
                 </div>
-                <div class="text">
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                    설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.설명글입니다.
-                </div>
+                <div class="text">${companyDetail.intro}</div>
             </div>
             <div class="right">
                 <div class="follow">
-                    <!--기본-->
                     <div class="right_default">
                         <div class="text">
-                            <h2>회사이름</h2>
+                            <h2>${companyDetail.companyName}</h2>
                         </div>
                         <div class="information">
                             <ul>
                                 <li>
                                     <h2>대표지 주소</h2>
-                                    <p>대표지 주소</p>
+                                    <p>${companyDetail.address}</p>
                                 </li>
                                 <li>
                                     <h2>대표 메일</h2>
-                                    <p>대표 메일</p>
+                                    <p>${companyDetail.email}</p>
                                 </li>
                                 <li>
                                     <h2>지역</h2>
-                                    <p>지역</p>
+                                    <p>${companyDetail.regionCodeName}</p>
                                 </li>
                                 <li>
                                     <h2>직원 수</h2>
-                                    <p>직원 수</p>
+                                    <p>${companyDetail.memberCount}</p>
                                 </li>
                             </ul>
                         </div>

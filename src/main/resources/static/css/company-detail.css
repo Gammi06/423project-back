@@ -39,6 +39,7 @@
 }
 
 .explain .intro_company .left {
+	margin-top: 30px;
     width: 490px;
 }
 
@@ -117,7 +118,7 @@
 
 .explain .intro_company .right .buttons .default a {
     display: block;
-    height: 100%;
+    width: 100%;
 }
 
 .explain .intro_company .right .buttons ul .subscribe {
@@ -129,6 +130,21 @@
     border-radius: 30px;
     font-weight: bold;
 }
+
+.explain .intro_company .right .buttons ul .subscribe:hover {
+    margin-top: 13px;
+    width: 162px;
+    background-color: #0d0d26;
+    padding: 13px 30px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.explain .intro_company .right .buttons ul .subscribe:hover a {
+	color: #33ffcc;
+}
+
 .explain .notice {
     margin-top: 20px;
     background-color: #f4f4f4;
@@ -187,6 +203,7 @@
 .company_info_detail_wrap .container  {
     width: 1000px;
     margin: 0 auto;
+    margin-bottom: 120px;
 }
 
 .company_info_detail_wrap .container .wanteds .wanted {
@@ -194,6 +211,7 @@
     padding: 10px;
     width: 230px;
     height: 330px;
+    margin-bottom: 20px;
 }
 
 .company_info_detail_wrap .container .wanteds .picture {
