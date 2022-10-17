@@ -54,7 +54,7 @@
 	
 	<select id="findAllWanteds"
 		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
-		SELECT w.id, w.title, w.detail, p.id, c.id, p.name, c.name, if(w.enddate > NOW(), '모집중', '마감') state
+		SELECT w.company_id, w.id, w.title, w.detail, w.position_code_id, w.career_code_id, p.name, c.name, if(w.enddate > NOW(), '모집중', '마감') state
 		FROM wanteds w
 		LEFT OUTER JOIN positions_code p
 		ON p.id = w.position_code_id
@@ -65,7 +65,7 @@
 	
 	<select id="findAllByCareer"
 		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
-		SELECT w.id, w.title, w.detail, c.id, c.name, if(w.enddate > NOW(), '모집중', '마감') state
+		SELECT w.company_id, w.id, w.title, w.detail, w.career_code_id, c.name, if(w.enddate > NOW(), '모집중', '마감') state
 		FROM wanteds w
 		INNER JOIN careers_code c
 		ON c.id = w.career_code_id
@@ -75,7 +75,7 @@
 	
 	<select id="findAllByPositionToCompany"
 		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
-		SELECT w.id, w.title, w.detail, p.id, p.name, if(w.enddate > NOW(), '모집중', '마감') state
+		SELECT w.company_id, w.id, w.title, w.detail, w.position_code_id , p.name, if(w.enddate > NOW(), '모집중', '마감') state
 		FROM wanteds w
 		INNER JOIN positions_code p
 		ON p.id = w.position_code_id
@@ -85,7 +85,7 @@
 	
 	<select id="findByBoth"
 		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
-		SELECT w.id, w.title, w.detail, p.id, c.id, c.name, p.name, if(w.enddate > NOW(), '모집중', '마감') state
+		SELECT w.company_id, w.id, w.title, w.detail, w.position_code_id, w.career_code_id, c.name, p.name, if(w.enddate > NOW(), '모집중', '마감') state
 		FROM wanteds w
 		LEFT OUTER JOIN positions_code p
 		ON p.id = w.position_code_id

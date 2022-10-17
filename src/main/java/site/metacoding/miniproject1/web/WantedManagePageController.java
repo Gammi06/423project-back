@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.ApplyManageService;
@@ -21,7 +22,7 @@ public class WantedManagePageController {
 	private final ApplyManageService applyManageService;
 	
 	@GetMapping("/companys/manage/{id}")
-	public String wantedManagePage(Model model, Integer id) {
+	public String wantedManagePage(Model model, @PathVariable Integer id) {
 		List<WantedsManageDto> wanteds = applyManageService.findAllWanteds(id);
 		
 		model.addAttribute("wanteds", wanteds);

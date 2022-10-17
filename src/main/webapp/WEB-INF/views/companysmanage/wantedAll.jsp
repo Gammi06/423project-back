@@ -68,18 +68,18 @@
 						<div class="cp_select">
 							<select name="text">
 								<option value="#" selected="selected">신입/경력</option>
-								<c:forEach var="careersCode" items="${wanteds}"><option value="${wanteds.careerCodeId}">${wanteds.careerName}</option></c:forEach>
+								<c:forEach var="careersCode" items="${wanteds}"><option value="${careersCode.careerName}">${careersCode.careerName}</option></c:forEach>
 							</select>
 							<select name="text" class="select_position">
 								<option value="#" selected="selected">포지션</option>
-								<c:forEach var="positionCode" items="${wanteds}"><option value="${wanteds.positionCodeId}">${wanteds.positionName}</option></c:forEach>
+								<c:forEach var="positionCode" items="${wanteds}"><option value="${positionCode.positionName}">${positionCode.positionName}</option></c:forEach>
 							</select>
 						</div>
 					</div>
 
 					<div class="cp_content_wrapper">
 					<c:forEach var="wanteds" items="${wanteds}">
-					<div class="cp_content_item">
+						<div class="cp_content_item">
 							<div class="cp_item_top">
 								<div class="cp_item_wanted">
 									<a href="#" class="cp_wanted_link">
