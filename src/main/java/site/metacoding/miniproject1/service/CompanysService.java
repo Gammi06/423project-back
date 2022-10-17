@@ -12,6 +12,8 @@ public class CompanysService {
 	private final CompanysDao companysDao;
 
 	public CompanyDetailDto findByIdToDetail(Integer id) {
-		return companysDao.findByIdToDetail(id);
+		 CompanyDetailDto companyDetailDtoPS = companysDao.findByIdToDetail(id);
+		 if(companyDetailDtoPS == null) return null;
+		 return companyDetailDtoPS;
 	}
 }

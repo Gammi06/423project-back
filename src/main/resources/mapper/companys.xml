@@ -6,6 +6,6 @@
 		SELECT c.id, c.company_name, c.address, c.email,
 		c.region_code_name, c.member_count, c.intro
 		FROM companys c
-		WHERE id = 1
+		WHERE id = #{id}
 	</select>
 </mapper>
