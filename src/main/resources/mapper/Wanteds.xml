@@ -34,23 +34,43 @@
 		LEFT OUTER JOIN companys c
 		ON w.company_id = c.id
 		LEFT OUTER JOIN positions_code pc
-		ON w.position_code_id + 1 = pc.id
+		ON w.position_code_id = pc.id
 		LEFT OUTER JOIN careers_code cc
-		ON w.career_code_id + 1 = cc.id
+		ON w.career_code_id = cc.id
 		WHERE w.id = #{id}
 	</select>
 
 	<select id="paging"
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto">
 		SELECT totalCount, totalPage, currentPage,
-		if(currentPage =
-		0, 1, 0) first,
-		if(currentPage = totalPage - 1, 1, 0) last
+		if(currentPage = 0, 1, 0) first,
+		if(currentPage = totalPage - 1, 1, 0) LAST
 		FROM
 		(
 		SELECT COUNT(*) totalCount, CEIL(COUNT(*)/16) totalPage,
-		#{page} currentPage, 0 FIRST, 0 last
-		FROM wanteds
+		0 currentPage, 0 FIRST, 0 last
+		FROM wanteds w
+		LEFT OUTER JOIN companys c
+		ON w.company_id = c.id
+		LEFT OUTER JOIN positions_code pc
+		ON w.position_code_id = pc.id
+		LEFT OUTER JOIN careers_code cc
+		ON w.career_code_id = cc.id
+		WHERE w.enddate > NOW()
+		<if test="keywordDto != null">
+			<if test="keywordDto.positionsCodeName != null and keywordDto.positionsCodeName != '전체'">
+				AND pc.name = #{keywordDto.positionsCodeName}
+			</if>
+			<if test="keywordDto.regionsCodeName != null and keywordDto.regionsCodeName != '전체'">
+				AND c.region_code_name = #{keywordDto.regionsCodeName}
+			</if>
+			<if test="keywordDto.CarrerCodeName != null and keywordDto.CarrerCodeName != '전체'">
+				AND cc.name = #{keywordDto.CarrerCodeName}
+			</if>
+			<if test="keywordDto.skillsCodeName != null">
+				
+			</if>
+		</if>
 		) result
 	</select>
 
@@ -58,18 +78,44 @@
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto">
 		SELECT l.like_count + w.view_count total_count ,w.id,
 		w.position_code_id, w.career_code_id, w.company_id, w.title, w.detail,
-		w.view_count, w.created, w.enddate,
-		c.company_name, c.region_code_name,
-		c.photo
+		w.view_count, w.created, w.enddate, c.company_name, c.region_code_name, c.photo,
+		pc.name, cc.name
 		FROM wanteds w
 		LEFT OUTER JOIN companys c
 		ON w.company_id = c.id
 		LEFT OUTER JOIN
 		(SELECT *, COUNT(user_id) like_count FROM likes
-		GROUP BY
-		wanted_id) l
+		GROUP BY wanted_id) l
 		ON l.wanted_id = w.id
+		LEFT OUTER JOIN positions_code pc
+		ON w.position_code_id = pc.id
+		LEFT OUTER JOIN careers_code cc
+		ON w.career_code_id = cc.id
 		WHERE w.enddate > NOW()
+		<if test="keywordDto != null">
+			<if test="keywordDto.positionsCodeName != null and keywordDto.positionsCodeName != '전체'">
+				AND pc.name = #{keywordDto.positionsCodeName}
+			</if>
+			<if test="keywordDto.regionsCodeName != null and keywordDto.regionsCodeName != '전체'">
+				AND c.region_code_name = #{keywordDto.regionsCodeName}
+			</if>
+			<if test="keywordDto.CarrerCodeName != null and keywordDto.CarrerCodeName != '전체'">
+				AND cc.name = #{keywordDto.CarrerCodeName}
+			</if>
+			<if test="keywordDto.skillsCodeName != null and keywordDto.skillsCodeName.size() != 0">
+				<foreach collection='keywordDto.skillsCodeName' index="index">
+					<if test="keywordDto.skillsCodeName.get(index) != null">
+						AND (
+						SELECT distinct(skills_code_id)
+						FROM myskills mk
+						LEFT OUTER JOIN skills_code sc
+						ON mk.skills_code_id = sc.id
+						WHERE mk.wanted_id = w.id
+						AND sc.name = #{keywordDto.skillsCodeName.get(index)}
+					</if>
+				</foreach>
+			</if>
+		</if>
 		<choose>
 			<when test="state == 1">
 				ORDER BY w.created DESC
@@ -93,11 +139,9 @@
 		ON w.company_id = c.id
 		LEFT OUTER JOIN
 		(SELECT *, COUNT(user_id) like_count FROM likes
-		GROUP BY
-		wanted_id) l
+		GROUP BY wanted_id) l
 		ON l.wanted_id = w.id
-		WHERE w.enddate > NOW() AND l.user_id
-		= #{userId}
+		WHERE w.enddate > NOW() AND l.user_id = #{userId}
 		ORDER BY RAND()
 		LIMIT 4
 	</select>
@@ -108,11 +152,9 @@
 		w.company_id, w.title, w.detail, w.view_count, w.created, w.enddate,
 		c.company_name, c.region_code_name, c.photo
 		FROM wanteds w
-		LEFT OUTER
-		JOIN companys c
+		LEFT OUTER JOIN companys c
 		ON w.company_id = c.id
-		WHERE w.position_code_id =
-		#{positionCodeId}
+		WHERE w.position_code_id = #{positionCodeId}
 		ORDER BY RAND()
 		LIMIT 8
 	</select>
@@ -127,17 +169,13 @@
 		c.photo
 		FROM wanteds w
 		LEFT OUTER JOIN companys c
-		ON w.company_id
-		= c.id
+		ON w.company_id = c.id
 		LEFT OUTER JOIN
 		(SELECT *, COUNT(user_id) like_count FROM likes
-		GROUP BY
-		wanted_id) l
-		ON
-		l.wanted_id = w.id
+		GROUP BY wanted_id) l
+		ON l.wanted_id = w.id
 		WHERE w.enddate > NOW()
-		ORDER BY
-		total_count DESC
+		ORDER BY total_count DESC
 		LIMIT 8
 	</select>
 
@@ -151,17 +189,13 @@
 		c.photo
 		FROM wanteds w
 		LEFT OUTER JOIN companys c
-		ON w.company_id
-		= c.id
+		ON w.company_id = c.id
 		LEFT OUTER JOIN
 		(SELECT *, COUNT(user_id) like_count FROM likes
-		GROUP BY
-		wanted_id) l
-		ON
-		l.wanted_id = w.id
+		GROUP BY wanted_id) l
+		ON l.wanted_id = w.id
 		WHERE w.enddate > NOW()
-		ORDER BY
-		total_count DESC
+		ORDER BY total_count DESC
 		LIMIT 1
 	</select>
 

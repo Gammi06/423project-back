@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.databind.introspect.TypeResolutionContext.Empty;
-
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.domain.codes.CareersCodeDao;
 import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
@@ -13,11 +11,8 @@ import site.metacoding.miniproject1.domain.codes.RegionsCodeDao;
 import site.metacoding.miniproject1.domain.codes.SkillsCodeDao;
 import site.metacoding.miniproject1.domain.wanteds.WantedsDao;
 import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
-import site.metacoding.miniproject1.web.dto.response.codes.CareersCodeDto;
-import site.metacoding.miniproject1.web.dto.response.codes.PositionsCodeDto;
-import site.metacoding.miniproject1.web.dto.response.codes.RegionsCodeDto;
-import site.metacoding.miniproject1.web.dto.response.codes.SkillsCodeDto;
 import site.metacoding.miniproject1.web.dto.response.mySkills.WantedsSkillsDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.KeywordDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingWantedsListDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailAndCompanyDto;
@@ -60,19 +55,24 @@ public class WantedsService {
 		return wantedDetailDtoPS;
 	}
 	
-	public PagingWantedsListDto pagingWantedsList(Integer page, Integer state) {
+	public PagingWantedsListDto pagingWantedsList(Integer page, Integer state, KeywordDto keywordDto) {
 		if(page == null) page = 0;
 		int startNum = page * 16;
-		
 		PagingWantedsListDto pagingWantedsListDtoPS = new PagingWantedsListDto();
-		pagingWantedsListDtoPS.setPagingDto(paging(page));
-		pagingWantedsListDtoPS.setWantedsListDtos(findAllToSort(state, startNum));
+		
+		if(keywordDto == null) keywordDto = null;
+		
+		keywordDto.setRegionsCodeName("서울");
+		
+		pagingWantedsListDtoPS.setPagingDto(paging(page, keywordDto));
+		pagingWantedsListDtoPS.setWantedsListDtos(findAllToSort(state, startNum, keywordDto));
+		
 		
 		return pagingWantedsListDtoPS;
 	}
 	
-	public PagingDto paging(Integer page) {
-		PagingDto pagingPS = wantedsDao.paging(page);
+	public PagingDto paging(Integer page, KeywordDto keywordDto) {
+		PagingDto pagingPS = wantedsDao.paging(page, keywordDto);
 		
 		final int blockCount = 16;
 		int currentBlock = page/ blockCount;
@@ -91,9 +91,9 @@ public class WantedsService {
 		return pagingPS;
 	}
 	
-	public List<WantedsListDto> findAllToSort(Integer state, Integer startNum){
+	public List<WantedsListDto> findAllToSort(Integer state, Integer startNum, KeywordDto keywordDto){
 		if(state == null) state = 0;
-		List<WantedsListDto> wantedsListPS = wantedsDao.findAllToSort(state, startNum);
+		List<WantedsListDto> wantedsListPS = wantedsDao.findAllToSort(state, startNum, keywordDto);
 		
 		for(int i = 0; i < wantedsListPS.size(); i++) {
 			List<WantedsSkillsDto> wantedsSkillsPS = mySkillsService.findMySkillByWantedId(i);
