@@ -1,0 +1,317 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'RixInooAriDuriR';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pretendard-Regular';
+	src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+#wrapper {
+	background-color: rgb(248, 248, 248);
+	font-family: 'GmarketSansMedium';
+	color: #191819;
+}
+
+#cp_wrap {
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	background-color: rgb(248, 248, 248);
+}
+
+#cp_wrap .companypage {
+	width: 250px;
+	padding: 20px 25px 40px 0px;
+}
+
+.companypage_title {
+	font-size: 20px;
+	font-weight: 900;
+	padding: 15px 0px;
+	color: #0d0d12;
+}
+
+.cp_info {
+	border: 1px solid #bbb;
+	border-radius: 5px 5px 0px 0px;
+	background: #fff;
+}
+
+#cp_wrap .cp_contents {}
+
+.cp_account {
+	border-bottom: 1px solid #bbb;
+	padding: 34px 0 0 0;
+}
+
+.cp_account .cp_img {
+	width: 80px;
+	height: 80px;
+	background: #33ffcc;
+	display: block;
+	margin: 0 auto;
+	border-radius: 80px;
+}
+
+.cp_acc .name {
+	color: rgb(94, 94, 94);
+	font-size: 18px;
+	font-weight: 900;
+	text-align: center;
+	margin: 30px 0px 30px 0px;
+}
+
+.cp_acc .email {
+	text-align: center;
+	margin: 0px 0px 30px 0px;
+	font-size: 14px;
+	color: #5E5E5E;
+}
+
+.cp_acc_setting button {
+	width: 216px;
+	height: 37px;
+	margin: 0px 0px 34px 17px;
+	border-radius: 50px;
+	background-color: rgb(230, 230, 230);
+	text-align: center;
+	line-height: 37px;
+	border: none;
+}
+
+.cp_acc_setting button a {
+	color: #5E5E5E;
+	display: block;
+	font-size: 13px;
+}
+
+.cp_acc_setting button:hover {
+	background: #0d0d12;
+}
+
+.cp_acc_setting button a:hover {
+	color: #33ffcc;
+}
+
+.cp_menu select {
+	font-family: 'GmarketSansMedium';
+	border-style: none;
+	border-bottom: 1px solid #bbb;
+	padding: 15px;
+	width: 100%;
+	height: 58px;
+	font-size: 16px;
+	font-weight: 900;
+	color: #333333;
+}
+
+.cp_status {
+	padding: 15px;
+}
+
+.cp_status ul li {
+	padding-bottom: 18px;
+}
+
+.cp_status ul li a {
+	display: flex;
+	justify-content: space-between;
+	color: #333333;
+	font-size: 14px;
+}
+
+.cp_status ul li a .cp_status_li1 span {
+	font-weight: 900;
+	color: #333333;
+	font-size: 15px;
+	display: inline;
+	box-shadow: inset 0 -10px 1px #33ffcc;
+}
+
+.cp_status ul li a:hover .cp_status_li2 span {
+	display: contents;
+	color: #33ffcc;
+}
+
+.companypage .logout button {
+	border: none;
+	background: none;
+	display: block;
+	margin: 0 auto;
+	padding: 25px;
+}
+
+.companypage .logout button a {
+	color: #5E5E5E;
+	display: block;
+	font-size: 14px;
+}
+
+.companypage .logout button a:hover {
+	color: #0d0d12;
+}
+
+.cp_applications {
+	width: 723px;
+	border: 1px solid #bbb;
+	margin: 70px 0 20px 0;
+	border-radius: 5px;
+	background: #fff;
+	min-height: 528px;
+}
+
+.cp_applications .cp_apply_manage {
+	display: flex;
+	justify-content: space-between;
+	width: 677px;
+	height: 60px;
+	margin: 20px auto 0;
+	background-color: rgb(230, 230, 230);
+	border-radius: 25px;
+	box-sizing: border-box;
+	padding: 3px 20px 0;
+}
+
+.cp_applications .cp_apply_manage .cp_apply_text {}
+
+.cp_applications .cp_apply_manage .cp_apply_text p {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 25px;
+	padding-top: 7px;
+}
+
+.cp_applications .cp_apply_manage .cp_apply_text span {
+	font-size: 12px;
+	line-height: 15px;
+}
+
+.cp_applications .cp_apply_manage .cp_arrow {
+	padding-top: 7px;
+	font-size: 30px;
+	font-weight: 900;
+}
+
+.cp_applications .cp_search {
+	padding: 20px 23px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.cp_applications .cp_search .subtitle_btn {
+	width: 130px;
+	height: 40px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 2.5em;
+	background-color: #33ffcc;
+	border-radius: 25px;
+}
+
+.cp_applications .cp_search .subtitle_btn:hover {
+	background-color: #191819;
+	color: #33ffcc;
+}
+
+.cp_applications .cp_search select {
+	width: 130px;
+	height: 40px;
+	margin-left: 14px;
+	padding: 0 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	line-height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #9e9e9e;
+}
+
+.cp_applications .cp_search select.select_position {
+	width: 230px;
+}
+
+.cp_applications .cp_search select .select .cp_application_title {
+	padding: 30px;
+	font-size: 18px;
+	color: #333333;
+}
+
+.cp_content_wrapper {
+	width: 677px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.cp_content_item {
+	width: 320px;
+	height: 150px;
+	border: 1px solid rgb(190, 190, 190);
+	border-radius: 5px;
+	padding: 20px;
+	box-sizing: border-box;
+	margin-bottom: 23px;
+}
+
+.cp_item_top {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cp_item_top .cp_item_wanted {
+	width: 200px;
+	height: 80px;
+}
+
+.cp_item_top .cp_item_wanted .cp_wanted_link {}
+
+.cp_item_top .cp_item_wanted .wanted_title {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	line-height: 26px;
+}
+
+.cp_item_top .cp_item_wanted .wanted_discribes {
+	color: #9e9e9e;
+	font-size: 14px;
+	line-height: 42px;
+}
+
+.cp_item_top .cp_item_state {
+	font-size: 15px;
+	line-height: 26px;
+}
+
+.cp_item_bot {
+	width: 100%;
+	text-align: right;
+}
+
+.cp_item_bot .cp_wanted_modify {
+	font-size: 12px;
+	color: rgb(64, 64, 64);
+	line-height: 2em;
+	text-align: center;
+	border: 1px solid rgb(190, 190, 190);
+	border-radius: 4px;
+	padding: 5px;
+	box-sizing: border-box;
+}

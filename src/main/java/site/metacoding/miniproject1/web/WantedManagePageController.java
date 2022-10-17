@@ -11,35 +11,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.ApplyManageService;
 import site.metacoding.miniproject1.service.WantedsService;
-import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
+import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
 
 @RequiredArgsConstructor
 @Controller
 public class WantedManagePageController {
 	
 	private final HttpSession session;
-	private final WantedsService wantedsService;
 	private final ApplyManageService applyManageService;
 	
-	@GetMapping("/company/manage/{id}")
-	public String mainPage(Model model, Integer positionCodeId) {		
-		WantedsListDto wanteds = wantedsService.findBestHot();
+	@GetMapping("/companys/manage/{id}")
+	public String wantedManagePage(Model model, Integer id) {
+		List<WantedsManageDto> wanteds = applyManageService.findAllWanteds(id);
 		
-		// 로그인 체크
-		// 미로그인시 가장 핫한 공고리스트
-		// + 로그인 했더라도 유저의 포지션값이 null일 경우 보여주는 공고 리스트
-		//List<WantedsListDto> wantedsList = wantedsService.findAllHot();
-
-		// 로그인한 유저의 설정된 포지션값 체크하기
-		positionCodeId = 0;	//테스트용
-		// 로그인시 설정된 포지션 중 가장 핫한 공고 리스트
-		List<WantedsListDto> wantedsList = wantedsService.findAllByPosition(positionCodeId);
-		if(wantedsList == null) {
-			wantedsList = wantedsService.findAllHot();
-		}
-		
-		model.addAttribute("wantedsList", wantedsList);
 		model.addAttribute("wanteds", wanteds);
-		return "all/main";
+		return "companysmanage/wantedAll";
 	}
 }

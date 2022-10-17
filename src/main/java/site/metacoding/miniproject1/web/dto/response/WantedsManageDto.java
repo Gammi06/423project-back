@@ -15,7 +15,9 @@ import lombok.Setter;
 public class WantedsManageDto {
 	private Integer id;
 	private Integer positionCodeId;
+	private Integer positionName;
 	private Integer careerCodeId;
+	private Integer careerName;
 	private Integer companyId;
 	private String title;
 	private String detail;

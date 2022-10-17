@@ -54,37 +54,45 @@
 	
 	<select id="findAllWanteds"
 		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
-		SELECT w.id, w.title, w.detail, if(w.enddate > NOW(), '모집중', '마감') state
-		FROM wanteds w
-	</select>
-	
-	<select id="findAllByCareer"
-		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
-		SELECT w.id, w.title, w.detail, if(w.enddate > NOW(), '모집중', '마감') state
-		FROM wanteds w
-		INNER JOIN careers_code c
-		ON c.id = w.career_code_id
-		WHERE w.career_code_id = #{careerCodeId}
-	</select>
-	
-	<select id="findAllByPositionToCompany"
-		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
-		SELECT w.id, w.title, w.detail, if(w.enddate > NOW(), '모집중', '마감') state
-		FROM wanteds w
-		INNER JOIN positions_code p
-		ON p.id = w.position_code_id
-		WHERE w.position_code_id = #{positionCodeId}
-	</select>
-	
-	<select id="findByBoth"
-		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
-		SELECT w.id, w.title, w.detail, if(w.enddate > NOW(), '모집중', '마감') state
+		SELECT w.id, w.title, w.detail, p.id, c.id, p.name, c.name, if(w.enddate > NOW(), '모집중', '마감') state
 		FROM wanteds w
 		LEFT OUTER JOIN positions_code p
 		ON p.id = w.position_code_id
 		LEFT OUTER JOIN careers_code c
 		ON c.id = w.career_code_id
-		WHERE w.position_code_id = #{positionCodeId}
+		WHERE w.company_id = #{companyId}
+	</select>
+	
+	<select id="findAllByCareer"
+		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
+		SELECT w.id, w.title, w.detail, c.id, c.name, if(w.enddate > NOW(), '모집중', '마감') state
+		FROM wanteds w
+		INNER JOIN careers_code c
+		ON c.id = w.career_code_id
+		WHERE w.company_id = #{companyId}
+		AND w.career_code_id = #{careerCodeId}
+	</select>
+	
+	<select id="findAllByPositionToCompany"
+		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
+		SELECT w.id, w.title, w.detail, p.id, p.name, if(w.enddate > NOW(), '모집중', '마감') state
+		FROM wanteds w
+		INNER JOIN positions_code p
+		ON p.id = w.position_code_id
+		WHERE w.company_id = #{companyId}
+		AND w.position_code_id = #{positionCodeId}
+	</select>
+	
+	<select id="findByBoth"
+		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
+		SELECT w.id, w.title, w.detail, p.id, c.id, c.name, p.name, if(w.enddate > NOW(), '모집중', '마감') state
+		FROM wanteds w
+		LEFT OUTER JOIN positions_code p
+		ON p.id = w.position_code_id
+		LEFT OUTER JOIN careers_code c
+		ON c.id = w.career_code_id
+		WHERE w.company_id = #{companyId}
+		AND w.position_code_id = #{positionCodeId}
 		AND w.career_code_id = #{careerCodeId}
 	</select>
 
