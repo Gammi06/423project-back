@@ -20,7 +20,7 @@ public class MessageController {
     @SendTo("/topic/all")
     public PushMessage getFirstAlarm() throws Exception {
         notificationService.sendGlobalNotification();
-        return new PushMessage("환영합니다!</br>지금 새로운 공고를 확인해보세요!");
+        return new PushMessage("환영합니다!</br>새로운 공고를 확인해보세요!");
     }
 
     @MessageMapping("/proposalalarm")

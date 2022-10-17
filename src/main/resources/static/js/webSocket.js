@@ -23,10 +23,6 @@ function connect() {
             showMessage(JSON.parse(message.body).content);
         });
 
-        stompClient.subscribe('/topic/messages', function (message) {
-            showMessage(JSON.parse(message.body).content);
-        });
-
         stompClient.subscribe('/user/topic/private-messages', function (message) {
             showMessage(JSON.parse(message.body).content);
         });

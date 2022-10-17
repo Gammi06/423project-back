@@ -22,13 +22,11 @@ public class WebSocketService {
         PushMessage response = new PushMessage(message);
         notificationService.sendGlobalNotification();
         messagingTemplate.convertAndSend("/topic/messages", response);
-
     }
 
     public void notifyUser(final String id, final String message) {
         PushMessage response = new PushMessage(message);
         notificationService.sendPrivateNotification(id);
         messagingTemplate.convertAndSendToUser(id, "/topic/private-messages", response);
-
     }
 }
