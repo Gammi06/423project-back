@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="site.metacoding.miniproject1.domain.users.UsersDao">
+	
+	<select id="findByUserId"
+		resultType="site.metacoding.miniproject1.domain.users.Users">
+		SELECT * FROM users WHERE user_id = #{userId}
+	</select>
+</mapper>
