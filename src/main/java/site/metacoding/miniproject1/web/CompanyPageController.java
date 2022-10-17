@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.CompanysService;
 import site.metacoding.miniproject1.web.dto.response.companys.CompanyDetailDto;
+import site.metacoding.miniproject1.web.dto.response.companys.CompanyDetailWithWantedsListDto;
 
 @RequiredArgsConstructor
 @Controller
@@ -16,8 +17,8 @@ public class CompanyPageController {
 
 	@GetMapping("/company/detail/{id}")
 	public String detailPage(Model model, @PathVariable Integer id) {
-		CompanyDetailDto companyDetailDtoPS = companysService.findByIdToDetail(id);
-		model.addAttribute("companyDetail", companyDetailDtoPS);
+		CompanyDetailWithWantedsListDto companyDetailWithWantedsListDtoPS = companysService.findByIdToDetailWithWantedsList(id);
+		model.addAttribute("companyDetail", companyDetailWithWantedsListDtoPS);
 		return "companys/company-detail";
 	}
 }

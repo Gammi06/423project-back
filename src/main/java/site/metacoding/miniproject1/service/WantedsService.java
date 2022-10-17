@@ -28,10 +28,8 @@ public class WantedsService {
 	private final RegionsCodeDao regionsCodeDao;
 	private final CareersCodeDao careersCodeDao;
 	private final MySkillsService mySkillsService;
-	private final CompanysService companysService;
 	
 	public List<WantedsListDto> findAllByCompanyId(Integer id) {
-		if(companysService.findByIdToDetail(id) == null) return null;
 		List<WantedsListDto> wantedsListDtosPS = wantedsDao.findAllByCompanyId(id);
 		return wantedsListDtosPS;
 	}
