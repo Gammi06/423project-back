@@ -9,4 +9,9 @@ public class TestController {
 	public String test() {
 		return "all/test";
 	}
+	
+	@GetMapping("/loginpage")
+	public String login () {
+		return "users/loginpage";
+	}
 }
