@@ -9,4 +9,7 @@ public interface UsersDao {
 	public Users findById(Integer id);
 	public void update(Integer id, Users users);
 	public void deleteById(Integer id);
+	
+	// 로그인을 위한 Dao
+	public Users findByUserId(String userId);
 }
