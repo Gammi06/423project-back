@@ -25,7 +25,7 @@ public class WantedsService {
 		return wantedsDtosPS;
 	}
 
-	public List<WantedsListDto> findAllByposition(Integer positionCodeId) {
+	public List<WantedsListDto> findAllByPosition(Integer positionCodeId) {
 		// 포지션이 있는지 확인하기
 		if (positionsCodeDao.findById(positionCodeId) == null)
 			return null;

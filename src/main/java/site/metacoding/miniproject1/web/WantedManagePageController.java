@@ -1,11 +1,7 @@
 package site.metacoding.miniproject1.web;
 
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -13,17 +9,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject1.service.ApplyManageService;
 import site.metacoding.miniproject1.service.WantedsService;
 import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
 
 @RequiredArgsConstructor
 @Controller
-public class MainPageController {
+public class WantedManagePageController {
 	
 	private final HttpSession session;
 	private final WantedsService wantedsService;
+	private final ApplyManageService applyManageService;
 	
-	@GetMapping({"/", "/main"})
+	@GetMapping("/company/manage/{id}")
 	public String mainPage(Model model, Integer positionCodeId) {		
 		WantedsListDto wanteds = wantedsService.findBestHot();
 		

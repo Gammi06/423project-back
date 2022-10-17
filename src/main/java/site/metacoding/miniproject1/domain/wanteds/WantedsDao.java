@@ -3,6 +3,7 @@ package site.metacoding.miniproject1.domain.wanteds;
 import java.util.List;
 
 import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
+import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
 
 public interface WantedsDao {
 	// 기본기능
@@ -15,4 +16,9 @@ public interface WantedsDao {
 	public WantedsListDto findBestHot();
 	public List<WantedsListDto> findAllHot();
 	public List<WantedsListDto> findAllByposition(Integer positionCodeId);
+	
+	public List<WantedsManageDto> findAllWanteds(Integer companyId);
+	public List<WantedsManageDto> findAllByCareer(Integer careerCodeId);
+	public List<WantedsManageDto> findAllByPosition(Integer positionCodeId);
+	public List<WantedsManageDto> findByBoth(Integer careerCodeId, Integer positionCodeId);
 }

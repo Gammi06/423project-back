@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.miniproject1.domain.wanteds.WantedsDao">
 
-	<select id="findAllByposition"
+	<select id="findAllByPosition"
 		resultType="site.metacoding.miniproject1.web.dto.response.WantedsListDto">
 		SELECT w.id, w.position_code_id, w.career_code_id, w.company_id, w.title, w.detail, w.view_count, w.created, w.enddate,
 		c.company_name, c.region_code_name, c.photo
@@ -50,6 +50,42 @@
 		WHERE w.enddate > NOW()
 		ORDER BY total_count DESC
 		LIMIT 1
+	</select>
+	
+	<select id="findAllWanteds"
+		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
+		SELECT w.id, w.title, w.detail, if(w.enddate > NOW(), '모집중', '마감') state
+		FROM wanteds w
+	</select>
+	
+	<select id="findAllByCareer"
+		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
+		SELECT w.id, w.title, w.detail, if(w.enddate > NOW(), '모집중', '마감') state
+		FROM wanteds w
+		INNER JOIN careers_code c
+		ON c.id = w.career_code_id
+		WHERE w.career_code_id = #{careerCodeId}
+	</select>
+	
+	<select id="findAllByPositionToCompany"
+		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
+		SELECT w.id, w.title, w.detail, if(w.enddate > NOW(), '모집중', '마감') state
+		FROM wanteds w
+		INNER JOIN positions_code p
+		ON p.id = w.position_code_id
+		WHERE w.position_code_id = #{positionCodeId}
+	</select>
+	
+	<select id="findByBoth"
+		resultType="site.metacoding.miniproject1.web.dto.response.WantedsManageDto">
+		SELECT w.id, w.title, w.detail, if(w.enddate > NOW(), '모집중', '마감') state
+		FROM wanteds w
+		LEFT OUTER JOIN positions_code p
+		ON p.id = w.position_code_id
+		LEFT OUTER JOIN careers_code c
+		ON c.id = w.career_code_id
+		WHERE w.position_code_id = #{positionCodeId}
+		AND w.career_code_id = #{careerCodeId}
 	</select>
 
 </mapper>
