@@ -8,10 +8,10 @@
                 <div class="picture">
                     <img src="https://picsum.photos/1000">
                 </div>
-                <div class="text">${wantedDetailAndCompany.wantedDetailDtoPS.detail}</div>
+                <div class="text">${wantedDetail.detail}</div>
                 <div class="skills">
                     <ul>
-						<c:forEach var="mySkills" items="${wantedDetailAndCompany.wantedDetailDtoPS.mySkills}">
+						<c:forEach var="mySkills" items="${wantedDetail.mySkills}">
                         	<li class="skill_items">${mySkills.skillsCodeName}</li>
                         </c:forEach>
                     </ul>
@@ -69,10 +69,10 @@
                     <!--기본-->
                     <div class="right_default">
                         <div class="text">
-                            <h2>${wantedDetailAndCompany.wantedDetailDtoPS.title}</h2>
-                            <h3><a href="/company/detail/${wantedDetailAndCompany.wantedDetailDtoPS.companyId}">${wantedDetailAndCompany.wantedDetailDtoPS.companyName}</a></h3>
-                            <strong>${wantedDetailAndCompany.wantedDetailDtoPS.positionCodeName}</strong>
-                            <p>${wantedDetailAndCompany.wantedDetailDtoPS.careerCodeName}</p>
+                            <h2>${wantedDetail.title}</h2>
+                            <h3><a href="/company/detail/${wantedDetail.companyId}">${wantedDetail.companyName}</a></h3>
+                            <strong>${wantedDetail.positionCodeName}</strong>
+                            <p>${wantedDetail.careerCodeName}</p>
                         </div>
                         <div class="buttons">
                             <div class="default">
@@ -98,7 +98,7 @@
             이름님, 이 포지션을 찾고 계셨나요?
         </h3>
         <div class="wanteds">
-        	<c:forEach var="wantedsList" items="${wantedDetailAndCompany.wantedsListDtosPS}">
+        	<c:forEach var="wantedsList" items="${wantedsList}">
 	        	<div class="wanted">
 	                <div class="wanted">
 	                    <a href="/wanteds/${wantedsList.id}">

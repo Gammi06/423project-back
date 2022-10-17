@@ -17,6 +17,7 @@ import site.metacoding.miniproject1.web.dto.response.mySkills.WantedsSkillsDto;
 public class WantedDetailDto {
 	private Integer id;
 	private String positionCodeName;
+	private Integer positionCodeId;
 	private String careerCodeName;
 	private String title;
 	private String detail;

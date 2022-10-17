@@ -27,7 +27,7 @@
 	
 	<select id="findByIdToDetail"
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto">
-		SELECT w.id, pc.name position_code_name, cc.name career_code_name,
+		SELECT w.id, pc.name position_code_name, w.position_code_id, cc.name career_code_name,
 		w.title, w.detail, w.view_count, w.created, w.enddate, c.photo,
 		c.company_name, c.id company_id, c.region_code_name
 		FROM wanteds w

@@ -13,6 +13,7 @@ import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.KeywordDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingWantedsListDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailAndCompanyDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
 
 @RequiredArgsConstructor
@@ -36,8 +37,10 @@ public class WantedsPageController {
 	
 	@GetMapping("/wanteds/{id}")
 	public String wantedsDetailPage(Model model, @PathVariable Integer id) {
-		WantedDetailAndCompanyDto wantedDetailAndCompanyDtoPS = wantedsService.findByCompanyIdAndAllWanteds(id); 
-		model.addAttribute("wantedDetailAndCompany", wantedDetailAndCompanyDtoPS);
+		WantedDetailDto wantedDetailDtoPS = wantedsService.findByIdToDetail(id);
+		List<WantedsListDto> wantedsListDtosPS = wantedsService.findAllByposition(wantedDetailDtoPS.getPositionCodeId());
+		model.addAttribute("wantedDetail", wantedDetailDtoPS);
+		model.addAttribute("wantedsList", wantedsListDtosPS);
 		return "wanteds/wanted-detail";
 	}
 }
