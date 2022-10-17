@@ -27,59 +27,41 @@
 }
 
 /*///////////////////////// explain /////////////////////////*/
-.explain {
+.company_info_detail_wrap .explain {
     font-family: 'Pretendard-Regular';
     width: 1000px;
     margin: 0 auto;
 }
 
-.explain .intro_company {
+.company_info_detail_wrap .explain .intro_company {
     display: flex;
     justify-content: space-between;
 }
 
-.explain .intro_company .left {
+.company_info_detail_wrap .explain .intro_company .left {
 	margin-top: 30px;
     width: 490px;
 }
 
-.explain .intro_company .left .picture{
+.company_info_detail_wrap .explain .intro_company .left .picture{
     width: 700px;
     width: 490px;
 }
 
-.explain .intro_company .left .picture img {
+.company_info_detail_wrap .explain .intro_company .left .picture img {
     width: 700px;
     height: 490px;
     overflow: hidden;
     position: relative;
 }
 
-.explain .intro_company .left .text {
+.company_info_detail_wrap .explain .intro_company .left .text {
     width: 700px;
     font-size: 16px;
     margin-top: 20px;
 }
 
-.explain .skills {
-    margin-top: 20px;
-    width: 700px;
-}
-
-.explain .skills ul {
-    display: flex;
-    justify-content: space-between;
-}
-
-.explain .skills ul li {
-    background-color: #f4f4f4;
-    border-radius: 30px;
-    padding: 10px 30px;
-    font-size: 14px;
-    color: #888;
-}
-
-.explain .intro_company .right .right_default{
+.company_info_detail_wrap .explain .intro_company .right .right_default{
     margin-top: 30px;
     width: 222px;
     height: 406px;
@@ -89,39 +71,34 @@
     position: relative;
 }
 
-.explain .intro_company .right .text {
+.company_info_detail_wrap .explain .intro_company .right .text {
     width: 100%;
     color: #191819;
 }
 
-.explain .intro_company .right .text h2 {
+.company_info_detail_wrap .explain .intro_company .right .text h2 {
     height: 70px;
     font-size: 24px;
     font-weight: bold;
     color: #191819;
 }
 
-.explain .intro_company .right .text strong {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.explain .intro_company .right .buttons {
+.company_info_detail_wrap .explain .intro_company .right .buttons {
     width: 100%;
     height: 150px;
 }
 
-.explain .intro_company .right .buttons .default {
+.company_info_detail_wrap .explain .intro_company .right .buttons .default {
     position: absolute;
     bottom: 5%;
 }
 
-.explain .intro_company .right .buttons .default a {
+.company_info_detail_wrap .explain .intro_company .right .buttons .default a {
     display: block;
     width: 100%;
 }
 
-.explain .intro_company .right .buttons ul .subscribe {
+.company_info_detail_wrap .explain .intro_company .right .buttons ul .subscribe {
     margin-top: 13px;
     width: 162px;
     background-color: #f2f2f2;
@@ -131,7 +108,7 @@
     font-weight: bold;
 }
 
-.explain .intro_company .right .buttons ul .subscribe:hover {
+.company_info_detail_wrap .explain .intro_company .right .buttons ul .subscribe:hover {
     margin-top: 13px;
     width: 162px;
     background-color: #0d0d26;
@@ -141,11 +118,11 @@
     font-weight: bold;
 }
 
-.explain .intro_company .right .buttons ul .subscribe:hover a {
+.company_info_detail_wrap .explain .intro_company .right .buttons ul .subscribe:hover a {
 	color: #33ffcc;
 }
 
-.explain .notice {
+.company_info_detail_wrap .explain .notice {
     margin-top: 20px;
     background-color: #f4f4f4;
     width: 100%;
@@ -155,38 +132,39 @@
     justify-content: space-around;
 }
 
-.explain .notice .text {
+.company_info_detail_wrap .explain .notice .text {
     font-size: 12px;
     color: #888;
 }
 
-.right .information ul li {
+.company_info_detail_wrap .right .information ul {
+	padding-bottom: 50px;
+}
+
+.company_info_detail_wrap .right .information ul li {
     border-bottom: 1px solid #888;
     padding: 10px;
     margin-bottom: 10px;
     width: 202px;
 }
 
-.right .information ul li h2 {
+.company_info_detail_wrap .right .information ul li h2 {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.right .information ul li p {
+.company_info_detail_wrap .right .information ul li p {
     font-size: 16px;
     color: #888;
 }
 
-.right .follow {
+.company_info_detail_wrap .right .follow {
     position: sticky;
     top: 30px
 }
 
 /*///////////////////////// wanteds /////////////////////////*/
-.company_info_detail_wrap .container {
-	padding-top : 50px;
-}
 
 .company_info_detail_wrap .container h3 {
     margin-top: 50px;

@@ -56,7 +56,7 @@
 			<c:forEach var="wantedsList" items="${companyDetail.wantedsListDtos}">
 				<div class="wanted">
 				    <div class="wanted">
-				        <a href="#">
+				        <a href="/wanteds/${wantedsList.id}">
 				        <div class="picture">
 				            <img src="https://picsum.photos/seed/picsum/200/300">
 				        </div>

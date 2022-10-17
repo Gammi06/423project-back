@@ -70,7 +70,7 @@
                     <div class="right_default">
                         <div class="text">
                             <h2>${wantedDetailAndCompany.wantedDetailDtoPS.title}</h2>
-                            <h3>${wantedDetailAndCompany.wantedDetailDtoPS.companyName}</h3>
+                            <h3><a href="/company/detail/${wantedDetailAndCompany.wantedDetailDtoPS.companyId}">${wantedDetailAndCompany.wantedDetailDtoPS.companyName}</a></h3>
                             <strong>${wantedDetailAndCompany.wantedDetailDtoPS.positionCodeName}</strong>
                             <p>${wantedDetailAndCompany.wantedDetailDtoPS.careerCodeName}</p>
                         </div>
