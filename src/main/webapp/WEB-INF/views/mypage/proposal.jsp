@@ -21,7 +21,7 @@
                     <p class="pp_sub_title">받은 요청</p>
                     <div class="pp_search">
                         <form name="searchProposal">
-                            <input type="text" placeholder="회사명 검색" name="keyword">
+                            <input id="keyword" type="text" placeholder="회사명 검색" name="keyword">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
@@ -63,6 +63,6 @@
                 </div>
             </div>
         </div>
-        
+
         <script src="/js/proposal.js"></script>
         <%@ include file="../layout/footer.jsp" %>

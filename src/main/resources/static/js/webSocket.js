@@ -68,7 +68,6 @@ function sendApplicationAlarm() {
     stompClient.send("/ws/applicationalarm");
 }
 
-
 function sendPrivateMessage() {
     console.log("sending private message");
     stompClient.send("/ws/private-message", {}, JSON.stringify({ 'messageContent': $("#private-message").val() }));

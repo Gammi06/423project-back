@@ -1,6 +1,7 @@
 package site.metacoding.miniproject1.websocket;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.annotation.SendToUser;
@@ -42,7 +43,6 @@ public class MessageController {
     @MessageMapping("/private-message")
     @SendToUser("/topic/private-messages")
     public PushMessage getPrivateMessage(Message message, String id) throws Exception {
-        Thread.sleep(1000);
         notificationService.sendPrivateNotification(id);
         return new PushMessage(HtmlUtils.htmlEscape(
                 "Sending private message to user " + id + " : " + message.getMessageContent()));
