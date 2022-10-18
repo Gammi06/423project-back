@@ -12,15 +12,16 @@ import lombok.Setter;
 @Getter
 public class Users {
 	private Integer id;
-	private String user_id;
-	private String user_password;
-	private String user_name;
+	private String userId;
+	private String userPassword;
+	private String userName;
 	private Integer age;
-	private String phone_number;
+	private String phoneNumber;
 	private String email;
 	private Blob photo;
-	private String position_code_name;
-	private Integer company_id;
-	private Integer mycareer_id;
+	private Integer positionCodeId;
+	private Integer companyId;
+	private Integer mycareerId;
 	private Timestamp created;
+	
 }

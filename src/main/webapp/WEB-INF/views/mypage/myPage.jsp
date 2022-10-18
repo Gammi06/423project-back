@@ -58,7 +58,6 @@
                             <a href="#">로그아웃</a>
                         </button>
                     </div>
-
                 </div>
 
                 <div class="mp_contents">

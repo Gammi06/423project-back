@@ -144,3 +144,4 @@ $(".application_notifications").click(function () {
 });
 
 connect();
+
