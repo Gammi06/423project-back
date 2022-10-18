@@ -68,5 +68,48 @@
 	</div>
 	<!--.as_wrap-->
 </div>
+<script>
+$("#btnUpdatePassword").click(() => {
+	passwordupdate();
+});
 
+function passwordupdate() {
+	if(passwordCheck() == false){
+		alert("비밀번호가 일치하지 않습니다.");
+		return;
+	}
+
+	function passwordCheck() {
+		let userNewPassword = $("#userNewPassword").val();
+		let userNewPasswordCheck = $("#userNewPasswordCheck").val();
+		if (userNewPassword == userNewPasswordCheck) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	let data = {
+		userPassword: $("#userNewPassword").val(),
+	};
+
+	let id = $("#id").val();
+
+	$.ajax("/api/users/password/" + id, {
+		type: "PUT",
+		dataType: "json", // 응답 데이터
+		data: JSON.stringify(data), // http body에 들고갈 요청 데이터
+		headers: { // http header에 들고갈 요청 데이터
+			"Content-Type": "application/json; charset=utf-8"
+		}
+	}).done((res) => {
+		if (res.code == 1) {
+			alert("비밀번호 수정 완료");
+			location.reload(); // f5
+		} else {
+			alert("업데이트에 실패하였습니다");
+		}
+	});
+}
+</script>
 <%@ include file="../layout/footer.jsp"%>

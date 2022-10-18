@@ -49,4 +49,25 @@
 	</div>
 	<!--.as_wrap-->
 </div>
+<script>
+$("#btnDelete").click(() => {
+	  deleteById();
+	});
+
+function deleteById(){
+	let id= $("#id").val();
+
+	  $.ajax("/api/users/delete/" + id, {
+			type: "DELETE",
+			dataType: "json"
+		}).done((res) => {
+			if (res.code == 1) {
+				alert("회원탈퇴 성공했습니다.");
+				location.href = "/loginpage"; 
+			} else {
+				alert("회원탈퇴에 실패했습니다.");
+			}
+		});
+	}
+</script>
 <%@ include file="../layout/footer.jsp"%>

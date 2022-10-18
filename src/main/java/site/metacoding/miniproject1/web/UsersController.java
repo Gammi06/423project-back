@@ -97,6 +97,22 @@ public class UsersController {
 		return new CMRespDto<>(1, "비밀번호설정 성공", null);
 	}
 	
+	@GetMapping("/users/delete/{id}")
+	public String delete(@PathVariable Integer id, Model model) {
+		Users usersPS = usersService.기본정보보기(id);
+		model.addAttribute("users", usersPS);
+		return "users/as_delete";
+	}
+	
+	@DeleteMapping("/api/users/delete/{id}")
+	public @ResponseBody CMRespDto<?> deleteById (@PathVariable Integer id, HttpServletResponse response) {
+		usersService.회원탈퇴(id);
+		Cookie cookie = new Cookie("userId", null);
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
+		session.invalidate();
+	    return new CMRespDto<>(1, "회원탈퇴성공", null);
+	}
 
 
 }
