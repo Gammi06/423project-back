@@ -18,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.domain.users.Users;
 import site.metacoding.miniproject1.service.UsersService;
 import site.metacoding.miniproject1.web.dto.request.users.UsersLoginReqDto;
+import site.metacoding.miniproject1.web.dto.request.users.UsersPasswordReqDto;
 import site.metacoding.miniproject1.web.dto.request.users.UsersUpdateReqDto;
 import site.metacoding.miniproject1.web.dto.response.CMRespDto;
 
@@ -78,6 +79,21 @@ public class UsersController {
 		Users usersPS = usersService.기본정보수정(id, updateReqDto);
 		session.setAttribute("principal", usersPS); // 세션 동기화
 		return new CMRespDto<>(1, "기본정보수정 성공", null);
+	}
+
+	@GetMapping("/s/users/password/{id}")
+	public String password(@PathVariable Integer id, Model model) {
+		Users usersPS = usersService.기본정보보기(id);
+		model.addAttribute("users", usersPS);
+		return "users/as_password";
+	}
+
+	@PutMapping("/s/api/users/password/{id}")
+	public @ResponseBody CMRespDto<?> updateByPassword(@PathVariable Integer id,
+			@RequestBody UsersPasswordReqDto passwordReqDto) {
+		Users usersPS = usersService.비밀번호설정(id, passwordReqDto);
+		session.setAttribute("principal", usersPS); // 세션 동기화
+		return new CMRespDto<>(1, "비밀번호설정 성공", null);
 	}
 
 }
