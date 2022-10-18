@@ -60,7 +60,7 @@ public class UsersController {
 	public String logout() {
 		session.invalidate();
 		System.out.println("로그아웃 됐습니다.");
-		return "redirect:/loginForm";
+		return "redirect:/loginpage";
 	}
 
 }
