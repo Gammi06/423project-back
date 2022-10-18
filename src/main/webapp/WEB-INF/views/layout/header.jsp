@@ -14,6 +14,7 @@
 	rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/footer.css"
 	rel="stylesheet">
+	
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -57,7 +58,7 @@
 								<li><a class="profile_item" href="#">지원 현황</a></li>
 								<li><a class="profile_item" href="#">제안받기 현황</a></li>
 								<li><a class="profile_item" href="#">좋아요</a></li>
-								<li><a class="profile_item" href="#">구독</a></li>
+								<li><a class="profile_item" href="/subscribes/${id}">구독</a></li>
 								<li><a class="profile_item_logout" href="/logout">로그아웃</a></li>
 							</ul></li>
 					</c:otherwise>

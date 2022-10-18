@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class Subcribes {
 	private Integer id;
-	private Integer user_id;
-	private Integer company_id;
+	private Integer userId;
+	private Integer companyId;
 	private Timestamp created;
 }
