@@ -55,7 +55,7 @@
 
                     <div class="logout">
                         <button>
-                            <a href="#">로그아웃</a>
+                            <a href="/logout">로그아웃</a>
                         </button>
                     </div>
                     <div class="btn_proposal"><button>

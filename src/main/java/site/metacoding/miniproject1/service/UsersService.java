@@ -47,5 +47,7 @@ public class UsersService {
 
 		return usersPs;
 	}
+	
+	public void 탈퇴하기() {}
 
 }
