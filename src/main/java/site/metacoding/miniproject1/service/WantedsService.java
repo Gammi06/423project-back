@@ -2,6 +2,8 @@ package site.metacoding.miniproject1.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -28,6 +30,7 @@ public class WantedsService {
 	private final RegionsCodeDao regionsCodeDao;
 	private final CareersCodeDao careersCodeDao;
 	private final MySkillsService mySkillsService;
+	private final HttpSession session;
 	
 	public List<WantedsListDto> findAllByCompanyId(Integer id) {
 		List<WantedsListDto> wantedsListDtosPS = wantedsDao.findAllByCompanyId(id);
@@ -60,13 +63,8 @@ public class WantedsService {
 		PagingWantedsListDto pagingWantedsListDtoPS = new PagingWantedsListDto();
 		
 		if(keywordDto == null) keywordDto = null;
-		
-		keywordDto.setRegionsCodeName("서울");
-		
 		pagingWantedsListDtoPS.setPagingDto(paging(page, keywordDto));
 		pagingWantedsListDtoPS.setWantedsListDtos(findAllToSort(state, startNum, keywordDto));
-		
-		
 		return pagingWantedsListDtoPS;
 	}
 	
