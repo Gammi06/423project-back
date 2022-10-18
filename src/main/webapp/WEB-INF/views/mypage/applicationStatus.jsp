@@ -46,7 +46,6 @@
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
-
                     <div>
                         <table class="as_table">
                             <thead>
@@ -75,7 +74,5 @@
                 </div>
             </div>
         </div>
-
         <script src="/js/applicationStatus.js"></script>
-
         <%@ include file="../layout/footer.jsp" %>
