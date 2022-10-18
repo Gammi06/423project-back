@@ -20,4 +20,9 @@
 		#{email}, phone_number = #{phoneNumber}
 		WHERE id = #{id}
 	</update>
+
+	<update id="updateByPassword">
+		UPDATE users SET user_password = #{userPassword}
+		WHERE id = #{id}
+	</update>
 </mapper>
