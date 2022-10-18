@@ -115,8 +115,8 @@ function resetApplicationNotificationCount() {
     updateApplicationNotificationDisplay();
 }
 
-$(".btn_login").click(function () {
-    sendFirstAlarm();
+$("#btnLogin").click(function () {
+    login();
 });
 
 $(".btn_proposal").click(function () {
