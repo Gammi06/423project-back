@@ -9,10 +9,13 @@ import site.metacoding.miniproject1.domain.codes.CareersCodeDao;
 import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
 import site.metacoding.miniproject1.domain.wanteds.WantedsDao;
 import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
+import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
+import site.metacoding.miniproject1.web.dto.response.companys.PagingDto;
+import site.metacoding.miniproject1.web.dto.response.companys.PagingWantedsManageDto;
 
 @RequiredArgsConstructor
 @Service
-public class ApplyManageService {
+public class RecruitManageService {
 	private final WantedsDao wantedsDao;
 	private final PositionsCodeDao positionsCodeDao;
 	private final CareersCodeDao careersCodeDao;
@@ -43,5 +46,43 @@ public class ApplyManageService {
 	public List<WantedsManageDto> findByBoth(Integer companyId, Integer careerCodeId, Integer positionCodeId) {
 		List<WantedsManageDto> wantedsManageDtoPS = wantedsDao.findByBoth(companyId, careerCodeId, positionCodeId);
 		return wantedsManageDtoPS;
+	}
+	
+	public AllCodesDto findAllCodes() {
+		AllCodesDto allCodesDto = new AllCodesDto();
+		allCodesDto.setPositionsCodeDtos(positionsCodeDao.findAll());
+		allCodesDto.setCareersCodeDtos(careersCodeDao.findAll());
+		return allCodesDto;
+	}
+	
+	public PagingWantedsManageDto pagingWantedsManage(Integer page, Integer companyId) {
+		if(page == null) page = 0;
+		int startNum = page * 5;
+		
+		PagingWantedsManageDto pagingWantedsManageDtoPS = new PagingWantedsManageDto();
+		pagingWantedsManageDtoPS.setPagingDto(paging(page));
+		pagingWantedsManageDtoPS.setWantedsManageDtos(wantedsDao.findAllWanteds(companyId));
+		
+		return pagingWantedsManageDtoPS;
+	}
+	
+	public PagingDto paging(Integer page) {
+		PagingDto pagingPS = wantedsDao.paging(page);
+		
+		final int blockCount = 5;
+		int currentBlock = page/ blockCount;
+		int startPageNum = 1 + blockCount * currentBlock;
+		int lastPageNum = 5 + blockCount * currentBlock;
+		
+		if(pagingPS.getTotalPage() < lastPageNum) {
+			lastPageNum = pagingPS.getTotalPage();
+		}
+		
+		pagingPS.setBlockCount(blockCount);
+		pagingPS.setCurrentBlock(currentBlock);
+		pagingPS.setStartPageNum(startPageNum);
+		pagingPS.setLastPageNum(lastPageNum);
+		
+		return pagingPS;
 	}
 }

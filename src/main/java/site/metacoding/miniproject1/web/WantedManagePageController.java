@@ -10,22 +10,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
-import site.metacoding.miniproject1.service.ApplyManageService;
-import site.metacoding.miniproject1.service.WantedsService;
+import site.metacoding.miniproject1.service.RecruitManageService;
 import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
+import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
+import site.metacoding.miniproject1.web.dto.response.companys.PagingWantedsManageDto;
 
 @RequiredArgsConstructor
 @Controller
 public class WantedManagePageController {
 	
 	private final HttpSession session;
-	private final ApplyManageService applyManageService;
+	private final RecruitManageService recruitManageService;
 	
 	@GetMapping("/companys/manage/{id}")
-	public String wantedManagePage(Model model, @PathVariable Integer id) {
-		List<WantedsManageDto> wanteds = applyManageService.findAllWanteds(id);
+	public String wantedManagePage(Model model, Integer page, @PathVariable Integer id) {
+		List<WantedsManageDto> wanteds = recruitManageService.findAllWanteds(id);
+		PagingWantedsManageDto pagingWantedsManagePS = recruitManageService.pagingWantedsManage(page, id);
+		AllCodesDto allCodesPS = recruitManageService.findAllCodes();
 		
 		model.addAttribute("wanteds", wanteds);
+		model.addAttribute("allCodes", allCodesPS);
+		model.addAttribute("pagingWantedsManage", pagingWantedsManagePS);
 		return "companysmanage/wantedAll";
 	}
 }

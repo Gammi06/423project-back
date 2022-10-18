@@ -1,6 +1,4 @@
-package site.metacoding.miniproject1.web.dto.response;
-
-import java.sql.Timestamp;
+package site.metacoding.miniproject1.web.dto.response.codes;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,8 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter
-public class PositionCodeDto {
+public class CareersCodeDto {
 	private Integer id;
 	private String name;
-	private Timestamp created;
 }

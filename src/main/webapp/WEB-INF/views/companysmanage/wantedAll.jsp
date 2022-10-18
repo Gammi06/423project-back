@@ -68,11 +68,15 @@
 						<div class="cp_select">
 							<select name="text">
 								<option value="#" selected="selected">신입/경력</option>
-								<c:forEach var="careersCode" items="${wanteds}"><option value="${careersCode.careerName}">${careersCode.careerName}</option></c:forEach>
+								<c:forEach var="careersCode" items="${allCodes.careersCodeDtos}">
+								<option value="${careersCode.id}">${careersCode.name}</option>
+								</c:forEach>
 							</select>
 							<select name="text" class="select_position">
 								<option value="#" selected="selected">포지션</option>
-								<c:forEach var="positionCode" items="${wanteds}"><option value="${positionCode.positionName}">${positionCode.positionName}</option></c:forEach>
+								<c:forEach var="positionCode" items="${allCodes.positionsCodeDtos}">
+								<option value="${positionCode.id}">${positionCode.name}</option>
+								</c:forEach>
 							</select>
 						</div>
 					</div>
@@ -94,6 +98,16 @@
 							</div>
 						</div>
 					</c:forEach>
+					<div class="paging">
+					<ul class="pagination">
+						<li class='page-item-prev${pagingWantedsManage.pagingDto.first ? "hidden" : ""}'><a href="/companys/manage/${id}/?page=${pagingWantedsManage.pagingDto.currentPage - 1}">이전</a></li>
+						<c:forEach var="num" begin="${pagingWantedsManage.pagingDto.startPageNum}" end="${pagingWantedsManage.pagingDto.lastPageNum}">
+							<li class='page-item${pagingWantedsManage.pagingDto.currentPage + 1 == num ? "-select" : ""}'>
+							<a href="/companys/manage/${id}/?page= ${num-1}">${num}</a></li>
+						</c:forEach>
+						<li class='page-item-next${pagingWantedsManage.pagingDto.last ? "-hidden" : ""}'><a href="/companys/manage/${id}/?page=${pagingWantedsManage.pagingDto.currentPage + 1}">다음</a></li>
+					</ul>
+					</div>
 					</div>
 				</div>
 			</div>

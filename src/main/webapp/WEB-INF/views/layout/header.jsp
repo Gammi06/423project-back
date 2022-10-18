@@ -12,6 +12,8 @@
     <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/companypage_manage.css" rel="stylesheet">
+    
     
 </head>
 <body>

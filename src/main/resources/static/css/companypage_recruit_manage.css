@@ -316,3 +316,14 @@
 	padding: 5px;
 	box-sizing: border-box;
 }
+
+.cp_content_wrapper .paging {
+	width: 667px;
+}
+
+.cp_content_wrapper .paging .pagination {
+	width: 400px;
+	display: flex;
+	justify-content: space-around;
+	margin: 25px auto 30px;
+}

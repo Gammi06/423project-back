@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
 import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
+import site.metacoding.miniproject1.web.dto.response.companys.PagingDto;
 
 public interface WantedsDao {
 	// 기본기능
@@ -23,4 +24,5 @@ public interface WantedsDao {
 	public List<WantedsManageDto> findAllByCareer(@Param("companyId") Integer companyId, @Param("careerCodeId") Integer careerCodeId);
 	public List<WantedsManageDto> findAllByPosition(@Param("companyId") Integer companyId, @Param("positionCodeId") Integer positionCodeId);
 	public List<WantedsManageDto> findByBoth(@Param("companyId") Integer companyId, @Param("careerCodeId") Integer careerCodeId, @Param("positionCodeId") Integer positionCodeId);
+	public PagingDto paging(Integer page);
 }
