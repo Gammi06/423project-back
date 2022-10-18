@@ -12,4 +12,7 @@ public interface UsersDao {
 	
 	// 로그인을 위한 Dao
 	public Users findByUserId(String userId); 
+	
+	// 비밀번호 수정을 위한 Dao
+	public void updateByPassword(Users users);
 }
