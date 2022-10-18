@@ -65,6 +65,9 @@
                             <a href="#">지원하기</a>
                         </button></div>
                     <p class="application_notifications"></p>
+                    <div class="btn_login"><button>
+                            <a href="#">로그인</a>
+                        </button></div>
                 </div>
 
                 <div class="mp_contents">

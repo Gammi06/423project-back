@@ -116,6 +116,10 @@ function resetApplicationNotificationCount() {
     updateApplicationNotificationDisplay();
 }
 
+$(".btn_login").click(function () {
+    sendFirstAlarm();
+});
+
 $(".btn_proposal").click(function () {
     sendProposalAlarm();
 });
@@ -141,6 +145,3 @@ $(".application_notifications").click(function () {
 });
 
 connect();
-setTimeout(function () {
-    sendFirstAlarm();
-}, 2000);
