@@ -26,38 +26,45 @@ public class MyPageService {
 
     private final ApplicationStatusDao applicationStatusDao;
 
-    public InfoAllDto viewMyPage() {
-        List<UserInfoDto> userInfoDtos = applicationStatusDao.findUser();
-        List<InfoCountDto> infoCountDtos = applicationStatusDao.findInfoCounts();
-        List<CompanyInfoDto> companyInfoDtos = applicationStatusDao.findCompany();
-        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts();
+    public InfoAllDto viewMyPage(Integer id) {
+        List<UserInfoDto> userInfoDtos = applicationStatusDao.findUser(id);
+        List<InfoCountDto> infoCountDtos = applicationStatusDao.findInfoCounts(id);
+        List<CompanyInfoDto> companyInfoDtos = applicationStatusDao.findCompany(id);
+        if(companyInfoDtos.size() == 0) {
+        	companyInfoDtos = applicationStatusDao.findCompanyIfNull();
+        }
+        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
         InfoAllDto infoAllDto = new InfoAllDto(userInfoDtos, infoCountDtos, companyInfoDtos, statusCountDtos);
         return infoAllDto;
     }
 
-    public StatusAllDto viewAll(String keyword) {
-        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts();
-        List<StatusInfoDto> statusInfoDtos = applicationStatusDao.findAll(keyword);
+
+    public StatusAllDto viewAll(Integer id, String keyword) {
+        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
+        List<StatusInfoDto> statusInfoDtos = applicationStatusDao.findAll(id, keyword);
         StatusAllDto statusAllDto = new StatusAllDto(statusCountDtos, statusInfoDtos);
         return statusAllDto;
     }
 
-    public StatusWaitingDto viewWaiting(String keyword) {
-        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts();
-        List<StatusWaitingInfoDto> statusWaitingInfoDtos = applicationStatusDao.findWaiting(keyword);
+
+    public StatusWaitingDto viewWaiting(Integer id, String keyword) {
+        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
+        List<StatusWaitingInfoDto> statusWaitingInfoDtos = applicationStatusDao.findWaiting(id, keyword);
         StatusWaitingDto statusWaitingDto = new StatusWaitingDto(statusCountDtos, statusWaitingInfoDtos);
         return statusWaitingDto;
     }
 
-    public StatusFinalDto viewFinal(String keyword) {
-        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts();
-        List<StatusFinalInfoDto> statusFinalInfoDtos = applicationStatusDao.findFinal(keyword);
+
+    public StatusFinalDto viewFinal(Integer id, String keyword) {
+        List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
+        List<StatusFinalInfoDto> statusFinalInfoDtos = applicationStatusDao.findFinal(id, keyword);
         StatusFinalDto statusFinalDto = new StatusFinalDto(statusCountDtos, statusFinalInfoDtos);
         return statusFinalDto;
     }
 
-    public RequestsDto viewRequests(String keyword) {
-        List<RequestsInfoDto> requestsInfoDtos = applicationStatusDao.findRequest(keyword);
+
+    public RequestsDto viewRequests(Integer id, String keyword) {
+        List<RequestsInfoDto> requestsInfoDtos = applicationStatusDao.findRequest(id, keyword);
         RequestsDto requestsDto = new RequestsDto(requestsInfoDtos);
         return requestsDto;
     }

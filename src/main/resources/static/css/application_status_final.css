@@ -204,6 +204,10 @@ body {
     vertical-align: middle;
 }
 
+.asf_table td a:hover {
+    color: #33ffcc;
+}
+
 .asf_table td .pass {
     color: #0000ee;
 }

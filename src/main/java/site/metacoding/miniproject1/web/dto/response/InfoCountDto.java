@@ -10,6 +10,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class InfoCountDto {
+    private Integer id;
     private Integer statusAll;
     private Integer likesCount;
     private Integer subscribesCount;

@@ -41,12 +41,12 @@
                     </div>
 
                     <div class="asa_search">
-                        <form method="get" action="/applicationstatusall">
-                            <input type="text" placeholder="회사명 검색" name="keyword" value="${referer.keyword}">
+                        <form name="searchAll">
+                            <input id="keyword" type="text" placeholder="회사명 검색" name="keyword"
+                                value="${referer.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
-
 
                     <div>
                         <table class="asa_table">
@@ -61,7 +61,7 @@
                             <tbody>
                                 <c:forEach var="statusInfoDtos" items="${statusAllDto.statusInfoDtos}">
                                     <tr>
-                                        <td>${statusInfoDtos.companyName}</td>
+                                        <td><a href="#">${statusInfoDtos.companyName}</a> </td>
                                         <td>${statusInfoDtos.positionCodeName}</td>
                                         <td>${statusInfoDtos.created}</td>
                                         <td>
@@ -88,5 +88,5 @@
                 </div>
             </div>
         </div>
-
+        <script src="/js/applicationStatus.js"></script>
         <%@ include file="../layout/footer.jsp" %>

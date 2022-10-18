@@ -10,26 +10,29 @@ import site.metacoding.miniproject1.web.dto.response.StatusFinalInfoDto;
 import site.metacoding.miniproject1.web.dto.response.StatusInfoDto;
 import site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto;
 import site.metacoding.miniproject1.web.dto.response.UserInfoDto;
+import org.apache.ibatis.annotations.Param;
 
 public interface ApplicationStatusDao {
 	// 기본기능
 	public void insert(ApplicationStatus applicationStatus);
 
-	public List<UserInfoDto> findUser();
+	public List<UserInfoDto> findUser(Integer id);
 
-	public List<CompanyInfoDto> findCompany();
+	public List<CompanyInfoDto> findCompany(Integer id);
+	
+	public List<CompanyInfoDto> findCompanyIfNull();
 
-	public List<InfoCountDto> findInfoCounts();
+	public List<InfoCountDto> findInfoCounts(Integer id);
 
-	public List<StatusInfoDto> findAll(String keyword);
+	public List<StatusInfoDto> findAll(@Param("id") Integer id, @Param("keyword") String keyword);
 
-	public List<StatusCountDto> findCounts();
+	public List<StatusCountDto> findCounts(Integer id);
 
-	public List<StatusWaitingInfoDto> findWaiting(String keyword);
+	public List<StatusWaitingInfoDto> findWaiting(@Param("id") Integer id, @Param("keyword") String keyword);
 
-	public List<StatusFinalInfoDto> findFinal(String keyword);
+	public List<StatusFinalInfoDto> findFinal(@Param("id") Integer id, @Param("keyword") String keyword);
 
-	public List<RequestsInfoDto> findRequest(String keyword);
+	public List<RequestsInfoDto> findRequest(@Param("id") Integer id, @Param("keyword") String keyword);
 
 	public ApplicationStatus findById(Integer id);
 

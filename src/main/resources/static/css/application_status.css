@@ -204,6 +204,10 @@ body {
     vertical-align: middle;
 }
 
+.as_table td a:hover {
+    color: #33ffcc;
+}
+
 .as_table td .waiting {
     color: #333333;
 }
