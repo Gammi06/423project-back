@@ -21,11 +21,8 @@
                     <p class="pp_sub_title">받은 요청</p>
                     <div class="pp_search">
                         <form name="searchProposal">
-                            <<<<<<< HEAD <input id="keyword" type="text" placeholder="회사명 검색" name="keyword">
-                                =======
-                                <input type="text" placeholder="회사명 검색" name="keyword">
-                                >>>>>>> c63fed018074742680fc921569332d2e2319260b
-                                <button class="btn_search" type="submit"></button>
+                            <input id="keyword" type="text" placeholder="회사명 검색" name="keyword">
+                            <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
 
