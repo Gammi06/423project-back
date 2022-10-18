@@ -26,34 +26,33 @@ public class UsersController {
 	private final HttpSession session;
 
 	@GetMapping("/loginpage")
-	public String loginForm(Model model, HttpServletRequest request) {
+	public String loginpage(Model model, HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
-		for (Cookie cookie : cookies) {
-			if (cookie.getName().equals("userId")) {
+		for(Cookie cookie : cookies) {
+			if(cookie.getName().equals("userId")) {
 				model.addAttribute(cookie.getName(), cookie.getValue());
 			}
 		}
 		return "users/loginpage";
 	}
 
-	@PostMapping("/login")
+	@PostMapping("/api/login")
 	public @ResponseBody CMRespDto<?> login(@RequestBody UsersLoginReqDto loginDto, HttpServletResponse response) {
-		if (loginDto.isRemember()) {
+		if(loginDto.isRemember()) {
 			Cookie cookie = new Cookie("userId", loginDto.getUserId());
-			cookie.setMaxAge(60 * 60 * 24);
+			cookie.setMaxAge(60*60*24);
 			response.addCookie(cookie);
-		} else {
+		}else {
 			Cookie cookie = new Cookie("userId", null);
 			cookie.setMaxAge(0);
 			response.addCookie(cookie);
 		}
-
+		
 		Users principal = usersService.로그인(loginDto);
-		if (principal == null) {
+		if(principal == null) {
 			return new CMRespDto<>(-1, "로그인실패", null);
 		}
 		session.setAttribute("principal", principal);
 		return new CMRespDto<>(1, "로그인성공", null);
 	}
-
 }

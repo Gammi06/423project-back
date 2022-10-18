@@ -42,7 +42,7 @@
 			<!--login_password-->
 			<div class="login_id_remember">
 				<input id="remember" type="checkbox">
-				<p class="input_text">&nbsp;아이디를 기억합니다.</p>
+				<p class="input_text">아이디를 기억합니다.</p>
 			</div>
 			<!--login_id_remembe-->
 			<div class="button_button">
@@ -82,7 +82,6 @@ function login() {
 	}).done((res) => {
 		if (res.code == 1) {
 			alert("로그인성공");
-			location.href = "/";
 
 		} else {
 			alert("로그인 실패, 아이디 패스워드를 확인해주세요");

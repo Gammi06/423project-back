@@ -9,4 +9,5 @@
 		resultType="site.metacoding.miniproject1.domain.users.Users">
 		SELECT * FROM users WHERE user_id = #{userId}
 	</select>
+	
 </mapper>

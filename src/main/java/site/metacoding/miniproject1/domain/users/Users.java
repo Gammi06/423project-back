@@ -23,4 +23,5 @@ public class Users {
 	private Integer companyId;
 	private Integer mycareerId;
 	private Timestamp created;
+	
 }

@@ -1,6 +1,5 @@
 package site.metacoding.miniproject1.service;
 
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,7 @@ import site.metacoding.miniproject1.web.dto.request.users.UsersLoginReqDto;
 @Service
 public class UsersService {
 	private final UsersDao usersDao;
-	
+
 	public Users 로그인(UsersLoginReqDto usersLoginReqDto) {
 		Users usersPS = usersDao.findByUserId(usersLoginReqDto.getUserId());
 		// if로 usersPS의 password와 Dto의 password 비교
@@ -25,5 +24,4 @@ public class UsersService {
 			return null;
 		}
 	}
-
 }
