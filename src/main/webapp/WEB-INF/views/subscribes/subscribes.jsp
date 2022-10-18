@@ -22,7 +22,7 @@
 				<tr>
 					<th>회사명</th>
 					<th>현재 올라온 공고</th>
-					<th>일자</th>
+					<th>마감일자</th>
 					<th>상태</th>
 				</tr>
 			</thead>
@@ -32,7 +32,7 @@
 					<tr class="company_body" onclick="location.href='/'" style="cursor: pointer">
 						<td><a href="/">${subscribesRespListDto.companyName}</a></td>
 						<td><a href="/">${subscribesRespListDto.companyName}</a></td>
-						<td>${subscribesRespListDto.created}</td>
+						<td>${subscribesRespListDto.enddate}</td>
 						<td>
 						<c:choose>
 								<c:when test="${subscribesRespListDto.state == '모집중'}">
