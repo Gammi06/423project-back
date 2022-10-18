@@ -15,20 +15,22 @@
 			<ul>
 				<li class="cont_resumenew">
 					<div class="resumenew_img">
-						<a href="update"><img src="/assets/icon_resume.png"
+						<a href="/resume/write"><img src="/assets/icon_resume.png"
 							alt="이력서이미지"></a>
 					</div>
 					<div class="resumenew_text">
-						<a href="update">새 이력서 작성</a>
+						<a href="/resume/write">새 이력서 작성</a>
 					</div>
 				</li>
-				<c:forEach var="resumeList" items="${resume}">
+				<c:forEach var="resume" items="${resumeList}">
 					<li class="cont_resumelist">
-						<div class="resumelist_name">${resumeList.title}</div>
-						<div class="resumelist_date">${resumeList.created}</div>
-						<div class="resumelist_img">
-							<a href="#"><img src="/assets/icon_view.png" alt="보기이미지"></a>
-							<a href="#"><img src="/assets/icon_delete.png" alt="삭제이미지"></a>
+						<div>
+							<div class="resumelist_name">${resume.title}</div>
+							<div class="resumelist_date">${resume.created}</div>
+						</div>
+						<div class="resumelist_btn">
+							<a href="javascript:void(0);" class="btn_view"><img src="/assets/icon_view.png" alt="보기이미지"></a>
+							<a href="#" class="btn_delete" value="${resume.id}"><img src="/assets/icon_delete.png" alt="삭제이미지" ></a>
 						</div>
 					</li>
 				</c:forEach>
@@ -37,6 +39,7 @@
 	</div>
 </section>
 <!------.resume03_sec끝------>
+<script src="/js/resume_delete.js"></script>
 
 
 <%@ include file="../layout/footer.jsp"%>

@@ -11,10 +11,10 @@ import lombok.Setter;
 @Getter
 public class Educations {
 	private Integer id;
-	private Integer user_id;
-	private Integer resume_id;
-	private Timestamp startdate;
-	private Timestamp enddate;
+	private Integer userId;
+	private Integer resumeId;
+	private Timestamp startDate;
+	private Timestamp endDate;
 	private String instruction;
 	private String state;
 }

@@ -38,7 +38,6 @@ body::-webkit-scrollbar {
 .resume03_sec {
 	width: 100%;
 	margin: 0 auto;
-	background-color: #f2f2f2;
 }
 
 .resume03_sec .sec_box {
@@ -47,6 +46,7 @@ body::-webkit-scrollbar {
 	padding-top: 50px;
 	padding-bottom: 500px;
 	padding-left: 35px;
+	background-color: #f2f2f2;
 }
 
 .resume03_sec .sec_box .box_title{
@@ -126,13 +126,13 @@ body::-webkit-scrollbar {
 	padding-bottom: 35px;
 }
 
-.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_img{
+.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_btn{
 	border-top: 1px solid #bbb;
 	text-align: right;
 	padding-top: 5px;
 }
 
-.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_img img{
+.resume03_sec .sec_box .box_cont .cont_resumelist .resumelist_btn img{
 	width: 25px;
 	margin-right: 10px;
 }

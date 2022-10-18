@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
+import site.metacoding.miniproject1.domain.resumes.Resumes;
 import site.metacoding.miniproject1.domain.resumes.ResumesDao;
 import site.metacoding.miniproject1.web.dto.response.resume.ResumeListDto;
 import site.metacoding.miniproject1.web.dto.response.resume.ResumeUpdateDto;
@@ -15,11 +16,23 @@ public class ResumeService {
 	
 	private final ResumesDao resumesDao;
 	
-	public ResumeUpdateDto findById(Integer id) {
-		return resumesDao.findById(id);
+	public ResumeUpdateDto updateById(Integer id) {
+		return resumesDao.updateById(id);
 	}
 	
-	public List<ResumeListDto> findByUserId(Integer id) {
-		return resumesDao.findByUserId(id);
+	public List<ResumeListDto> ListById(Integer id) {
+		return resumesDao.ListById(id);
+	}
+	
+	public List<Resumes> findAll(Integer id) {
+		return resumesDao.findAll();
+	}
+	
+	public void delete(Integer id) {
+		resumesDao.deleteById(id);
+	}
+	
+	public void update(Integer id, Resumes resumes) {
+		resumesDao.update(id, resumes);
 	}
 }

@@ -12,8 +12,10 @@
     <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/resume_main.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/resume_write.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/resume_update.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/resume_list.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <header class="header">

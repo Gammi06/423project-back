@@ -7,10 +7,12 @@ import site.metacoding.miniproject1.web.dto.response.resume.ResumeUpdateDto;
 
 public interface ResumesDao {
 	// 기본기능
-	public void insert(Resumes resumes);
+	public ResumeUpdateDto updateById(Integer id);
+	public List<ResumeListDto> ListById(Integer id);
 	public List<Resumes> findAll();
-	public ResumeUpdateDto findById(Integer id);
-	public void update(Integer id, Resumes resumes);
 	public void deleteById(Integer id);
-	public List<ResumeListDto> findByUserId(Integer id);
+	public void insert(Resumes resumes);
+	public void update(Integer id, Resumes resumes);
+	public Resumes findById(Integer id);
+
 }

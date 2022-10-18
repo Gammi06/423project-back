@@ -11,14 +11,14 @@ import lombok.Setter;
 @Getter
 public class Wanteds {
 	private Integer id;
-	private String position_code_name;
-	private Integer career_code_id;
+	private String positionCodeName;
+	private Integer careerCodeId;
 	private String pay;
-	private Integer company_id;
+	private Integer companyId;
 	private String title;
 	private String detail;
-	private Integer view_count;
+	private Integer viewCount;
 	private Timestamp created;
-	private Timestamp enddate;
+	private Timestamp endDate;
 	private Boolean checked;
 }

@@ -1,6 +1,5 @@
 package site.metacoding.miniproject1.domain.companys;
 
-import java.sql.Blob;
 import java.sql.Timestamp;
 
 import lombok.Getter;
@@ -12,14 +11,14 @@ import lombok.Setter;
 @Getter
 public class Companys {
 	private Integer id;
-	private String company_name;
+	private String companyName;
 	private String address;
 	private String email;
-	private String company_number;
-	private Blob photo;
-	private String region_code_name;
+	private String companyNumber;
+	private String photo;
+	private String regionCodeName;
 	private String intro;
 	private Integer years;
-	private Integer member_count;
+	private Integer memberCount;
 	private Timestamp created;
 }

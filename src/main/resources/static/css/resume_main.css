@@ -41,7 +41,7 @@ body::-webkit-scrollbar {
 .resume01_sec1{
 	height: 440px;
 	width: 100%;
-	background: url(../assets/banner_resume01.jpg) no-repeat center;
+	background: url('/assets/img_resume06.jpg') no-repeat center;
 	margin: 0 auto;
 }
 
@@ -57,10 +57,11 @@ body::-webkit-scrollbar {
 }
 
 .resume01_sec1 div .sec1_cont1 span{
-	color: #fff;
+	color: white;
 	font-weight: bold;
 	font-size: 56px;
     font-family: 'GmarketSansMedium';
+    text-shadow: -5px 0px 5px #6B71F2, 5px 1px 5px #373CA6, 5px 0px 5px #373CA6, 0px -5px 5px #373CA6;
 }
 
 .resume01_sec1 div .sec1_cont2{
@@ -68,9 +69,11 @@ body::-webkit-scrollbar {
 }
 
 .resume01_sec1 div .sec1_cont2 span{
-	color: #fff;
+	color: white;
 	font-size: 18px;
 	font-family: 'Pretendard-Regular';
+	text-shadow: -5px 0px 5px #6B71F2, 5px 1px 5px #373CA6, 5px 0px 5px #373CA6, 0px -5px 5px #373CA6;
+	font-weight: bold;
 }
 
 .resume01_sec1 div .sec1_cont3{
@@ -90,7 +93,7 @@ body::-webkit-scrollbar {
 .resume01_sec1 div .sec1_cont4 .btn{
 	font-weight: bold;
 	font-size: 18px;
-	border: 1px solid #0000ee;
+	border: 2px solid #0000ee;
 	border-radius: 30px;
 	width: 160px;
 	height: 45px;
@@ -154,14 +157,21 @@ body::-webkit-scrollbar {
 
 .resume01_sec2 .sec2_box .box_tl{
 	margin: 0 10px 10px 0;
+	background-image: url('/assets/img_resume03.jpg');
 }
 
 .resume01_sec2 .sec2_box .box_bl{
 	margin: 0 10px 0 0;
+	background-image: url('/assets/img_resume03.jpg');
 }
 
 .resume01_sec2 .sec2_box .box_tr{
 	margin: 0 0 10px 0;
+	background-image: url('/assets/img_resume03.jpg');
+}
+
+.resume01_sec2 .sec2_box .box_br{
+	background-image: url('/assets/img_resume03.jpg');
 }
 /*------.resume01_sec2끝------*/
 
@@ -193,7 +203,7 @@ body::-webkit-scrollbar {
 .resume01_sec3 div p{
 	width: 800px;
 	height: 500px;
-	background-color: white;
+	background: url('/assets/img_resume06.jpg') no-repeat center;
 }
 /*------.resume01_sec3끝------*/
 
@@ -218,24 +228,24 @@ body::-webkit-scrollbar {
 
 .resume01_sec4 .btn_newresume{
 	background-color: #0000ee;
-	border: 1px solid #0000ee;
+	border: 2px solid #0000ee;
 	border-radius: 30px;
 	height: 50px;
 	width: 160px;
 	text-align: center;
 	margin-right: 0;
 	color: white;
-}
-
-.resume01_sec4 .btn_newresume:hover{
-	background-color: white;
-	color: #0000ee;
-}
-
-.resume01_sec4 .btn_newresume span{
 	line-height: 50px;
 	font-weight: bold;
 	font-size: 18px;
     font-family: 'GmarketSansMedium';
+    cursor: pointer;
+}
+
+.resume01_sec4 .btn_newresume:hover{
+	background-color:  #e6e6e6;
+	color: #0000ee;
+	border: 2px solid #0000ee;
+	border-radius: 30px;
 }
 /*------.resume01_sec4끝------*/

@@ -13,7 +13,7 @@ public class MyCareers {
 	private Integer id;
 	private Integer userId;
 	private Integer resumeId;
-	private Timestamp startdate;
-	private Timestamp enddate;
+	private Timestamp startDate;
+	private Timestamp endDate;
 	private String companyName;
 }
