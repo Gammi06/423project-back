@@ -53,7 +53,7 @@
 						<li class="profile"><a href="#">프로필</a>
 							<ul class="profile_list">
 								<li><a class="profile_item_mypage"
-									href="#">My page</a></li>
+									href="/mypage/${principal.id}">My page</a></li>
 								<li><a class="profile_item" href="#">지원 현황</a></li>
 								<li><a class="profile_item" href="#">제안받기 현황</a></li>
 								<li><a class="profile_item" href="#">좋아요</a></li>

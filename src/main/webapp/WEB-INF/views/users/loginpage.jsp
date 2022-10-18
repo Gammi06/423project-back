@@ -82,7 +82,7 @@ function login() {
 	}).done((res) => {
 		if (res.code == 1) {
 			alert("로그인성공");
-
+			location.reload();
 		} else {
 			alert("로그인 실패, 아이디 패스워드를 확인해주세요");
 		}
