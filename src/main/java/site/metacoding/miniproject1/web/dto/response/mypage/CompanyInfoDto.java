@@ -1,4 +1,4 @@
-package site.metacoding.miniproject1.web.dto.response;
+package site.metacoding.miniproject1.web.dto.response.mypage;
 
 import java.sql.Blob;
 

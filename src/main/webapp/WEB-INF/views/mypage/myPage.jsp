@@ -58,19 +58,6 @@
                             <a href="#">로그아웃</a>
                         </button>
                     </div>
-                    <div class="btn_proposal"><button>
-                            <a href="#">제안하기</a>
-                        </button></div>
-                    <div class="btn_application"><button>
-                            <a href="#">지원하기</a>
-                        </button></div>
-                    <p class="application_notifications"></p>
-                    <div class="btn_login"><button>
-                            <a href="#">로그인</a>
-                        </button></div>
-                    <div class="btn_private-proposal"><button>
-                            <a href="#">개인한테 제안하기</a>
-                        </button></div>
 
                 </div>
 
