@@ -1,0 +1,127 @@
+@charset "UTF-8";
+.company_header {
+    display: block;
+    background-color: #0d0d26;
+    border-bottom: 1px solid #bbb;
+    height: 50px;
+	font-family: GmarketSansMedium;
+
+}
+
+.company_header_inner {
+    width: 1000px;
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+s .company_header_inner .company_menu {
+    text-align: center;
+    flex: 0 1 50px;
+    color: #bbb;
+
+}
+
+.company_header_inner .company_menu a {
+    margin-left: 45px;
+    color: #bbb;
+    width: 150px;
+}
+/*버튼*/
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+ margin-right: -650px;
+}
+.dropbtn {
+    background-color: #0d0d12;
+    background: none;
+    color: #bbb;
+    padding: 16px;
+    font-size: 14px;
+    border: none; 
+  }
+  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 96px;
+  min-height: 40px;
+  font-size: 14px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px 0px #bbb;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #0d0d12;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {
+  display: block;}
+
+.dropdown:hover .dropbtn{
+  background: none;
+  color: #bbb;
+
+}
+
+ 
+  .dropdown-content a {
+    color: #bbb;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+
+/*버튼 끝*/
+
+
+.company_header_inner .company_login a {
+    display: block;
+    color: #888888;
+    overflow: hidden;
+    width: 60px;
+
+}
+
+.company_header_inner .company_login a:hover {
+    display: block;
+    color: #0d0d12;
+    
+}
+
+.company_header_inner .company_service {
+    margin-top: 14px;
+    width: 133px;
+    height: 34px;
+    padding-left: -70px;
+    margin-right: -20px;
+}
+
+.company_header_inner .company_service a {
+    padding: 8px 30px;
+    border-radius: 30px;
+    border: 2px solid #f4f4f4;
+    background-color: #0d0d12;
+    color: #f4f4f4;
+    line-height: 20px;
+}
+
+.company_header_inner .company_service a:hover {
+    border: 2px solid #0d0d12;
+    background-color: #f4f4f4;
+    color: #0d0d12;
+}

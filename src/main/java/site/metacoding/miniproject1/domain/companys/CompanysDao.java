@@ -9,4 +9,5 @@ public interface CompanysDao {
 	public Companys findById(Integer id);
 	public void update(Integer id, Companys companys);
 	public void deleteById(Integer id);
+	public Companys findByIdCompanysNumber(String companyNumber);
 }
