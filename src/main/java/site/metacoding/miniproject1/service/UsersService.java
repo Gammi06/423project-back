@@ -24,4 +24,6 @@ public class UsersService {
 			return null;
 		}
 	}
+	
+	public void 기본정보수정() {};
 }
