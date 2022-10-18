@@ -47,7 +47,8 @@ public class UsersService {
 
 		return usersPs;
 	}
-	
-	public void 탈퇴하기() {}
 
+	public void 회원탈퇴(Integer id) {
+		usersDao.deleteById(id);
+	}
 }
