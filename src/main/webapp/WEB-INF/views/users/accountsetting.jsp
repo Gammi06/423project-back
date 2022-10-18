@@ -13,8 +13,7 @@
 				<li class="as_position"><a href="/users/as/${principal.id}">기본정보
 						수정</a></li>
 				<li class="as_proposal"><a href="#">프로필 수정</a></li>
-				<li class="as_proposal"><a
-					href="#">비밀번호 설정</a></li>
+				<li class="as_proposal"><a href="#">비밀번호 설정</a></li>
 				<li class="as_proposal"><a href="#">회원 탈퇴</a></li>
 			</ul>
 		</div>
@@ -30,9 +29,9 @@
 				</div>
 				<div class="as_img">
 					<div class="photo">
-							<img src="" class="input_img">
+						<img src="" class="input_img">
 					</div>
-					<!--photo--> 
+					<!--photo-->
 					<div class="img">
 						<div class="plus">
 							<label for="file" class="input_file">+ </label> <input
@@ -71,6 +70,34 @@
 	<!--.as_wrap-->
 </div>
 <script>
+$("#btnUpdate").click(() => {
+	update();
+});
 
+function update() {
+	let data = {
+		userName: $("#userName").val(),
+		email: $("#email").val(),
+		phoneNumber: $("#phoneNumber").val()
+	};
+
+	let id = $("#id").val();
+
+	$.ajax("/api/users/as/" + id, {
+		type: "PUT",
+		dataType: "json", 
+		data: JSON.stringify(data), 
+		headers: { 
+			"Content-Type": "application/json; charset=utf-8"
+		}
+	}).done((res) => {
+		if (res.code == 1) {
+			alert("회원 수정 완료");
+			location.reload(); // f5
+		} else {
+			alert("업데이트에 실패하였습니다");
+		}
+	});
+}
 </script>
 <%@ include file="../layout/footer.jsp"%>
