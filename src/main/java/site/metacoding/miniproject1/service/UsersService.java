@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.domain.users.Users;
 import site.metacoding.miniproject1.domain.users.UsersDao;
 import site.metacoding.miniproject1.web.dto.request.users.UsersLoginReqDto;
+import site.metacoding.miniproject1.web.dto.request.users.UsersUpdateReqDto;
 
 @RequiredArgsConstructor
 @Service
@@ -24,6 +25,17 @@ public class UsersService {
 			return null;
 		}
 	}
-	
-	public void 기본정보수정() {};
+
+	public Users 기본정보수정(Integer id, UsersUpdateReqDto usersUpdateReqDto) {
+		Users usersPs = usersDao.findById(id);
+		usersPs.update(usersUpdateReqDto);
+		usersDao.update(usersPs);
+
+		return usersPs;
+	}
+
+	public Users 기본정보보기(Integer id) {
+		Users usersPs = usersDao.findById(id);
+		return usersPs;
+	}
 }
