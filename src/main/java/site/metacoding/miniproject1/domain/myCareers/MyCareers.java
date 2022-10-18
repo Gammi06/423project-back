@@ -11,9 +11,9 @@ import lombok.Setter;
 @Getter
 public class MyCareers {
 	private Integer id;
-	private Integer user_id;
-	private Integer resume_id;
+	private Integer userId;
+	private Integer resumeId;
 	private Timestamp startdate;
 	private Timestamp enddate;
-	private String company_name;
+	private String companyName;
 }

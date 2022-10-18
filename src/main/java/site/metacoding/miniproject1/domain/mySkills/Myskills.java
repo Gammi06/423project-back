@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 public class Myskills {
 	private Integer id;
-	private Integer user_id;
-	private Integer resume_id;
-	private Integer wanted_id;
-	private Integer skills_code_id;
+	private Integer userId;
+	private Integer resumeId;
+	private Integer wantedId;
+	private Integer skillsCodeId;
 }

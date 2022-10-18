@@ -1,0 +1,279 @@
+@charset "UTF-8";
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: auto;
+	font-family: GmarketSansMedium;
+}
+
+.center_header {
+	justify-content: left;
+	align-items: flex-start;
+	width: 900px;
+	margin-top: 40px;
+}
+
+.center_header .company_info {
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.center_header .mine_title {
+	color: #bbb;
+	font-size: 14px;
+}
+
+/*회사명 입력 */
+.companyname_title {
+	justify-content: left;
+	align-items: flex-start;
+	width: 900px;
+	margin-top: 50px;
+}
+
+.companyname_title .company_namebox {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.companyname_title #companyName {
+	width: 900px;
+	height: 40px;
+	color: #191819;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	padding-left: 10px;
+}
+
+/*회사명 입력 완료*/
+
+/*대표주소/ 대표메일*/
+.boss_set {
+	display: flex;
+	justify-content: space-between;
+	width: 900px;
+	margin-top: 50px;
+}
+
+.boss_set .Representativeaddresstext {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.boss_set #address {
+	/*대표지 입력란*/
+	width: 440px;
+	height: 40px;
+	color: #191819;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	padding-left: 10px;
+	margin-right: 10px;
+}
+
+.boss_set .representativemailformtext {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.boss_set  #email {
+	/*대표메일입력란*/
+	width: 440px;
+	height: 40px;
+	color: #191819;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	padding-left: 10px;
+}
+
+/*사업자 번호 /지역*/
+.buisnessman {
+	display: flex;
+	justify-content: space-between;
+	width: 900px;
+	margin-top: 50px;
+}
+
+.buisnessman .businessnumberform {
+	/*사업자번호*/
+	font-size: 16px;
+	margin-bottom: -5px;
+	padding-bottom: 13px;
+}
+
+.buisnessman #companyNumber {
+	/*사업자번호 입력란*/
+	width: 440px;
+	height: 40px;
+	color: #191819;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	padding-left: 10px;
+	margin-right: 10px;
+}
+
+.buisnessman #btncompanyNumberSameCheck {
+	width: 200px;
+	height: 20px;
+	font-size: 16px;
+	margin-top: 5px;
+	background: #fff;
+	border: none;
+	text-align: right;
+	font-family: GmarketSansMedium;
+}
+
+#btncompanyNumberSameCheck a:hover {
+	font-size: 16px;
+	color: #191819;
+	box-shadow: inset 0 -10px 1px #33ffcc;
+}
+
+.regionform {
+	margin-top: 8px;
+}
+
+.buisnessman #region {
+	/*대표지역*/
+	font-size: 16px;
+	margin-bottom: 12px;
+}
+
+.buisnessman #regionCodeName {
+	/*대표지역입력란*/
+	width: 440px;
+	height: 40px;
+	color: #191819;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	padding-left: 10px;
+	margin-right: 10px;
+}
+
+/*회사소개*/
+.companyabouttusset {
+	justify-content: left;
+	align-items: flex-start;
+	width: 900px;
+	margin-top: 50px;
+}
+
+.companyabouttusset .companyabouttusform {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.companyabouttusset #intro {
+	width: 900px;
+	height: 146px;
+	color: #191819;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	padding-left: 10px;
+	resize: none;
+}
+
+/*회사소개완료*/
+
+/*설립연도 /직원 수*/
+.companybirth {
+	display: flex;
+	justify-content: space-between;
+	width: 900px;
+	margin-top: 50px;
+}
+
+.companybirth  .establishyears {
+	/*사업자번호*/
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.companybirth #years {
+	/*직원입력란*/
+	width: 440px;
+	height: 40px;
+	color: #191819;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	padding-left: 10px;
+	margin-right: 10px;
+}
+
+.companybirth .establishnumber .femployeeorm {
+	/*직원수*/
+	font-size: 16px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.companybirth .establishnumber {
+	margin-top: -6px;
+}
+
+.companybirth .establishnumber #memberCount {
+	/*직원수*/
+	width: 440px;
+	height: 40px;
+	color: #191819;
+	border-radius: 5px;
+	border: 1px solid #aaa;
+	padding-left: 10px;
+	margin-top: -9px;
+}
+
+/*설립연도 /직원 수 완료*/
+
+/*이용약관*/
+.Terms_of_service {
+	justify-content: space-between;
+	width: 900px;
+	margin-top: 50px;
+}
+
+.Terms_of_service .sel2 {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.Terms_of_service #form-label {
+	width: 914px;
+	height: 146px;
+	color: #bbb;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	padding-left: 10px;
+}
+
+.buttonform {
+	display: flex;
+	justify-content: space-between;
+	width: 900px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.buttonform .form_check {
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.buttoncheckform .buttoncheck2 {
+	width: 144px;
+	height: 44px;
+	border: 1px solid #bbb;
+	border-radius: 25px;
+	background-color: #bbb;
+	text-align: center;
+	line-height: 44px;
+}
+
+.buttoncheckform .buttoncheck2 #buttoncheckform-submit {
+	font-size: 16px;
+	color: #fff;
+	border: none;
+	background-color: #bbb;
+}
