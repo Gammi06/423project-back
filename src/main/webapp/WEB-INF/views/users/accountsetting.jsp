@@ -14,7 +14,7 @@
 						수정</a></li>
 				<li class="as_proposal"><a href="#">프로필 수정</a></li>
 				<li class="as_proposal"><a href="/users/password/${principal.id}">비밀번호 설정</a></li>
-				<li class="as_proposal"><a href="#">회원 탈퇴</a></li>
+				<li class="as_proposal"><a href="/users/delete/${principal.id}">회원 탈퇴</a></li>
 			</ul>
 		</div>
 		<!--as_menu-->
