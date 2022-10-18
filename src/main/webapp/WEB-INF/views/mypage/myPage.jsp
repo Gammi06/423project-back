@@ -58,7 +58,6 @@
                             <a href="#">로그아웃</a>
                         </button>
                     </div>
-                    <input id="id" type="hidden" value="${infoAllDto.userInfoDtos.id}">
                     <div class="btn_proposal"><button>
                             <a href="#">제안하기</a>
                         </button></div>
