@@ -25,4 +25,8 @@
 		UPDATE users SET user_password = #{userPassword}
 		WHERE id = #{id}
 	</update>
+
+	<delete id="deleteById">
+		DELETE FROM users WHERE id = #{id}
+	</delete>
 </mapper>
