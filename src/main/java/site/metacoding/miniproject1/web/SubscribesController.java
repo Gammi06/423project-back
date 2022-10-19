@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.SubsribesService;
-import site.metacoding.miniproject1.web.dto.response.SubscribesRespListDto;
+import site.metacoding.miniproject1.web.dto.response.subscribes.SubscribesRespListDto;
 
 
 @RequiredArgsConstructor
