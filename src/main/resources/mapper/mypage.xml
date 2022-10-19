@@ -4,11 +4,7 @@
 	namespace="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatusDao">
 
 	<select id="findUser"
-<<<<<<< HEAD
 		resultType="site.metacoding.miniproject1.web.dto.response.mypage.UserInfoDto">
-=======
-		resultType="site.metacoding.miniproject1.web.dto.response.UserInfoDto">
->>>>>>> acfe4c39b33a2e1c9354bac79e0f2ea303b1caee
 		SELECT us.id, us.user_id, us.user_password,
 		us.user_name, US.AGE,
 		us.phone_number, us.email, us.photo,
@@ -21,11 +17,7 @@
 	</select>
 
 	<select id="findCompany"
-<<<<<<< HEAD
 		resultType="site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto">
-=======
-		resultType="site.metacoding.miniproject1.web.dto.response.CompanyInfoDto">
->>>>>>> acfe4c39b33a2e1c9354bac79e0f2ea303b1caee
 		SELECT @ROWNUM :=@ROWNUM+1 AS no, comrec.*
 		FROM (SELECT com.id, com.company_name, com.address, com.email,
 		com.company_number, com.photo,
@@ -40,21 +32,13 @@
 		ON com.id = wan.company_id
 		LEFT OUTER JOIN users us
 		ON wan.position_code_id = us.position_code_id
-<<<<<<< HEAD
 		WHERE us.id = #{id} AND wan.enddate > NOW()
-=======
-		WHERE us.id = #{id}
->>>>>>> acfe4c39b33a2e1c9354bac79e0f2ea303b1caee
 		ORDER BY RAND() LIMIT 4) comrec,
 		(SELECT @ROWNUM := 0) R
 	</select>
 	
 	<select id="findCompanyIfNull"
-<<<<<<< HEAD
 		resultType="site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto">
-=======
-		resultType="site.metacoding.miniproject1.web.dto.response.CompanyInfoDto">
->>>>>>> acfe4c39b33a2e1c9354bac79e0f2ea303b1caee
 		SELECT @ROWNUM :=@ROWNUM+1 AS no, comrec.*
 		FROM (SELECT com.id, com.company_name, com.address, com.email,
 		com.company_number, com.photo,
@@ -67,10 +51,7 @@
 		FROM companys com
 		INNER JOIN wanteds wan
 		ON com.id = wan.company_id
-<<<<<<< HEAD
 		WHERE wan.enddate > NOW()
-=======
->>>>>>> acfe4c39b33a2e1c9354bac79e0f2ea303b1caee
 		ORDER BY RAND() LIMIT 4) comrec,
 		(SELECT @ROWNUM := 0) R
 	</select>
@@ -200,13 +181,8 @@
 	</select>
 
 	<select id="findRequest"
-<<<<<<< HEAD
 		resultType="site.metacoding.miniproject1.web.dto.response.mypage.RequestsInfoDto">
 		SELECT req.id, req.resume_id, req.wanted_id, if(wan.enddate>NOW(), '모집중', '마감') status, req.created,
-=======
-		resultType="site.metacoding.miniproject1.web.dto.response.RequestsInfoDto">
-		SELECT req.id, req.resume_id, req.wanted_id, req.status, req.created,
->>>>>>> acfe4c39b33a2e1c9354bac79e0f2ea303b1caee
 		wan.position_code_id, wan.career_code_id, wan.company_id,
 		com.company_name,
 		poco.name positionCodeName
