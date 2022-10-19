@@ -31,7 +31,7 @@
                         <div class="mp_status">
                             <c:forEach var="infoCountDtos" items="${infoAllDto.infoCountDtos}">
                                 <ul>
-                                    <li><a href="/applicationstatusall">
+                                    <li><a href="/applicationstatusall/${principal.id}">
                                             <div class="mp_status_li1">지원 현황</div>
                                             <div>${infoCountDtos.statusAll}</div>
                                         </a></li>
@@ -39,7 +39,7 @@
                                             <div class="mp_status_li2">좋아요</div>
                                             <div>${infoCountDtos.likesCount}</div>
                                         </a></li>
-                                    <li><a href="/proposal">
+                                    <li><a href="/proposal/${principal.id}">
                                             <div class="mp_status_li3">받은 요청</div>
                                             <p class="proposal_notifications"></p>
                                             <div>${infoCountDtos.requestsCount}</div>
@@ -73,19 +73,19 @@
                             <p class="mp_application_title">지원 현황</p>
                             <div class="mp_application_counts">
                                 <div class="mp_app_all">
-                                    <a href="/applicationstatusall">
+                                    <a href="/applicationstatusall/${principal.id}">
                                         <p class="mp_all_count">${statusCountDtos.statusAll}</p>
                                         <p class="mp_all_text">전체</p>
                                     </a>
                                 </div>
                                 <div class="mp_app">
-                                    <a href="/applicationstatus">
+                                    <a href="/applicationstatus/${principal.id}">
                                         <p class="mp_count">${statusCountDtos.statusC}</p>
                                         <p class="mp_text">지원 완료</p>
                                     </a>
                                 </div>
                                 <div class="mp_app_final">
-                                    <a href="/applicationstatusfinal">
+                                    <a href="/applicationstatusfinal/${principal.id}">
                                         <p class="mp_final_count">${statusCountDtos.statusFinal}</p>
                                         <p class="mp_final_text">최종 합격</p>
                                     </a>

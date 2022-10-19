@@ -51,7 +51,7 @@
                             <c:otherwise>
                                 <li class="alert">
 
-                                    <a href="#">알림</a>
+                                    <a href="/mypage/${principal.id}">알림</a>
 
                                     <ul class="alert_item_list">
 
@@ -68,8 +68,9 @@
                                     <ul class="profile_list">
                                         <li><a class="profile_item_mypage" href="/mypage/${principal.id}">My
                                                 page</a></li>
-                                        <li><a class="profile_item" href="#">지원 현황</a></li>
-                                        <li><a class="profile_item" href="#">제안받기 현황</a></li>
+                                        <li><a class="profile_item" href="/applicationstatusall/${principal.id}">지원
+                                                현황</a></li>
+                                        <li><a class="profile_item" href="/proposal/${principal.id}">제안받기 현황</a></li>
                                         <li><a class="profile_item" href="#">좋아요</a></li>
                                         <li><a class="profile_item" href="/subscribes/${id}">구독</a></li>
                                         <li><a class="profile_item_logout" href="/logout">로그아웃</a></li>

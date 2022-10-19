@@ -11,8 +11,8 @@
                 <div class="pp_menu">
                     <p class="pp_title">지원 현황</p>
                     <ul>
-                        <li class="pp_position"><a href="/applicationstatusall">지원한 포지션</a></li>
-                        <li class="pp_proposal"><a href="/proposal">받은 요청</a></li>
+                        <li class="pp_position"><a href="/applicationstatusall/${principal.id}">지원한 포지션</a></li>
+                        <li class="pp_proposal"><a href="/proposal/${principal.id}">받은 요청</a></li>
                     </ul>
                 </div>
 

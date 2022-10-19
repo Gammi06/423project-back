@@ -11,8 +11,8 @@
                 <div class="as_menu">
                     <p class="as_title">지원 현황</p>
                     <ul>
-                        <li class="as_position"><a href="/applicationstatusall">지원한 포지션</a></li>
-                        <li class="as_proposal"><a href="/proposal">받은 요청</a></li>
+                        <li class="as_position"><a href="/applicationstatusall/${principal.id}">지원한 포지션</a></li>
+                        <li class="as_proposal"><a href="/proposal/${principal.id}">받은 요청</a></li>
                     </ul>
                 </div>
 
@@ -20,19 +20,19 @@
                     <div class="as_counts">
                         <c:forEach var="statusCountDtos" items="${statusWaitingDto.statusCountDtos}">
                             <div class="as_count_all">
-                                <a href="/applicationstatusall">
+                                <a href="/applicationstatusall/${principal.id}">
                                     <p class="as_all_count">${statusCountDtos.statusAll}</p>
                                     <p class="as_all_text">전체</p>
                                 </a>
                             </div>
                             <div class="as_count_c">
-                                <a href="/applicationstatus">
+                                <a href="/applicationstatus/${principal.id}">
                                     <p class="as_count">${statusCountDtos.statusC}</p>
                                     <p class="as_text">지원 완료</p>
                                 </a>
                             </div>
                             <div class="as_count_final">
-                                <a href="/applicationstatusfinal">
+                                <a href="/applicationstatusfinal/${principal.id}">
                                     <p class="as_final_count">${statusCountDtos.statusFinal}</p>
                                     <p class="as_final_text">최종합격</p>
                                 </a>
