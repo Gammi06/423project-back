@@ -68,10 +68,6 @@ function sendApplicationAlarm() {
     stompClient.send("/ws/applicationalarm");
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c2f998711c8f4f846625df8d831ce280726250e5
 function sendPrivateMessage() {
     console.log("sending private message");
     stompClient.send("/ws/private-message", {}, JSON.stringify({ 'messageContent': $("#private-message").val() }));
@@ -119,13 +115,10 @@ function resetApplicationNotificationCount() {
     updateApplicationNotificationDisplay();
 }
 
-<<<<<<< HEAD
 $("#btnLogin").click(function () {
     login();
 });
 
-=======
->>>>>>> c2f998711c8f4f846625df8d831ce280726250e5
 $(".btn_proposal").click(function () {
     sendProposalAlarm();
 });
@@ -151,10 +144,3 @@ $(".application_notifications").click(function () {
 });
 
 connect();
-<<<<<<< HEAD
-
-=======
-setTimeout(function () {
-    sendFirstAlarm();
-}, 2000);
->>>>>>> c2f998711c8f4f846625df8d831ce280726250e5
