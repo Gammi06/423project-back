@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.RecruitManageService;
-import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
 import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
 import site.metacoding.miniproject1.web.dto.response.companys.PagingWantedsManageDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsManageDto;
 
 @RequiredArgsConstructor
 @Controller

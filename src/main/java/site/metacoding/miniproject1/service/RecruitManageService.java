@@ -8,10 +8,10 @@ import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.domain.codes.CareersCodeDao;
 import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
 import site.metacoding.miniproject1.domain.wanteds.WantedsDao;
-import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
 import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
 import site.metacoding.miniproject1.web.dto.response.companys.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.companys.PagingWantedsManageDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsManageDto;
 
 @RequiredArgsConstructor
 @Service

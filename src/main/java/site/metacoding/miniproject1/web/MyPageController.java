@@ -1,7 +1,6 @@
 package site.metacoding.miniproject1.web;
 
 import java.util.HashMap;
-
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -9,17 +8,15 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.PathVariable;
-
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.service.MyPageService;
-import site.metacoding.miniproject1.web.dto.response.InfoAllDto;
-import site.metacoding.miniproject1.web.dto.response.RequestsDto;
-import site.metacoding.miniproject1.web.dto.response.StatusAllDto;
-import site.metacoding.miniproject1.web.dto.response.StatusFinalDto;
-import site.metacoding.miniproject1.web.dto.response.StatusWaitingDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.InfoAllDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.RequestsDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusAllDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusFinalDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusWaitingDto;
 
 @RequiredArgsConstructor
 @Controller

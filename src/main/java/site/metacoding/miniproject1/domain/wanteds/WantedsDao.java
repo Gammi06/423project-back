@@ -4,13 +4,12 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import site.metacoding.miniproject1.web.dto.response.WantedsListDto;
-import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
 import site.metacoding.miniproject1.web.dto.response.companys.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.KeywordDto;
-import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
+import site.metacoding.miniproject1.web.dto.response.companys.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsListDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsManageDto;
 
 public interface WantedsDao {
 	// 기본기능

@@ -4,7 +4,7 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
-import site.metacoding.miniproject1.web.dto.response.WantedsManageDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsManageDto;
 
 @Setter
 @Getter
