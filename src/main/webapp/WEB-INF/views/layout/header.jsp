@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,9 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구해줘용</title>
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="css/header.css" rel="stylesheet">
-    <link href="css/footer.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/resume_main.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/resume_write.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/resume_update.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/resume_list.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <header class="header">
