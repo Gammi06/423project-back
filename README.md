@@ -52,7 +52,7 @@ CREATE TABLE users (
    phone_number VARCHAR(20),
    email VARCHAR(20),
    photo BLOB,
-   position_code_name VARCHAR(20),
+   position_code_id INT,
    company_id INT,
    mycareer_id INT,
    created TIMESTAMP
@@ -202,28 +202,28 @@ CREATE TABLE recruits (
 
 ### 더미데이터 생성 (MariaDB)
 ```sql
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('garam1234', '1234', '박가람', 26, '01011112222', 'garam12@naver.com', NULL, '프론트 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('garam1234', '1234', '박가람', 26, '01011112222', 'garam12@naver.com', NULL, 3, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
 VALUES('Lzm1992', '1234', '이재모', 80, '01024551478', 'Lzm1992@hanmail.com', NULL, NULL, NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('lazyIn94', '1234', '한가인', 29, '01034567890', 'lazyIn94@naver.com', NULL, '백앤드 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('hand0728', '1234', '손재영', 35, '01022223333', 'hand0728@naver.com', NULL, '웹 퍼블리셔', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('dragon5k', '1234', '김용오', 32, '01035567770', 'dragon5k@naver.com', NULL, '백앤드 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('lazyIn94', '1234', '한가인', 29, '01034567890', 'lazyIn94@naver.com', NULL, 1, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('hand0728', '1234', '손재영', 35, '01022223333', 'hand0728@naver.com', NULL, 2, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('dragon5k', '1234', '김용오', 32, '01035567770', 'dragon5k@naver.com', NULL, 1, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
 VALUES('samsung1', '1234', '이건희', 82, '01023998293', 'samsung1@samsung.com', NULL, NULL, NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
 VALUES('goodLg', '1234', '구광모', 44, '01928382992', 'goodLg@lg.com', NULL, NULL, NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
 VALUES('apple', '1234', '스티븐잡스', 58, '0828112456', 'apple@apple.com', NULL, NULL, NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('kongG', '1234', '홍콩지', 27, '01098776543', 'kongG@nate.com', NULL, '백앤드 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('1DongA', '1234', '한동아', 20, '01098722921', '1DongA@gmail.com', NULL, '프론트 개발자', NULL, NULL, NOW());
-INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_name, company_id, mycareer_id, created)
-VALUES('newSui', '1234', '신류이수', 31, '01056821345', 'newSui@gmail.com', NULL, '웹 퍼블리셔', NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('kongG', '1234', '홍콩지', 27, '01098776543', 'kongG@nate.com', NULL, 1, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('1DongA', '1234', '한동아', 20, '01098722921', '1DongA@gmail.com', NULL, 3, NULL, NULL, NOW());
+INSERT INTO users(user_id, user_password, user_name, age, phone_number, email, photo, position_code_id, company_id, mycareer_id, created)
+VALUES('newSui', '1234', '신류이수', 31, '01056821345', 'newSui@gmail.com', NULL, 2, NULL, NULL, NOW());
 
 INSERT INTO companys(company_name, address, email, company_number, photo, region_code_name, intro, years, member_count, created)
 VALUES('이재모피자', '부산광역시 중구 광복중앙로 31', 'Lzm1992@hanmail.com', '98700123456', NULL, '부산', '정성 가득한 피자를 만듭니다.', 1992, 20, NOW());
