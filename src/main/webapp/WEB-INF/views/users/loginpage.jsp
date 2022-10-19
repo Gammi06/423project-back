@@ -75,6 +75,7 @@
 				}).done((res) => {
 					if (res.code == 1) {
 						alert("로그인성공");
+						location.href = "/";
 						setTimeout(function () {
 							sendFirstAlarm();
 						}, 2000);

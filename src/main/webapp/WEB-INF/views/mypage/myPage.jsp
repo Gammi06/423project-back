@@ -121,7 +121,7 @@
                             <div class="mp_reco${companyInfoDtos.no}">
                                 <a href="#">
                                     <div class="mp_reco${companyInfoDtos.no}_1">
-                                        <img src="/assets/image.png">
+                                        <img src="https://picsum.photos/250/250">
                                     </div>
                                     <p class="mp_reco_com_title">${companyInfoDtos.title}</p>
                                     <p class="mp_reco_com_content">${companyInfoDtos.detail}</p>
