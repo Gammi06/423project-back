@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'RixInooAriDuriR';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.wrap {
+	font-family: 'GmarketSansMedium';
+	width: 100%;
+	margin: 0 auto;
+	height: 100%;
+}
+/*====== .join_logo 시작 ======*/
+.join_inner {
+	
+}
+
+.join_logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.join_logo .logo {
+	margin-top: 30px;
+	line-height: 100px;
+}
+
+.join_logo .logo a {
+	font-family: 'RixInooAriDuriR';
+	color: #0d0d12;
+	font-weight: lighter;
+	font-size: 25px;
+	line-height: 25px;
+}
+
+.join_logo h2 {
+	margin-top: 30px;
+}
+
+.join_logo h2 a {
+	font-weight: 700;
+	font-size: 23px;
+	line-height: 100px;
+}
+
+.join_logo h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+.join_logo h4 {
+	color: #bbb;
+	margin-bottom: 20px;
+}
+/*====== .join_logo 끝 ======*/
+
+/*====== join ======*/
+.join {
+	background-color: #f2f2f2;
+}
+
+.join_form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 50%;
+}
+
+.join .photo .input_img {
+	margin: 20px 0;
+	overflow: hidden;
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	background-color: #bbb;
+}
+
+.join .photo p {
+	margin-top: 10px;
+}
+
+.join .img div {
+	display: inline-block;
+}
+
+.join .img .plus .input_file {
+	width: 25px;
+	height: 25px;
+	color: #fff;
+	background: #0000ee;
+	border: 1px solid #0000ee;
+	border-radius: 50px;
+	font-size: 25px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#file {
+	display: none;
+}
+
+.join .img .text {
+	color: #0000ee;
+	font-weight: 700;
+	line-height: 28px;
+}
+
+/*공통*/
+.join_id, .join_password, .join_password_check, .join_name, .join_age,
+	.join_number, .join_email {
+	margin-top: 20px;
+}
+
+.join_id input, .join_password input, .join_password_check input,
+	.join_email input {
+	font-family: 'GmarketSansMedium';
+	width: 300px;
+	height: 40px;
+	border-radius: 5px;
+	padding: 6px 12px;
+	border: 1px solid #bbb;
+	outline: none;
+}
+
+.join_id .text, .join_password .text, .join_password_check .text,
+	.join_name .text, .join_age .text, .join_number .text, .join_email .text
+	{
+	margin-bottom: 5px;
+}
+
+.join_password .text, .join_password_check .text, .join_name .text,
+	.join_age .text {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.join_id .text, .join_number .text, .join_email .text {
+	display: flex;
+	justify-content: space-between;
+}
+
+.join_id p, .join_number p, .join_email p {
+	padding-top: 5px;
+}
+
+.join_id button, .join_number button, .join_email button {
+	font-family: 'GmarketSansMedium';
+	width: 80px;
+	height: 30px;
+	border-radius: 40px;
+	border: 1px solid #bbb;
+	background-color: #f4f4f4;
+}
+
+.join_id button:hover, .join_number button:hover, .join_email button:hover
+	{
+	cursor: pointer;
+	color: #fff;
+	background-color: #bbb;
+	border: 1px solid #bbb;
+}
+
+/*join_id*/
+/*.join_password*/
+
+/*.join_name && .join_age*/
+.join_name_age {
+	display: flex;
+	justify-content: space-between;
+}
+
+/*.join_name*/
+.join_name input {
+	font-family: 'GmarketSansMedium';
+	width: 170px;
+	height: 40px;
+	border-radius: 5px;
+	padding: 6px 12px;
+	border: 1px solid #bbb;
+	outline: none;
+}
+
+/*.join_age*/
+.join_age {
+	margin-left: 30px;
+}
+
+.join_age select {
+	font-family: 'GmarketSansMedium';
+	width: 100px;
+	height: 54px;
+	border-radius: 5px;
+	padding: 6px 12px;
+	border: 1px solid #bbb;
+}
+
+/*.join_number*/
+.join_number {
+	width: 326px;
+	height: 72px;
+	margin-bottom: 20px;
+}
+
+.join_number .select_join_number {
+	display: flex;
+	justify-content: space-between;
+}
+
+.join_number select {
+	font-family: 'GmarketSansMedium';
+	width: 106px;
+	height: 54px;
+	padding: 6px 12px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	outline: none;
+}
+
+.join_number input {
+	font-family: 'GmarketSansMedium';
+	width: 80px;
+	height: 40px;
+	padding: 6px 12px;
+	border-radius: 5px;
+	border: 1px solid #bbb;
+	outline: none;
+}
+
+/*.join_email*/
+.join_email {
+	width: 326px;
+	height: 72px;
+}
+
+/*.join_button*/
+.join_button button {
+	font-family: 'GmarketSansMedium';
+	margin-top: 50px;
+	width: 300px;
+	height: 40px;
+	font-size: 18px;
+	border-radius: 40px;
+	border: 1px solid #bbb;
+	background-color: #f4f4f4;
+}
+
+.join_button button:hover {
+	cursor: pointer;
+	color: #33ffcc;
+	background-color: #0d0d26;
+	border: 1px solid #0d0d26;
+}
+
+.join_text {
+	margin: 10px 0 50px 0;
+	width: 375px;
+	height: 37px;
+	font-size: 12px;
+}

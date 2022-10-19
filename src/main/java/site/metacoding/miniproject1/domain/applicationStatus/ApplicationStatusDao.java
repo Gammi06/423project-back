@@ -20,7 +20,7 @@ public interface ApplicationStatusDao {
 	public List<UserInfoDto> findUser(Integer id);
 
 	public List<CompanyInfoDto> findCompany(Integer id);
-	
+
 	public List<CompanyInfoDto> findCompanyIfNull();
 
 	public List<InfoCountDto> findInfoCounts(Integer id);

@@ -10,8 +10,6 @@ import org.springframework.web.util.HtmlUtils;
 import site.metacoding.miniproject1.web.dto.response.mypage.Message;
 import site.metacoding.miniproject1.web.dto.response.mypage.PushMessage;
 
-
-
 @Controller
 public class MessageController {
 

@@ -13,6 +13,7 @@ import lombok.Setter;
 @Getter
 public class RequestsDto {
     private String keyword;
+    private Integer id;
     private List<RequestsInfoDto> requestsInfoDtos;
 
     public RequestsDto(List<RequestsInfoDto> requestsInfoDtos) {

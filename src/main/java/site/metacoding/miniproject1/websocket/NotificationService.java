@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import site.metacoding.miniproject1.web.dto.response.mypage.PushMessage;
 
-
 @Service
 public class NotificationService {
 

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
@@ -8,18 +8,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>구해줘용</title>
-<link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/wanted.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/wanted-detail.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/company-detail.css" rel="stylesheet">
-<script src="https://kit.fontawesome.com/e264982194.js" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="${pageContext.request.contextPath}/css/reset.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/header.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/footer.css"
+	rel="stylesheet">
+	
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -28,17 +25,17 @@
 				<button class="btn_menu">메뉴</button>
 				<ul class="dropdown_menu">
 					<li class="menu_top">포지션 목록</li>
-					<li><a class="dropdown_item" href="/wanteds">백앤드 개발자</a></li>
-					<li><a class="dropdown_item" href="/wanteds">웹 퍼블리셔</a></li>
-					<li><a class="dropdown_item" href="/wanteds">프론트앤드 개발자</a></li>
+					<li><a class="dropdown_item" href="#">백앤드 개발자</a></li>
+					<li><a class="dropdown_item" href="#">웹 퍼블리셔</a></li>
+					<li><a class="dropdown_item" href="#">프론트앤드 개발자</a></li>
 					<li class="menu_bottom">구직은 구해줘용과 함께</li>
 				</ul>
 			</div>
 			<h1 class="logo">
-				<a href="/">구해줘용</a>
+				<a href="#">구해줘용</a>
 			</h1>
 			<ul class="gnb">
-				<li><a href="/wanteds">채용</a></li>
+				<li><a href="#">채용</a></li>
 				<li><a href="#">이력서</a></li>
 			</ul>
 			<ul class="login">

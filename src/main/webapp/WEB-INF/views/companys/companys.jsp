@@ -9,6 +9,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="/css/companys.css" rel="stylesheet">
 <link href="/css/companys_header.css" rel="stylesheet">
+<link href="/css/footer.css" rel="stylesheet">
+<link href="/css/reset.css" rel="stylesheet">
+
 
 </head>
 <!-- <a class="dropdown_item" >내 프로필</a>

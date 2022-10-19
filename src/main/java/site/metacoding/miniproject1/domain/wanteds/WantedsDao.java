@@ -1,9 +1,7 @@
 package site.metacoding.miniproject1.domain.wanteds;
 
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
-
 import site.metacoding.miniproject1.web.dto.response.wanteds.KeywordDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedDetailDto;
