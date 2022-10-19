@@ -18,5 +18,11 @@
 		SELECT * FROM companys WHERE company_number = #{CompanysNumber}
 	</select>
 
-
+	<select id="findByIdToDetail"
+		resultType="site.metacoding.miniproject1.web.dto.response.companys.CompanyDetailDto">
+		SELECT c.id, c.company_name, c.address, c.email,
+		c.region_code_name, c.member_count, c.intro
+		FROM companys c
+		WHERE id = #{id}
+	</select>
 </mapper>
