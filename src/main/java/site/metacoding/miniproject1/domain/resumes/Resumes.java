@@ -11,8 +11,8 @@ import lombok.Setter;
 @Getter
 public class Resumes {
 	private Integer id;
-	private Integer user_id;
-	private Integer positions_code_id;
+	private Integer userId;
+	private Integer positionsCodeId;
 	private String title;
 	private String intro;
 	private Integer status_id;

@@ -10,6 +10,6 @@ public interface CompanysDao {
 	public List<Companys> findAll();
 	public void update(Integer id, Companys companys);
 	public void deleteById(Integer id);
-	
 	public CompanyDetailDto findByIdToDetail(Integer id);
+	public Companys findByIdCompanysNumber(String companyNumber);
 }

@@ -11,4 +11,9 @@ public class TestController {
 		return "all/test";
 	}
 	*/
+	
+	@GetMapping("/accountsetting")
+	public String test() {
+		return "users/accountsetting";
+	}
 }

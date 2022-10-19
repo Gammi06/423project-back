@@ -20,7 +20,7 @@
                 <div class="pp_contents">
                     <p class="pp_sub_title">받은 요청</p>
                     <div class="pp_search">
-                        <form method="get" action="/proposal">
+                        <form name="searchProposal">
                             <input type="text" placeholder="회사명 검색" name="keyword">
                             <button class="btn_search" type="submit"></button>
                         </form>
@@ -39,7 +39,7 @@
                             <tbody>
                                 <c:forEach var="requestsInfoDtos" items="${requestsDto.requestsInfoDtos}">
                                     <tr>
-                                        <td>${requestsInfoDtos.companyName}</td>
+                                        <td><a href>${requestsInfoDtos.companyName}</a></td>
                                         <td>${requestsInfoDtos.positionCodeName}</td>
                                         <td>${requestsInfoDtos.created}</td>
                                         <td>
@@ -63,5 +63,6 @@
                 </div>
             </div>
         </div>
-
+        
+        <script src="/js/proposal.js"></script>
         <%@ include file="../layout/footer.jsp" %>
