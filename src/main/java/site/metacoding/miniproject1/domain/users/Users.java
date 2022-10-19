@@ -3,9 +3,13 @@ package site.metacoding.miniproject1.domain.users;
 import java.sql.Blob;
 import java.sql.Timestamp;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import site.metacoding.miniproject1.web.dto.request.users.UsersPasswordReqDto;
+import site.metacoding.miniproject1.web.dto.request.users.UsersUpdateReqDto;
 
 @NoArgsConstructor
 @Setter
@@ -23,5 +27,5 @@ public class Users {
 	private Integer companyId;
 	private Integer mycareerId;
 	private Timestamp created;
-	
+
 }
