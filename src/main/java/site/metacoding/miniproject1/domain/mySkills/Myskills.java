@@ -7,7 +7,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class MySkills {
+public class Myskills {
 	private Integer id;
 	private Integer userId;
 	private Integer resumeId;
