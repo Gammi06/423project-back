@@ -2,7 +2,8 @@ package site.metacoding.miniproject1.domain.subcribes;
 
 import java.util.List;
 
-import site.metacoding.miniproject1.web.dto.response.SubscribesRespListDto;
+import site.metacoding.miniproject1.web.dto.response.subscribes.SubscribesRespListDto;
+
 
 
 public interface SubcribesDao {

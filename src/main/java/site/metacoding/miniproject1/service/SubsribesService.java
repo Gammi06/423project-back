@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.domain.subcribes.SubcribesDao;
-import site.metacoding.miniproject1.web.dto.response.SubscribesRespListDto;;
+import site.metacoding.miniproject1.web.dto.response.subscribes.SubscribesRespListDto;
 
 @RequiredArgsConstructor
 @Service

@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'RixInooAriDuriR';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#wrap {
+	font-family: 'GmarketSansMedium';
+	height: 1000px;
+	background-color: #f2f2f2;
+}
+/*======.as_wrap 시작======*/
+#as_wrap {
+	width: 1000px;
+	margin: 0 auto;
+	display: flex;
+}
+/*.as_menu======*/
+.as_menu {
+	margin-right: 50px;
+}
+
+.as_title {
+	font-size: 20px;
+	text-align: left;
+	line-height: 1.5em;
+	font-weight: bold;
+	padding: 60px 0 0 0;
+	margin-bottom: 10px;
+}
+
+.as_position {
+	padding: 0 20px 10px 30px;
+}
+
+.as_position a {
+	font-size: 16px;
+	font-weight: 900;
+	color: #333333;
+	box-shadow: inset 0 -10px 1px #33ffcc;
+}
+
+.as_proposal {
+	padding: 0px 20px 0px 30px;
+	margin-bottom: 10px;
+}
+
+.as_proposal a {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.as_proposal a:hover {
+	color: #33ffcc;
+	font-weight: bold;
+}
+/*.as_menu 끝=======*/
+
+/*.as_edit 시작======*/
+.as_edit {
+	width: 723px;
+	border: 1px solid #bbb;
+	padding: 40px 30px 30px 40px;
+	margin-top: 100px;
+	border-radius: 5px;
+	background: #fff;
+}
+
+.as_edit strong {
+	font-size: 18px;
+}
+
+.as_edit span {
+	line-height: 50px;
+	color: #bbb;
+}
+
+.as_edit select {
+	font-family: 'GmarketSansMedium';
+	width: 504px;
+	height: 40px;
+	border-radius: 5px;
+	padding: 6px 12px;
+	border: 1px solid #bbb;
+}
+/*.as_edit 끝======*/
+
+/*.as_detail 시작====*/
+/*공통*/
+.as_detail_position, .as_detail_skill, .as_detail_career,
+	.as_detail_company, .as_detail_education {
+	margin: 0 0 30px 25px;
+	display: flex;
+}
+
+.as_detail_position h6, .as_detail_skill h6, .as_detail_career h6,
+	.as_detail_company h6, .as_detail_education h6, .as_detail_text h6 {
+	width: 107px;
+	color: #bbb;
+	padding-top: 10px;
+}
+
+/*.as_detail_position*/
+.as_detail_position {
+	margin-top: 20px;
+}
+/*.as_detail_text*/
+.as_detail_text {
+	margin-left: 25px;
+}
+
+.as_detail_text p {
+	margin-top: 10px;
+	color: #bbb;
+	font-size: 13px;
+}
+
+.as_detail_text textarea {
+	width: 612px;
+	height: 172px;
+	resize: none;
+	border: 1px solid #bbb;
+	outline-color: #bbb;
+}
+/*.as_detail 끝====*/
+
+/*.as_button 시작====*/
+.as_button button {
+	margin: 20px 0 0 430px;
+	width: 226px;
+	height: 40px;
+	font-size: 18px;
+	border-radius: 40px;
+	border: 1px solid #bbb;
+	background-color: #f4f4f4;
+}
+
+.as_button button:hover {
+	cursor: pointer;
+	color: #33ffcc;
+	background-color: #0d0d26;
+	border: 1px solid #0d0d26;
+}
+/*.as_button 끝====*/

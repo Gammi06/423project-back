@@ -19,10 +19,14 @@
         </div>
         <div class="intro_title">
             <strong>나에게 맞는 채용 공고</strong>
-            <!--로그인시-->
-            <!-- <p>(이름)님의 포지션에 맞춘 공고들을 살펴보세요!</p> -->
-            <!--비로그인시-->
-            <p>로그인을 해서 나에게 맞는 공고를 설정해보세요!</p>
+            <c:choose>
+					<c:when test="${empty principal}">
+                        <p>로그인을 해서 나에게 맞는 공고를 설정해보세요!</p>
+                    </c:when>
+                    <c:otherwise>
+                        <p>선택하신 포지션을 구하는 공고들을 살펴보세요!</p>
+                    </c:otherwise>
+            </c:choose>
         </div>
         <div class="wanteds">
         	<c:forEach var="wantedsAllList" items="${wantedsList}">
@@ -59,10 +63,15 @@
                 <p class="logo">구해줘용&nbsp</p><p class="text"> 사용해야 하는 이유?</p>
             </div>
             <p class="content">타 사이트보다 합격률이 1.5배 높아요!</p>
-            <!--미로그인시-->
-            <p><a href="#">✔ 회원가입하기</a></p>
-            <!--로그인시-->
-            <!--<p class="link"><a href="#">✔ 프로필 수정하기</a></p> -->
+
+            <c:choose>
+					<c:when test="${empty principal}">
+                        <p><a href="#">✔ 회원가입하기</a></p>
+                    </c:when>
+                    <c:otherwise>
+                        <p class="link"><a href="#">✔ 프로필 수정하기</a></p>
+                    </c:otherwise>
+            </c:choose>
         </div>
     </div>
 </div>

@@ -10,8 +10,14 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Likes {
-	private Integer id;
-	private Integer userId;
-	private Integer wantedId;
-	private Timestamp created;
+    private Integer id;
+    private Integer userId;
+    private Integer wantedId;
+    private Timestamp created;
+
+    public Likes(Integer userId, Integer wantedId) {
+        this.userId = userId;
+        this.wantedId = wantedId;
+    }
+
 }

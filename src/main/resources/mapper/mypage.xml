@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper
-	namespace="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatusDao">
+<mapper namespace="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatusDao">
 
-	<select id="findUser"
-		resultType="site.metacoding.miniproject1.web.dto.response.mypage.UserInfoDto">
+
+	<select id="findUser" resultType="site.metacoding.miniproject1.web.dto.response.mypage.UserInfoDto">
 		SELECT us.id, us.user_id, us.user_password,
 		us.user_name, US.AGE,
 		us.phone_number, us.email, us.photo,
@@ -16,8 +15,7 @@
 		WHERE us.id = #{id}
 	</select>
 
-	<select id="findCompany"
-		resultType="site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto">
+	<select id="findCompany" resultType="site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto">
 		SELECT @ROWNUM :=@ROWNUM+1 AS no, comrec.*
 		FROM (SELECT com.id, com.company_name, com.address, com.email,
 		com.company_number, com.photo,
@@ -36,9 +34,8 @@
 		ORDER BY RAND() LIMIT 4) comrec,
 		(SELECT @ROWNUM := 0) R
 	</select>
-	
-	<select id="findCompanyIfNull"
-		resultType="site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto">
+
+	<select id="findCompanyIfNull" resultType="site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto">
 		SELECT @ROWNUM :=@ROWNUM+1 AS no, comrec.*
 		FROM (SELECT com.id, com.company_name, com.address, com.email,
 		com.company_number, com.photo,
@@ -56,8 +53,7 @@
 		(SELECT @ROWNUM := 0) R
 	</select>
 
-	<select id="findInfoCounts"
-	resultType="site.metacoding.miniproject1.web.dto.response.mypage.InfoCountDto">
+	<select id="findInfoCounts" resultType="site.metacoding.miniproject1.web.dto.response.mypage.InfoCountDto">
 		SELECT count((IFNULL(state, 0))) AS statusAll,
 		(SELECT count((IFNULL(wanted_id, 0))) AS likesCount
 		FROM likes
@@ -76,9 +72,7 @@
 		WHERE res.user_id = #{id}
 	</select>
 
-
-	<select id="findAll"
-		resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusInfoDto">
+	<select id="findAll" resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusInfoDto">
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
@@ -104,8 +98,7 @@
 		ORDER BY apps.id DESC
 	</select>
 
-	<select id="findCounts"
-		resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusCountDto">
+	<select id="findCounts" resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusCountDto">
 		SELECT count((IFNULL(state, 0))) AS statusAll,
 		(SELECT
 		count((IFNULL(state, 0))) AS statusC
@@ -124,8 +117,7 @@
 		WHERE res.user_id = #{id}
 	</select>
 
-	<select id="findWaiting"
-		resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusWaitingInfoDto">
+	<select id="findWaiting" resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusWaitingInfoDto">
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
@@ -152,8 +144,7 @@
 		ORDER BY apps.id DESC
 	</select>
 
-	<select id="findFinal"
-		resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusFinalInfoDto">
+	<select id="findFinal" resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusFinalInfoDto">
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
@@ -180,9 +171,8 @@
 		ORDER BY apps.id DESC
 	</select>
 
-	<select id="findRequest"
-		resultType="site.metacoding.miniproject1.web.dto.response.mypage.RequestsInfoDto">
-		SELECT req.id, req.resume_id, req.wanted_id, if(wan.enddate>NOW(), '모집중', '마감') status, req.created,
+	<select id="findRequest" resultType="site.metacoding.miniproject1.web.dto.response.mypage.RequestsInfoDto">
+		SELECT req.id, req.resume_id, req.wanted_id, req.status, req.created,
 		wan.position_code_id, wan.career_code_id, wan.company_id,
 		com.company_name,
 		poco.name positionCodeName
@@ -201,7 +191,6 @@
 		</if>
 		ORDER BY req.id DESC
 	</select>
-
 
 
 </mapper>

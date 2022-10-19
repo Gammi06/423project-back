@@ -22,7 +22,8 @@ public class Users {
 	private Integer age;
 	private String phoneNumber;
 	private String email;
-	private Blob photo;
+	private String photo;
+	private String positionCodeName;
 	private Integer positionCodeId;
 	private Integer companyId;
 	private Integer mycareerId;

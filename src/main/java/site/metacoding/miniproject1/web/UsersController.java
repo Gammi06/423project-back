@@ -112,6 +112,15 @@ public class UsersController {
 		response.addCookie(cookie);
 		session.invalidate();
 		return new CMRespDto<>(1, "회원탈퇴성공", null);
+	
+	@GetMapping("/users/profile")
+	public String profile() {
+		return "users/profile";
+	}
+	
+	@GetMapping("/users/joinpage")
+	public String joinpage() {
+		return "users/joinpage";
 	}
 
 }
