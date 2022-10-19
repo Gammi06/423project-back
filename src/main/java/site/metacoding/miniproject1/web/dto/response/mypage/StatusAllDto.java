@@ -14,6 +14,7 @@ import lombok.Setter;
 public class StatusAllDto {
 
     private String keyword;
+    private Integer id;
     private List<StatusCountDto> statusCountDtos;
     private List<StatusInfoDto> statusInfoDtos;
 

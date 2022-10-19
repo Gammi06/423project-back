@@ -1,6 +1,10 @@
 package site.metacoding.miniproject1.web;
 
+
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import javax.servlet.http.HttpSession;
 
@@ -31,7 +35,7 @@ public class MainPageController {
 		// 로그인한 유저의 설정된 포지션값 체크하기
 		positionCodeId = 0;	//테스트용
 		// 로그인시 설정된 포지션 중 가장 핫한 공고 리스트
-		List<WantedsListDto> wantedsList = wantedsService.findAllByposition(positionCodeId);
+		List<WantedsListDto> wantedsList = wantedsService.findAllByPosition(positionCodeId);
 		if(wantedsList == null) {
 			wantedsList = wantedsService.findAllHot();
 		}

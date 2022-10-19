@@ -11,18 +11,18 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 @Getter
-public class WantedsListDto {
-	private Integer totalCount;
+public class WantedsManageDto {
 	private Integer id;
 	private Integer positionCodeId;
+	private String positionName;
 	private Integer careerCodeId;
+	private String careerName;
 	private Integer companyId;
+	private Integer no;
+	private String companyName;
+	private String photo;
 	private String title;
 	private String detail;
-	private Integer viewCount;
-	private Timestamp created;
 	private Timestamp enddate;
-	private String photo;
-	private String companyName;
-	private String regionCodeName;
+	private String state; //모집중/마감
 }

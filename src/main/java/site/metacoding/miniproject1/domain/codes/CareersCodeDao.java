@@ -4,8 +4,7 @@ import java.util.List;
 
 import site.metacoding.miniproject1.web.dto.response.codes.CareersCodeDto;
 
-
 public interface CareersCodeDao {
 	public List<CareersCodeDto> findAll();
-	public CareersCodeDto findById(Integer id);
+	public CareersCode findById(Integer id);
 }
