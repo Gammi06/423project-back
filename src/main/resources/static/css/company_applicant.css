@@ -1,0 +1,953 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'RixInooAriDuriR';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2')
+		format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Pretendard-Regular';
+	src:
+		url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+		format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+body {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+	font-family: 'Pretendard-Regular';
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+
+
+/*------.applicant_main시작------*/
+.applicant_main{
+    width:1000px;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+/*------.applicant_main끝------*/
+
+
+
+/*------.applicant_title시작------*/
+.applicant_title{
+}
+
+.applicant_title div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.applicant_title div strong{
+    font-size: 20px;
+}
+
+.applicant_title div span{
+    margin-top: 10px;
+    font-size: 14px;
+}
+/*------.applicant_title끝------*/
+
+
+
+/*------.applicant_container시작------*/
+.applicant_container{
+    width: 998px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: white;
+
+}
+/*------.applicant_container끝------*/
+
+
+
+/*------.applicant_subtitle시작------*/
+.applicant_subtitle{
+	padding-bottom: 20px;
+    display: -webkit-flex;
+	display: flex;
+    justify-content: flex-start;
+	flex-direction: row;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.applicant_subtitle .subtitle_btn{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: flex-start;
+    margin-right: 10px;
+}
+
+.applicant_subtitle .subtitle_btn .btn_hiring{
+	background-color: #0000ee;
+	border: 1px solid #0000ee;
+	border-radius: 30px;
+	height: 40px;
+	width: 130px;
+	text-align: center;
+	margin-right: 0;
+	color: white;
+}
+
+.applicant_subtitle .subtitle_btn .btn_hiring:hover{
+	background-color: white;
+	color: #0000ee;
+}
+
+.applicant_subtitle .subtitle_btn .btn_hiring span{
+	line-height: 42px;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.applicant_subtitle .subtitle_select{
+    width: 815px;
+    height: 40px;
+    border-radius: 10px;
+    border:1px solid #bbb;
+}
+
+.applicant_subtitle .subtitle_select option{
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 10px;
+    background-color: white;
+}
+
+.applicant_subtitle .subtitle_select option:first-child{
+    margin-top: 9px;
+    margin-bottom: 26px;
+}
+
+.applicant_subtitle .subtitle_select option:nth-child(2){
+    margin-bottom: 27px;
+}
+
+.applicant_subtitle .subtitle_select option:nth-child(3){
+    margin-bottom: 18px;
+}
+
+.applicant_subtitle .subtitle_select option:last-child{
+    margin-bottom: 8px;
+}
+/*------.applicant_subtitle끝------*/
+
+
+.applicant_container .applicant_table{
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 50px;
+    align-items: baseline;
+}
+
+
+/*------.applicant_table1시작------*/
+.applicant_table1{
+    border: 1px solid #bbb;
+    width: 215px;
+    margin-left: 20px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table1 .table1_row1{
+    border-top: 3px solid #bbb;
+    background-color: #f4f4f4;
+    height: 50px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant_table1 .table1_row1 div{
+    float: left;
+    font-size: 14px;
+    margin: auto 10px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table1 .table1_row2{
+    border-top: 1px solid #bbb;
+    background-color: #f4f4f4;
+    height: 40px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant_table1 .table1_row2 div{
+    float: left;
+    margin: auto 10px;
+}
+
+.applicant_table1 .table1_row2 .row2_checkbox label{
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row2 .row2_btn{
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table1 .table1_row2 .row2_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table1 .table1_row3{
+    border-top: 1px solid #bbb;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table1 .table1_row3 .row3_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table1 .table1_row3 .row3_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table1 .table1_row3 .row3_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row3 .row3_fail{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row3 .row3_btn{
+    display: none;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table1 .table1_row3 .row3_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table1 .table1_row3 .row3_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+
+.applicant_table1 .table1_row3 .row3_bottom div{
+    font-size: 13px;
+}
+/*------------------------------------------------*/
+
+.applicant_table1 .table1_row4{
+    border-top: 1px solid #bbb;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table1 .table1_row4 .row4_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table1 .table1_row4 .row4_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table1 .table1_row4 .row4_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row4 .row4_fail{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row4 .row4_btn{
+    display: none;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table1 .table1_row4 .row4_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table1 .table1_row4 .row4_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+
+.applicant_table1 .table1_row4 .row4_bottom div{
+    font-size: 13px;
+}
+/*------------------------------------------------*/
+
+.applicant_table1 .table1_row5{
+    border-top: 1px solid #bbb;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table1 .table1_row5 .row5_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table1 .table1_row5 .row5_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table1 .table1_row5 .row5_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row5 .row5_fail{
+    /* display: none; */
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row5 .row5_btn{
+    display: none;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table1 .table1_row5 .row5_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table1 .table1_row5 .row5_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+
+.applicant_table1 .table1_row5 .row5_bottom div{
+    font-size: 13px;
+}
+/*------------------------------------------------*/
+
+.applicant_table1 .table1_row6{
+    border-top: 1px solid #bbb;
+    background-color: #f4f4f4;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table1 .table1_row6 .row6_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table1 .table1_row6 .row6_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table1 .table1_row6 .row6_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row6 .row6_fail{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table1 .table1_row6 .row6_btn{
+    /* display: none; */
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table1 .table1_row6 .row6_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table1 .table1_row6 .row6_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+
+.applicant_table1 .table1_row6 .row6_bottom div{
+    font-size: 13px;
+}
+/*------.applicant_table1끝------*/
+
+
+
+
+/*------.applicant_table2시작------*/
+.applicant_table2{
+    border: 1px solid #bbb;
+    width: 215px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table2 .table2_row1{
+    border-top: 3px solid #bbb;
+    background-color: #f4f4f4;
+    height: 50px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant_table2 .table2_row1 div{
+    float: left;
+    font-size: 14px;
+    margin: auto 10px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table2 .table2_row2{
+    border-top: 1px solid #bbb;
+    background-color: #f4f4f4;
+    height: 40px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant_table2 .table2_row2 div{
+    float: left;
+    margin: auto 10px;
+}
+
+.applicant_table2 .table2_row2 .row2_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table2 .table2_row2 .row2_btn{
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table2 .table2_row2 .row2_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table2 .table2_row3{
+    border-top: 1px solid #bbb;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table2 .table2_row3 .row3_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table2 .table2_row3 .row3_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table2 .table2_row3 .row3_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table2 .table2_row3 .row3_fail{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table2 .table2_row3 .row3_btn{
+    display: none;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table2 .table2_row3 .row3_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table2 .table2_row3 .row3_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table2 .table2_row4{
+    border-top: 1px solid #bbb;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table2 .table2_row4 .row4_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table2 .table2_row4 .row4_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table2 .table2_row4 .row4_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table2 .table2_row4 .row4_fail{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table2 .table2_row4 .row4_btn{
+    display: none;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table2 .table2_row4 .row4_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table2 .table2_row4 .row4_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+/*------.applicant_table2끝------*/
+
+
+
+/*------.applicant_table3시작------*/
+.applicant_table3{
+    border: 1px solid #bbb;
+    width: 215px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table3 .table3_row1{
+    border-top: 3px solid #bbb;
+    background-color: #f4f4f4;
+    height: 50px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant_table3 .table3_row1 div{
+    float: left;
+    font-size: 14px;
+    margin: auto 10px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table3 .table3_row2{
+    border-top: 1px solid #bbb;
+    background-color: #f4f4f4;
+    height: 40px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant_table3 .table3_row2 div{
+    float: left;
+    margin: auto 10px;
+}
+
+.applicant_table3 .table3_row2 .row2_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table3 .table3_row2 .row2_btn{
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table3 .table3_row2 .row2_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table3 .table3_row3{
+    border-top: 1px solid #bbb;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table3 .table3_row3 .row3_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table3 .table3_row3 .row3_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table3 .table3_row3 .row3_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table3 .table3_row3 .row3_fail{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table3 .table3_row3 .row3_btn{
+    display: none;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table3 .table3_row3 .row3_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table3 .table3_row3 .row3_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table3 .table3_row4{
+    border-top: 1px solid #bbb;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table3 .table3_row4 .row4_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table3 .table3_row4 .row4_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table3 .table3_row4 .row4_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table3 .table3_row4 .row4_fail{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table3 .table3_row4 .row4_btn{
+    display: none;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table3 .table3_row4 .row4_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table3 .table3_row4 .row4_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+/*------.applicant_table3끝------*/
+
+
+
+/*------.applicant_table4시작------*/
+.applicant_table4{
+    border: 1px solid #bbb;
+    width: 215px;
+    margin-right: 20px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table4 .table4_row1{
+    border-top: 3px solid #bbb;
+    background-color: #f4f4f4;
+    height: 50px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant_table4 .table4_row1 div{
+    float: left;
+    font-size: 14px;
+    margin: auto 10px;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table4 .table4_row2{
+    border-top: 1px solid #bbb;
+    background-color: #f4f4f4;
+    height: 40px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant_table4 .table4_row2 div{
+    float: left;
+    margin: auto 10px;
+}
+
+.applicant_table4 .table4_row2 .row2_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table4 .table4_row2 .row2_btn{
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table4 .table4_row2 .row2_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+/*------------------------------------------------*/
+
+.applicant_table4 .table4_row3{
+    border-top: 1px solid #bbb;
+    background-color: white;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.applicant_table4 .table4_row3 .row3_top{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+}
+
+.applicant_table4 .table4_row3 .row3_checkbox label{
+    font-size: 15px;
+}
+
+.applicant_table4 .table4_row3 .row3_pass{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table4 .table4_row3 .row3_fail{
+    display: none;
+    color: #888888;
+    font-size: 14px;
+}
+
+.applicant_table4 .table4_row3 .row3_btn{
+    display: none;
+    background-color: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    width: 60px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.applicant_table4 .table4_row3 .row3_btn a{
+    font-size: 12px;
+    color: #888888;
+}
+
+.applicant_table4 .table4_row3 .row3_bottom{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    color: #888888;
+    padding: 20px 10px 10px 10px;
+}
+/*------.applicant_table4끝------*/

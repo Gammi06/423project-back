@@ -15,6 +15,7 @@
     <link href="${pageContext.request.contextPath}/css/resume_write.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/resume_update.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/resume_list.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/company_applicant.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
