@@ -4,6 +4,7 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
+import site.metacoding.miniproject1.domain.codes.CareersCode;
 
 @Getter
 @Setter

@@ -16,7 +16,7 @@ public class Companys {
 	private String address;
 	private String email;
 	private String companyNumber;
-	private Blob photo;
+	private String photo;
 	private String regionCodeName;
 	private String intro;
 	private Integer years;

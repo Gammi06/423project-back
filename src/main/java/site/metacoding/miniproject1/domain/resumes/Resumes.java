@@ -15,6 +15,6 @@ public class Resumes {
 	private Integer positionsCodeId;
 	private String title;
 	private String intro;
-	private Integer status_id;
+	private Integer statusId;
 	private Timestamp created;
 }
