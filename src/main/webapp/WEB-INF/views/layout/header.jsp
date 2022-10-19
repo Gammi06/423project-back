@@ -60,15 +60,15 @@
 									href="/mypage/${principal.id}">My page</a></li>
 								<li><a class="profile_item" href="#">지원 현황</a></li>
 								<li><a class="profile_item" href="#">제안받기 현황</a></li>
-								<li><a class="profile_item" href="#">좋아요</a></li>
-								<li><a class="profile_item" href="/subscribes/${id}">구독</a></li>
+								<li><a class="profile_item" href="/likes/${principal.id}">좋아요</a></li>
+								<li><a class="profile_item" href="/subscribes/${principal.id}">구독</a></li>
 								<li><a class="profile_item_logout" href="/logout">로그아웃</a></li>
 							</ul></li>
 					</c:otherwise>
 				</c:choose>
 			</ul>
 			<ul class="companyservice">
-				<li><a href="#">기업 서비스</a></li>
+				<li><a href="/companys/${principal.id}">기업 서비스</a></li>
 			</ul>
 		</div>
 	</header>

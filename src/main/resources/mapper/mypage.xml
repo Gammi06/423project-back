@@ -4,7 +4,7 @@
 	namespace="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatusDao">
 
 	<select id="findUser"
-		resultType="site.metacoding.miniproject1.web.dto.response.UserInfoDto">
+		resultType="site.metacoding.miniproject1.web.dto.response.mypage.UserInfoDto">
 		SELECT us.id, us.user_id, us.user_password,
 		us.user_name, US.AGE,
 		us.phone_number, us.email, us.photo,
@@ -17,7 +17,7 @@
 	</select>
 
 	<select id="findCompany"
-		resultType="site.metacoding.miniproject1.web.dto.response.CompanyInfoDto">
+		resultType="site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto">
 		SELECT @ROWNUM :=@ROWNUM+1 AS no, comrec.*
 		FROM (SELECT com.id, com.company_name, com.address, com.email,
 		com.company_number, com.photo,
@@ -38,7 +38,7 @@
 	</select>
 	
 	<select id="findCompanyIfNull"
-		resultType="site.metacoding.miniproject1.web.dto.response.CompanyInfoDto">
+		resultType="site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto">
 		SELECT @ROWNUM :=@ROWNUM+1 AS no, comrec.*
 		FROM (SELECT com.id, com.company_name, com.address, com.email,
 		com.company_number, com.photo,
@@ -56,7 +56,7 @@
 	</select>
 
 	<select id="findInfoCounts"
-	resultType="site.metacoding.miniproject1.web.dto.response.InfoCountDto">
+	resultType="site.metacoding.miniproject1.web.dto.response.mypage.InfoCountDto">
 		SELECT count((IFNULL(state, 0))) AS statusAll,
 		(SELECT count((IFNULL(wanted_id, 0))) AS likesCount
 		FROM likes
@@ -77,7 +77,7 @@
 
 
 	<select id="findAll"
-		resultType="site.metacoding.miniproject1.web.dto.response.StatusInfoDto">
+		resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusInfoDto">
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
@@ -104,7 +104,7 @@
 	</select>
 
 	<select id="findCounts"
-		resultType="site.metacoding.miniproject1.web.dto.response.StatusCountDto">
+		resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusCountDto">
 		SELECT count((IFNULL(state, 0))) AS statusAll,
 		(SELECT
 		count((IFNULL(state, 0))) AS statusC
@@ -124,7 +124,7 @@
 	</select>
 
 	<select id="findWaiting"
-		resultType="site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto">
+		resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusWaitingInfoDto">
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
@@ -152,7 +152,7 @@
 	</select>
 
 	<select id="findFinal"
-		resultType="site.metacoding.miniproject1.web.dto.response.StatusFinalInfoDto">
+		resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusFinalInfoDto">
 		SELECT apps.id id, apps.wanted_id wantedId,
 		apps.resume_id resumeId,
 		apps.state state,
@@ -180,7 +180,7 @@
 	</select>
 
 	<select id="findRequest"
-		resultType="site.metacoding.miniproject1.web.dto.response.RequestsInfoDto">
+		resultType="site.metacoding.miniproject1.web.dto.response.mypage.RequestsInfoDto">
 		SELECT req.id, req.resume_id, req.wanted_id, req.status, req.created,
 		wan.position_code_id, wan.career_code_id, wan.company_id,
 		com.company_name,
