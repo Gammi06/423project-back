@@ -19,6 +19,9 @@ public class WantedsManageDto {
 	private Integer careerCodeId;
 	private String careerName;
 	private Integer companyId;
+	private Integer no;
+	private String companyName;
+	private Blob photo;
 	private String title;
 	private String detail;
 	private Timestamp enddate;

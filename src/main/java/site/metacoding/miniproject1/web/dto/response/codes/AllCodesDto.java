@@ -11,4 +11,6 @@ import site.metacoding.miniproject1.domain.codes.CareersCode;
 public class AllCodesDto {
 	private List<CareersCodeDto> careersCodeDtos;
 	private List<PositionsCodeDto> positionsCodeDtos;
+	private List<SkillsCodeDto> skillsCodeDtos;
+	private List<RegionsCodeDto> regionsCodeDtos;
 }

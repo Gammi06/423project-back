@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="mp_acc_setting">
                                     <button>
-                                        <a href="#">계정 설정하기</a>
+                                        <a href="/users/as/${principal.id}">계정 설정하기</a>
                                     </button>
                                 </div>
                             </c:forEach>
@@ -41,11 +41,12 @@
                                         </a></li>
                                     <li><a href="/proposal">
                                             <div class="mp_status_li3">받은 요청</div>
-                                            <div>${infoCountDtos.subscribesCount}</div>
+                                            <p class="proposal_notifications"></p>
+                                            <div>${infoCountDtos.requestsCount}</div>
                                         </a></li>
                                     <li><a href="#">
                                             <div class="mp_status_li4">구독</div>
-                                            <div>${infoCountDtos.requestsCount}</div>
+                                            <div>${infoCountDtos.subscribesCount}</div>
                                         </a></li>
                                 </ul>
                             </c:forEach>
@@ -54,9 +55,16 @@
 
                     <div class="logout">
                         <button>
-                            <a href="#">로그아웃</a>
+                            <a href="/logout">로그아웃</a>
                         </button>
                     </div>
+                    <div class="btn_proposal"><button>
+                            <a href="#">제안하기</a>
+                        </button></div>
+                    <div class="btn_application"><button>
+                            <a href="#">지원하기</a>
+                        </button></div>
+                    <p class="application_notifications"></p>
                 </div>
 
                 <div class="mp_contents">
@@ -90,9 +98,15 @@
                     <p class="mp_position_title">프로필</p>
                     <div class="mp_pro_contents">
                         <c:forEach var="userInfoDtos" items="${infoAllDto.userInfoDtos}">
-                            <p class="mp_profile_position">
-                                현재 구직중인 포지션은 <span>${userInfoDtos.positionCodeName}</span>
-                            </p>
+                            <c:choose>
+                                <c:when test="${userInfoDtos.positionCodeName eq null}">
+                                    <p class="mp_profile_position">현재 구직중인 <span>포지션을</span> 설정해주세요</p>
+                                </c:when>
+                                <c:otherwise>
+                                    <p class="mp_profile_position">
+                                        현재 구직중인 포지션은 <span>${userInfoDtos.positionCodeName}</span></p>
+                                </c:otherwise>
+                            </c:choose>
                             <button>
                                 <a href="#">프로필 수정하기</a>
                             </button>
@@ -104,9 +118,9 @@
                     <p class="mp_reco_title">추천</p>
                     <div class="mp_recos">
                         <c:forEach var="companyInfoDtos" items="${infoAllDto.companyInfoDtos}">
-                            <div class="mp_reco${i}">
+                            <div class="mp_reco${companyInfoDtos.no}">
                                 <a href="#">
-                                    <div class="mp_reco1_1">
+                                    <div class="mp_reco${companyInfoDtos.no}_1">
                                         <img src="/assets/image.png">
                                     </div>
                                     <p class="mp_reco_com_title">${companyInfoDtos.title}</p>

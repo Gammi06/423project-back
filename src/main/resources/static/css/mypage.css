@@ -119,12 +119,29 @@ body {
     padding-bottom: 18px;
 }
 
+.mp_status ul li:last-child {
+    padding-bottom: 10px;
+}
+
 .mp_status ul li a {
     display: flex;
     justify-content: space-between;
     color: #333333;
     font-size: 14px;
     font-family: 'GmarketSansMedium';
+}
+
+.mp_status ul li .proposal_notifications {
+    width: 22px;
+    height: 15px;
+    color: #0d0d26;
+    background-color: #33ffcc;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 17px;
+    font-size: 12px;
+    margin: 0 115px 0 0;
 }
 
 .mypage .logout button {
@@ -145,6 +162,18 @@ body {
 
 .mypage .logout button a:hover {
     color: #0d0d12;
+}
+
+.application_notifications {
+    width: 22px;
+    height: 15px;
+    color: #0d0d26;
+    background-color: #33ffcc;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 17px;
+    font-size: 12px;
 }
 
 .mp_applications {
@@ -405,10 +434,8 @@ body {
 .mp_reco_com_content {
     color: #9E9E9E;
     font-size: 12px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2 (integer);
-    overflow: hidden;
+    width: 150px;
+    height: 55px;
 }
 
 .mp_reco1 .mp_company {
