@@ -10,7 +10,7 @@
         
         <div>
         <a href="#"><strong>Company Page</strong></a>
-        <a href="#"><span>&lt; 돌아가기</span></a>
+        <a href="/"><span>&lt; 돌아가기</span></a>
         </div>
 
     </section>
@@ -25,7 +25,7 @@
 
             <div class="subtitle_btn">
                 <a href="#" class="btn btn_hiring">
-                    <span>채용중</span>
+                    채용중
                 </a>
             </div>
 

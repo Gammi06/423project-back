@@ -44,7 +44,6 @@ body::-webkit-scrollbar {
 /*------.applicant_main시작------*/
 .applicant_main{
     width:1000px;
-    background-color: #f4f4f4;
     margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -105,31 +104,28 @@ body::-webkit-scrollbar {
 
 .applicant_subtitle .subtitle_btn .btn_hiring{
 	background-color: #0000ee;
-	border: 1px solid #0000ee;
+	border: 2px solid #0000ee;
 	border-radius: 30px;
 	height: 40px;
 	width: 130px;
 	text-align: center;
 	margin-right: 0;
 	color: white;
-}
-
-.applicant_subtitle .subtitle_btn .btn_hiring:hover{
-	background-color: white;
-	color: #0000ee;
-}
-
-.applicant_subtitle .subtitle_btn .btn_hiring span{
 	line-height: 42px;
 	font-weight: bold;
 	font-size: 15px;
 }
 
+.applicant_subtitle .subtitle_btn .btn_hiring:hover{
+	background-color: #e6e6e6;
+	color: #0000ee;
+}
+
 .applicant_subtitle .subtitle_select{
     width: 815px;
-    height: 40px;
+    height: 42px;
     border-radius: 10px;
-    border:1px solid #bbb;
+    border:2px solid #bbb;
 }
 
 .applicant_subtitle .subtitle_select option{
@@ -142,19 +138,19 @@ body::-webkit-scrollbar {
 
 .applicant_subtitle .subtitle_select option:first-child{
     margin-top: 9px;
-    margin-bottom: 26px;
+    margin-bottom: 20px;
 }
 
 .applicant_subtitle .subtitle_select option:nth-child(2){
-    margin-bottom: 27px;
+    margin-bottom: 19px;
 }
 
 .applicant_subtitle .subtitle_select option:nth-child(3){
-    margin-bottom: 18px;
+    margin-bottom: 19px;
 }
 
 .applicant_subtitle .subtitle_select option:last-child{
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 /*------.applicant_subtitle끝------*/
 
