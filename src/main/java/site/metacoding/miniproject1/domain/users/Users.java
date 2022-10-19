@@ -24,6 +24,7 @@ public class Users {
 	private String email;
 	private String photo;
 	private String positionCodeName;
+	private Integer positionCodeId;
 	private Integer companyId;
 	private Integer mycareerId;
 	private Timestamp created;

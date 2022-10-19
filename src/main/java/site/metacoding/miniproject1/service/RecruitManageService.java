@@ -9,7 +9,7 @@ import site.metacoding.miniproject1.domain.codes.CareersCodeDao;
 import site.metacoding.miniproject1.domain.codes.PositionsCodeDao;
 import site.metacoding.miniproject1.domain.wanteds.WantedsDao;
 import site.metacoding.miniproject1.web.dto.response.codes.AllCodesDto;
-import site.metacoding.miniproject1.web.dto.response.companys.PagingDto;
+import site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto;
 import site.metacoding.miniproject1.web.dto.response.companys.PagingWantedsManageDto;
 import site.metacoding.miniproject1.web.dto.response.wanteds.WantedsManageDto;
 
@@ -39,7 +39,7 @@ public class RecruitManageService {
 		if (positionsCodeDao.findById(positionCodeId) == null)
 			return null;
 
-		List<WantedsManageDto> wantedsManageDtosPS = wantedsDao.findAllByPosition(companyId, positionCodeId);
+		List<WantedsManageDto> wantedsManageDtosPS = wantedsDao.findAllByPositionToCompany(companyId, positionCodeId);
 		return wantedsManageDtosPS;
 	}
 	
@@ -60,7 +60,7 @@ public class RecruitManageService {
 		int startNum = page * 5;
 		
 		PagingWantedsManageDto pagingWantedsManageDtoPS = new PagingWantedsManageDto();
-		pagingWantedsManageDtoPS.setPagingDto(paging(page));
+		//pagingWantedsManageDtoPS.setPagingDto(paging(page));
 		pagingWantedsManageDtoPS.setWantedsManageDtos(wantedsDao.findAllWanteds(companyId));
 		
 		return pagingWantedsManageDtoPS;
