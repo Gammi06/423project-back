@@ -41,8 +41,8 @@
                     </div>
 
                     <div class="as_search">
-                        <form name="search">
-                            <input type="text" placeholder="회사명 검색" name="keyword">
+                        <form name="search" action="/applicationstatus/${statusWaitingDto.id}">
+                            <input type="text" placeholder="회사명 검색" name="keyword" value="${statusWaitingDto.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>

@@ -42,8 +42,8 @@
                     </div>
 
                     <div class="asf_search">
-                        <form name="searchFinal">
-                            <input type="text" placeholder="회사명 검색" name="keyword">
+                        <form name="searchFinal" action="/applicationstatusfinal/${statusFinalDto.id}">
+                            <input type="text" placeholder="회사명 검색" name="keyword" value="${statusFinalDto.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>

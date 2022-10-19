@@ -41,8 +41,8 @@
                     </div>
 
                     <div class="asa_search">
-                        <form name="searchAll">
-                            <input id="keyword" type="text" name="keyword" value="${SessionScope.referer.keyword}">
+                        <form name="searchAll" action="/applicationstatusall/${statusAllDto.id}">
+                            <input id="keyword" type="text" name="keyword" value="${statusAllDto.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
