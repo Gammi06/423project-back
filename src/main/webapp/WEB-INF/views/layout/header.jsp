@@ -11,15 +11,15 @@
             <link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
+            <link href="${pageContext.request.contextPath}/css/reset.css" rel="stylesheet">
+            <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
+            <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
-            <link href="${pageContext.request.contextPath}/css/companypage_manage.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/wanted.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/wanted-detail.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/company-detail.css" rel="stylesheet">
             <script src="https://kit.fontawesome.com/e264982194.js" crossorigin="anonymous"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
         </head>
 
         <body>
@@ -35,40 +35,43 @@
                             <li class="menu_bottom">구직은 구해줘용과 함께</li>
                         </ul>
                     </div>
-                    <h1 class="logo"><a href="#">구해줘용</a></h1>
+                    <h1 class="logo">
+                        <a href="#">구해줘용</a>
+                    </h1>
                     <ul class="gnb">
                         <li><a href="#">채용</a></li>
                         <li><a href="#">이력서</a></li>
                     </ul>
                     <ul class="login">
                         <!--로그인시-->
-                        <li class="alert">
-                            <a href="#">알림</a>
-                            <ul class="alert_item_list">
-                                <li><a class="alert_item">
-                                        <strong>알림제목</strong>
-                                        <p>알림내용</p>
-                                    </a></li>
-                            </ul>
-                        </li>
-                        <li class="profile">
-                            <a href="#">프로필</a>
-                            <ul class="profile_list">
-                                <li><a class="profile_item_mypage" href="#">My page</a></li>
-                                <li><a class="profile_item" href="#">지원 현황</a></li>
-                                <li><a class="profile_item" href="#">제안받기 현황</a></li>
-                                <li><a class="profile_item" href="#">좋아요</a></li>
-                                <li><a class="profile_item" href="#">구독</a></li>
-                                <li><a class="profile_item_logout" href="#">로그아웃</a></li>
-                            </ul>
-                        </li>
-                        <!--미 로그인시-->
-                        <!--
-                <li><a href="#">로그인/회원가입</a></li>
-                -->
+                        <c:choose>
+                            <c:when test="${empty principal}">
+                                <li><a href="/loginpage">로그인/회원가입</a></li>
+                            </c:when>
+                            <c:otherwise>
+                                <li class="alert"><a href="#">알림</a>
+                                    <ul class="alert_item_list">
+                                        <li><a class="alert_item"> <strong>알림제목</strong>
+                                                <p>알림내용</p>
+                                            </a></li>
+                                    </ul>
+                                </li>
+                                <li class="profile"><a href="#">프로필</a>
+                                    <ul class="profile_list">
+                                        <li><a class="profile_item_mypage" href="/mypage/${principal.id}">My page</a>
+                                        </li>
+                                        <li><a class="profile_item" href="#">지원 현황</a></li>
+                                        <li><a class="profile_item" href="#">제안받기 현황</a></li>
+                                        <li><a class="profile_item" href="/likes/${principal.id}">좋아요</a></li>
+                                        <li><a class="profile_item" href="/subscribes/${principal.id}">구독</a></li>
+                                        <li><a class="profile_item_logout" href="/logout">로그아웃</a></li>
+                                    </ul>
+                                </li>
+                            </c:otherwise>
+                        </c:choose>
                     </ul>
                     <ul class="companyservice">
-                        <li><a href="#">기업 서비스</a></li>
+                        <li><a href="/companys/${principal.id}">기업 서비스</a></li>
                     </ul>
                 </div>
             </header>

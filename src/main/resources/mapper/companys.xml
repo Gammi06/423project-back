@@ -10,7 +10,7 @@
 		company_number, photo, region_code_name, intro, years, member_count,
 		created)
 		VALUES(#{companyName},#{address}, #{email}, #{companyNumber},
-		NULL, #{regionCodeName}, #{intro}, #{years}, #{memberCount}, NOW());
+		NULL, #{regionCodeName}, #{intro}, #{years}, #{memberCount}, NOW())
 	</insert>
 
 	<select id="findByIdCompanysNumber"

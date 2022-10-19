@@ -1,7 +1,5 @@
 package site.metacoding.miniproject1.web;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +20,7 @@ public class CompanysController {
 
 	private final CompanysService companysService;
 
-	@GetMapping("/companys")
+	@GetMapping("/companys/{id}")
 	public String companyform() {
 		return "companys/companys";
 	}
