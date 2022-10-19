@@ -42,8 +42,7 @@
 
                     <div class="asa_search">
                         <form name="searchAll">
-                            <input id="keyword" placeholder="회사명 검색" type="text" name="keyword"
-                                value="${referer.keyword}">
+                            <input id="keyword" type="text" name="keyword" value="${SessionScope.referer.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
