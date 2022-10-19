@@ -6,9 +6,8 @@
 		<div class="all_position">
 			<div class="select_head">포지션 선택</div>
 			<div class="select_all">
-				<select class="all" id="positionCode" name="positionName"
-					onchange="ChangeValue('positionCode')">
-					<c:forEach var="positions" items="${allCodes.positionsCodeDtos}">
+				<select class="all" id="positionCode" name="positionName" onchange="ChangeValue('positionCode')">
+					<c:forEach var="positions" items="${allWantedListDto.allCodesDto.positionsCodeDtos}">
 						<option>${positions.name}</option>
 					</c:forEach>
 				</select>
@@ -22,7 +21,7 @@
 				<select class="region" id="regionCode" name="regionName"
 					onchange="ChangeValue('regionCode')">
 					<option selected>전체</option>
-					<c:forEach var="regions" items="${allCodes.regionsCodeDtos}">
+					<c:forEach var="regions" items="${allWantedListDto.allCodesDto.regionsCodeDtos}">
 						<option>${regions.name}</option>
 					</c:forEach>
 				</select>
@@ -31,7 +30,7 @@
 				<select class="career" id="careerCode" name="careerName"
 					onchange="ChangeValue('careerCode')">
 					<option selected>전체</option>
-					<c:forEach var="careers" items="${allCodes.careersCodeDtos}">
+					<c:forEach var="careers" items="${allWantedListDto.allCodesDto.careersCodeDtos}">
 						<option>${careers.name}</option>
 					</c:forEach>
 				</select>
@@ -40,7 +39,7 @@
 				<select class="skill" id="skillsCode" name="skillsName"
 					onchange="ChangeValue('skillsCode')">
 					<option selected>전체</option>
-					<c:forEach var="skills" items="${allCodes.skillsCodeDtos}">
+					<c:forEach var="skills" items="${allWantedListDto.allCodesDto.skillsCodeDtos}">
 						<option>${skills.name}</option>
 					</c:forEach>
 				</select>
@@ -70,13 +69,45 @@
 		</div>
 	</div>
 	<div class="overBox">
-		<div class="liked">
-			<div class="liked_wanted">
-				<div class="liked_title">♥ 내가 좋아요한 공고들</div>
-				<div class="wanteds">
-					<c:forEach var="wantedsLikeList" items="${wantedsLikeList}">
+		<c:if test="${!empty principal}">
+			<div class="liked">
+				<div class="liked_wanted">
+					<div class="liked_title">♥ 내가 좋아요한 공고들</div>
+					<div class="wanteds">
+						<c:forEach var="wantedsLikeList" items="${allWantedListDto.wantedsLikeListDtos}">
+							<div class="wanted">
+								<a href="/wanteds/${wantedsLikeList.id}">
+									<div class="picture">
+										<img src="https://picsum.photos/seed/picsum/200/300">
+									</div>
+									<div class="wanted_text">
+										<div class="text">
+											<ul>
+												<li class="title">
+													<h2>${wantedsLikeList.title}</h2>
+												</li>
+												<li class="content">
+													<p>${wantedsLikeList.detail}</p>
+												</li>
+											</ul>
+										</div>
+										<div class="company_intro">
+											<p class="company_region">${wantedsLikeList.regionCodeName}</p>
+											<p class="company_name">${wantedsLikeList.companyName}</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						</c:forEach>
+					</div>
+				</div>
+			</div>
+		</c:if>
+			<div class="all_wanteds">
+				<div class="wanteds" id="wanteds">
+					<c:forEach var="wantedsAllList" items="${allWantedListDto.pagingWantedsListDto.wantedsListDtos}">
 						<div class="wanted">
-							<a href="/wanteds/${wantedsLikeList.id}">
+							<a href="/wanteds/${wantedsAllList.id}">
 								<div class="picture">
 									<img src="https://picsum.photos/seed/picsum/200/300">
 								</div>
@@ -84,16 +115,16 @@
 									<div class="text">
 										<ul>
 											<li class="title">
-												<h2>${wantedsLikeList.title}</h2>
+												<h2>${wantedsAllList.title}</h2>
 											</li>
 											<li class="content">
-												<p>${wantedsLikeList.detail}</p>
+												<p>${wantedsAllList.detail}</p>
 											</li>
 										</ul>
 									</div>
 									<div class="company_intro">
-										<p class="company_region">${wantedsLikeList.regionCodeName}</p>
-										<p class="company_name">${wantedsLikeList.companyName}</p>
+										<p class="company_region">${wantedsAllList.regionCodeName}</p>
+										<p class="company_name">${wantedsAllList.companyName}</p>
 									</div>
 								</div>
 							</a>
@@ -102,135 +133,31 @@
 				</div>
 			</div>
 		</div>
-		<div class="all_wanteds">
-			<div class="wanteds">
-				<c:forEach var="wantedsAllList"
-					items="${pagingWantedsList.wantedsListDtos}">
-					<div class="wanted">
-						<a href="/wanteds/${wantedsAllList.id}">
-							<div class="picture">
-								<img src="https://picsum.photos/seed/picsum/200/300">
-							</div>
-							<div class="wanted_text">
-								<div class="text">
-									<ul>
-										<li class="title">
-											<h2>${wantedsAllList.title}</h2>
-										</li>
-										<li class="content">
-											<p>${wantedsAllList.detail}</p>
-										</li>
-									</ul>
-								</div>
-								<div class="company_intro">
-									<p class="company_region">${wantedsAllList.regionCodeName}</p>
-									<p class="company_name">${wantedsAllList.companyName}</p>
-								</div>
-							</div>
-						</a>
-					</div>
-				</c:forEach>
-			</div>
-		</div>
-	</div>
 	<div class="paging">
 		<ul class="pagaination">
-			<li
-				class='page-item-prev${pagingWantedsList.pagingDto.first ? "-hidden" : ""}'>
-				<a
-				href="/wanteds/?page=${pagingWantedsList.pagingDto.currentPage - 1}">이전</a>
+			<li class='page-item-prev${allWantedListDto.pagingWantedsListDto.pagingDto.first ? "-hidden" : ""}'>
+				<a href="/wanteds/?page=${allWantedListDto.pagingWantedsListDto.pagingDto.currentPage - 1}">이전</a>
 			</li>
 			<c:forEach var="num"
-				begin="${pagingWantedsList.pagingDto.startPageNum}"
-				end="${pagingWantedsList.pagingDto.lastPageNum}">
-				<li
-					class='page-item${pagingWantedsList.pagingDto.currentPage + 1 == num ? "-select" : ""}'>
+				begin="${allWantedListDto.pagingWantedsListDto.pagingDto.startPageNum}"
+				end="${allWantedListDto.pagingWantedsListDto.pagingDto.lastPageNum}">
+				<li class='page-item${allWantedListDto.pagingWantedsListDto.pagingDto.currentPage + 1 == num ? "-select" : ""}'>
 					<a href="/wanteds/?page= ${num-1}">${num}</a>
 				</li>
 			</c:forEach>
 			<li
-				class='page-item-next${pagingWantedsList.pagingDto.last ? "-hidden" : ""}'>
-				<a
-				href="/wanteds/?page=${pagingWantedsList.pagingDto.currentPage + 1}">다음</a>
+				class='page-item-next${allWantedListDto.pagingWantedsListDto.pagingDto.last ? "-hidden" : ""}'>
+				<a href="/wanteds/?page=${allWantedListDto.pagingWantedsListDto.pagingDto.currentPage + 1}">다음</a>
 			</li>
 		</ul>
+		<div>first: ${allWantedListDto.pagingWantedsListDto.pagingDto.first}</div>
+		<div>last: ${allWantedListDto.pagingWantedsListDto.pagingDto.last}</div>
+		<div>startPageNum: ${allWantedListDto.pagingWantedsListDto.pagingDto.startPageNum}</div>
+		<div>lastPageNum: ${allWantedListDto.pagingWantedsListDto.pagingDto.lastPageNum}</div>
+		<div>currentPage: ${allWantedListDto.pagingWantedsListDto.pagingDto.currentPage}</div>
 	</div>
 </div>
 </body>
 </html>
 
-<script>
-	let data = {
-		positionCode : '전체',
-		regionCode : '전체',
-		careerCode : '전체',
-		skillsCode : []	
-	};
-
-	$("#btnSearch").click(()=>{
-		$.ajax("/wanteds", {
-			type: "GET",
-			dataType: "json",
-			async: true
-		}).done((res)=>{
-			console.log("1");
-			if(res.code == 1){
-				console.log("2");
-				alert("통신성공");
-				console.log("3");
-				location.reload();
-			} else {
-				alert("통신실패");
-			}
-		});
-	});
-	
-	function ChangeValue(id){
-		let element = document.getElementById(id);
-		if(id == 'positionCode') {
-			data.positionCode = element.options[element.selectedIndex].value;
-		}
-		if(id == 'regionCode') {
-			data.regionCode = element.options[element.selectedIndex].value;
-		}
-		if(id == 'careerCode') {
-			data.careerCode = element.options[element.selectedIndex].value;
-		}
-		if(id == 'skillsCode') {
-			if(element.options[element.selectedIndex].value == '전체'){
-				data.skillsCode.length = 0;
-			} else {
-				if(data.skillsCode.length >= 3) return;
-				let num = data.skillsCode.length;
-				data.skillsCode.push(element.options[element.selectedIndex].value);
-				if(num == 0) {
-					showSkillbutton('skill1', 'skillName1', element.options[element.selectedIndex].value)
-				} else if(num == 1) {
-					showSkillbutton('skill2', 'skillName2', element.options[element.selectedIndex].value)
-				} else {
-					showSkillbutton('skill3', 'skillName3', element.options[element.selectedIndex].value)
-				}
-			}
-		}
-	}
-	
-	function showSkillbutton(id, name, text) {
-		document.getElementById(name).textContent = text;
-		
-		const btn = document.getElementById(id);
-		btn.style.display  = 'flex';
-	}
-	
-	function hideSkillbutton(id, name) {		
-		const btn1 = document.getElementById(id);
-		btn1.style.display  = 'none';
-		
-		if(id == 'skill1'){
-			data.skillsCode.splice(0);
-		} else if (id == 'skill2'){
-			data.skillsCode.splice(1);
-		} else {
-			data.skillsCode.splice(2);
-		}
-	}
-</script>
+<script src="/js/wanted.js"></script>

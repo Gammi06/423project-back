@@ -43,12 +43,12 @@
 	<select id="paging"
 		resultType="site.metacoding.miniproject1.web.dto.response.wanteds.PagingDto">
 		SELECT totalCount, totalPage, currentPage,
-		if(currentPage = 0, 1, 0) first,
+		if(currentPage = 0, 1, 0) FIRST,
 		if(currentPage = totalPage - 1, 1, 0) LAST
 		FROM
 		(
 		SELECT COUNT(*) totalCount, CEIL(COUNT(*)/16) totalPage,
-		0 currentPage, 0 FIRST, 0 last
+		0 currentPage, 0 FIRST, 0 LAST
 		FROM wanteds w
 		LEFT OUTER JOIN companys c
 		ON w.company_id = c.id
@@ -58,16 +58,16 @@
 		ON w.career_code_id = cc.id
 		WHERE w.enddate > NOW()
 		<if test="keywordDto != null">
-			<if test="keywordDto.positionsCodeName != null and keywordDto.positionsCodeName != '전체'">
-				AND pc.name = #{keywordDto.positionsCodeName}
+			<if test="keywordDto.positionsCodeNames != null and keywordDto.positionsCodeNames != '전체'">
+				AND pc.name = #{keywordDto.positionsCodeNames}
 			</if>
-			<if test="keywordDto.regionsCodeName != null and keywordDto.regionsCodeName != '전체'">
-				AND c.region_code_name = #{keywordDto.regionsCodeName}
+			<if test="keywordDto.regionsCodeNames != null and keywordDto.regionsCodeNames != '전체'">
+				AND c.region_code_name = #{keywordDto.regionsCodeNames}
 			</if>
-			<if test="keywordDto.CarrerCodeName != null and keywordDto.CarrerCodeName != '전체'">
-				AND cc.name = #{keywordDto.CarrerCodeName}
+			<if test="keywordDto.CarrerCodeNames != null and keywordDto.CarrerCodeNames != '전체'">
+				AND cc.name = #{keywordDto.CarrerCodeNames}
 			</if>
-			<if test="keywordDto.skillsCodeName != null">
+			<if test="keywordDto.skillsCodeNames != null">
 				
 			</if>
 		</if>
@@ -93,38 +93,31 @@
 		ON w.career_code_id = cc.id
 		WHERE w.enddate > NOW()
 		<if test="keywordDto != null">
-			<if test="keywordDto.positionsCodeName != null and keywordDto.positionsCodeName != '전체'">
-				AND pc.name = #{keywordDto.positionsCodeName}
+			<if test="keywordDto.positionsCodeNames != null and keywordDto.positionsCodeNames != '전체'">
+				AND pc.name = #{keywordDto.positionsCodeNames}
 			</if>
-			<if test="keywordDto.regionsCodeName != null and keywordDto.regionsCodeName != '전체'">
-				AND c.region_code_name = #{keywordDto.regionsCodeName}
+			<if test="keywordDto.regionsCodeNames != null and keywordDto.regionsCodeNames != '전체'">
+				AND c.region_code_name = #{keywordDto.regionsCodeNames}
 			</if>
-			<if test="keywordDto.CarrerCodeName != null and keywordDto.CarrerCodeName != '전체'">
-				AND cc.name = #{keywordDto.CarrerCodeName}
+			<if test="keywordDto.CarrerCodeNames != null and keywordDto.CarrerCodeNames != '전체'">
+				AND cc.name = #{keywordDto.CarrerCodeNames}
 			</if>
-			<if test="keywordDto.skillsCodeName != null and keywordDto.skillsCodeName.size() != 0">
-				<foreach collection='keywordDto.skillsCodeName' index="index">
-					<if test="keywordDto.skillsCodeName.get(index) != null">
+			<if test="keywordDto.skillsCodeNames != null and keywordDto.skillsCodeNames.size() != 0">
+				<foreach collection='keywordDto.skillsCodeNames' index="index">
+					<if test="keywordDto.skillsCodeNames.get(index) != null">
 						AND (
 						SELECT distinct(skills_code_id)
 						FROM myskills mk
 						LEFT OUTER JOIN skills_code sc
 						ON mk.skills_code_id = sc.id
 						WHERE mk.wanted_id = w.id
-						AND sc.name = #{keywordDto.skillsCodeName.get(index)}
+						AND sc.name = #{keywordDto.skillsCodeNames.get(index)}
 					</if>
 				</foreach>
 			</if>
 		</if>
-		<choose>
-			<when test="state == 1">
-				ORDER BY w.created DESC
-			</when>
-			<otherwise>
-				ORDER BY total_count DESC
-			</otherwise>
-		</choose>
-		OFFSET #{startNum} ROWS FETCH NEXT 16 ROWS ONLY
+		ORDER BY w.created DESC
+		OFFSET #{keywordDto.startNum} ROWS FETCH NEXT 16 ROWS ONLY
 	</select>
 
 	<select id="findAllLike"

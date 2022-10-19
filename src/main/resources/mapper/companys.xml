@@ -2,8 +2,15 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper
-	namespace="site.metacoding.miniproject1.domain.companys.CompanysDao">
+<mapper namespace="site.metacoding.miniproject1.domain.companys.CompanysDao">
+
+	<select id="findByIdToDetail"
+		resultType="site.metacoding.miniproject1.web.dto.response.companys.CompanyDetailDto">
+		SELECT c.id, c.company_name, c.address, c.email,
+		c.region_code_name, c.member_count, c.intro
+		FROM companys c
+		WHERE id = #{id}
+	</select>
 
 	<insert id="insert">
 		INSERT INTO companys(company_name, address, email,
@@ -18,11 +25,4 @@
 		SELECT * FROM companys WHERE company_number = #{CompanysNumber}
 	</select>
 
-	<select id="findByIdToDetail"
-		resultType="site.metacoding.miniproject1.web.dto.response.companys.CompanyDetailDto">
-		SELECT c.id, c.company_name, c.address, c.email,
-		c.region_code_name, c.member_count, c.intro
-		FROM companys c
-		WHERE id = #{id}
-	</select>
 </mapper>

@@ -30,7 +30,6 @@ public class WantedsService {
 	private final RegionsCodeDao regionsCodeDao;
 	private final CareersCodeDao careersCodeDao;
 	private final MySkillsService mySkillsService;
-	private final HttpSession session;
 	
 	public List<WantedsListDto> findAllByCompanyId(Integer id) {
 		List<WantedsListDto> wantedsListDtosPS = wantedsDao.findAllByCompanyId(id);
@@ -57,22 +56,22 @@ public class WantedsService {
 		return wantedDetailDtoPS;
 	}
 	
-	public PagingWantedsListDto pagingWantedsList(Integer page, Integer state, KeywordDto keywordDto) {
-		if(page == null) page = 0;
-		int startNum = page * 16;
+	public PagingWantedsListDto pagingWantedsList(KeywordDto keywordDto) {
+		if(keywordDto.getPage() == null) keywordDto.setPage(0);;
+		int startNum = keywordDto.getPage() * 16;
+		keywordDto.setStartNum(startNum);
 		PagingWantedsListDto pagingWantedsListDtoPS = new PagingWantedsListDto();
 		
-		if(keywordDto == null) keywordDto = null;
-		pagingWantedsListDtoPS.setPagingDto(paging(page, keywordDto));
-		pagingWantedsListDtoPS.setWantedsListDtos(findAllToSort(state, startNum, keywordDto));
+		pagingWantedsListDtoPS.setPagingDto(paging(keywordDto));
+		pagingWantedsListDtoPS.setWantedsListDtos(findAllToSort(keywordDto));
 		return pagingWantedsListDtoPS;
 	}
 	
-	public PagingDto paging(Integer page, KeywordDto keywordDto) {
-		PagingDto pagingPS = wantedsDao.paging(page, keywordDto);
+	public PagingDto paging(KeywordDto keywordDto) {
+		PagingDto pagingPS = wantedsDao.paging(keywordDto);
 		
 		final int blockCount = 16;
-		int currentBlock = page/ blockCount;
+		int currentBlock = keywordDto.getPage()/ blockCount;
 		int startPageNum = 1 + blockCount * currentBlock;
 		int lastPageNum = 16 + blockCount * currentBlock;
 		
@@ -88,10 +87,8 @@ public class WantedsService {
 		return pagingPS;
 	}
 	
-	public List<WantedsListDto> findAllToSort(Integer state, Integer startNum, KeywordDto keywordDto){
-		if(state == null) state = 0;
-		List<WantedsListDto> wantedsListPS = wantedsDao.findAllToSort(state, startNum, keywordDto);
-		
+	public List<WantedsListDto> findAllToSort(KeywordDto keywordDto){
+		List<WantedsListDto> wantedsListPS = wantedsDao.findAllToSort(keywordDto);
 		for(int i = 0; i < wantedsListPS.size(); i++) {
 			List<WantedsSkillsDto> wantedsSkillsPS = mySkillsService.findMySkillByWantedId(i);
 			if(wantedsSkillsPS != null) {
@@ -129,7 +126,7 @@ public class WantedsService {
 		return wantedsDtosPS;
 	}
 
-	public List<WantedsListDto> findAllByPosition(Integer positionCodeId) {
+	public List<WantedsListDto> findAllByposition(Integer positionCodeId) {
 		// 포지션이 있는지 확인하기
 		if (positionsCodeDao.findById(positionCodeId) == null)
 			return null;
@@ -137,5 +134,4 @@ public class WantedsService {
 		List<WantedsListDto> wantedsDtosPS = wantedsDao.findAllByposition(positionCodeId);
 		return wantedsDtosPS;
 	}
-	
 }
