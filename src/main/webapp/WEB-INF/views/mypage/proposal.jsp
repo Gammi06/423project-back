@@ -3,8 +3,7 @@
     <%@ include file="../layout/header.jsp" %>
 
         <head>
-            <link href="/css/proposal.css" rel="stylesheet">
-            <script src="https://kit.fontawesome.com/e264982194.js" crossorigin="anonymous"></script>
+            <link href="/css/proposal.css?after" rel="stylesheet">
         </head>
 
         <div id="wrap">
@@ -12,16 +11,18 @@
                 <div class="pp_menu">
                     <p class="pp_title">지원 현황</p>
                     <ul>
-                        <li class="pp_position"><a href="/applicationstatusall">지원한 포지션</a></li>
-                        <li class="pp_proposal"><a href="/proposal">받은 요청</a></li>
+                        <li class="pp_position"><a href="/applicationstatusall/${principal.id}">지원한 포지션</a></li>
+                        <li class="pp_proposal"><a href="/proposal/${principal.id}">받은 요청</a></li>
                     </ul>
                 </div>
+
 
                 <div class="pp_contents">
                     <p class="pp_sub_title">받은 요청</p>
                     <div class="pp_search">
-                        <form name="searchProposal">
-                            <input type="text" placeholder="회사명 검색" name="keyword">
+                        <form name="searchProposal" action="/proposal/${requestsDto.id}">
+                            <input id="keyword" type="text" placeholder="회사명 검색" name="keyword"
+                                value="${requestsDto.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>
@@ -63,6 +64,6 @@
                 </div>
             </div>
         </div>
-        
+        <script src="https://kit.fontawesome.com/e264982194.js" crossorigin="anonymous"></script>
         <script src="/js/proposal.js"></script>
         <%@ include file="../layout/footer.jsp" %>

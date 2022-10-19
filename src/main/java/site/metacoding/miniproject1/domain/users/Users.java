@@ -34,7 +34,7 @@ public class Users {
 		this.email = updateReqDto.getEmail();
 		this.phoneNumber = updateReqDto.getPhoneNumber();
 	}
-	
+
 	public void update(UsersPasswordReqDto passwordReqDto) {
 		this.userPassword = passwordReqDto.getUserPassword();
 	}

@@ -42,6 +42,8 @@ public class MyPageService {
         List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
         List<StatusInfoDto> statusInfoDtos = applicationStatusDao.findAll(id, keyword);
         StatusAllDto statusAllDto = new StatusAllDto(statusCountDtos, statusInfoDtos);
+        statusAllDto.setKeyword(keyword);
+        statusAllDto.setId(id);
         return statusAllDto;
     }
 
@@ -49,6 +51,8 @@ public class MyPageService {
         List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
         List<StatusWaitingInfoDto> statusWaitingInfoDtos = applicationStatusDao.findWaiting(id, keyword);
         StatusWaitingDto statusWaitingDto = new StatusWaitingDto(statusCountDtos, statusWaitingInfoDtos);
+        statusWaitingDto.setKeyword(keyword);
+        statusWaitingDto.setId(id);
         return statusWaitingDto;
     }
 
@@ -56,12 +60,16 @@ public class MyPageService {
         List<StatusCountDto> statusCountDtos = applicationStatusDao.findCounts(id);
         List<StatusFinalInfoDto> statusFinalInfoDtos = applicationStatusDao.findFinal(id, keyword);
         StatusFinalDto statusFinalDto = new StatusFinalDto(statusCountDtos, statusFinalInfoDtos);
+        statusFinalDto.setKeyword(keyword);
+        statusFinalDto.setId(id);
         return statusFinalDto;
     }
 
     public RequestsDto viewRequests(Integer id, String keyword) {
         List<RequestsInfoDto> requestsInfoDtos = applicationStatusDao.findRequest(id, keyword);
         RequestsDto requestsDto = new RequestsDto(requestsInfoDtos);
+        requestsDto.setKeyword(keyword);
+        requestsDto.setId(id);
         return requestsDto;
     }
 

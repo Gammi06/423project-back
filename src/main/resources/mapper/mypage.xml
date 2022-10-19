@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatusDao">
 
+
 	<select id="findUser" resultType="site.metacoding.miniproject1.web.dto.response.mypage.UserInfoDto">
 		SELECT us.id, us.user_id, us.user_password,
 		us.user_name, US.AGE,
@@ -29,7 +30,7 @@
 		ON com.id = wan.company_id
 		LEFT OUTER JOIN users us
 		ON wan.position_code_id = us.position_code_id
-		WHERE us.id = #{id}
+		WHERE us.id = #{id} AND wan.enddate > NOW()
 		ORDER BY RAND() LIMIT 4) comrec,
 		(SELECT @ROWNUM := 0) R
 	</select>
@@ -47,6 +48,7 @@
 		FROM companys com
 		INNER JOIN wanteds wan
 		ON com.id = wan.company_id
+		WHERE wan.enddate > NOW()
 		ORDER BY RAND() LIMIT 4) comrec,
 		(SELECT @ROWNUM := 0) R
 	</select>
@@ -69,7 +71,6 @@
 		ON appst.resume_id = res.id
 		WHERE res.user_id = #{id}
 	</select>
-
 
 	<select id="findAll" resultType="site.metacoding.miniproject1.web.dto.response.mypage.StatusInfoDto">
 		SELECT apps.id id, apps.wanted_id wantedId,

@@ -14,7 +14,6 @@ import lombok.Setter;
 public class StatusWaitingDto {
 
     private String keyword;
-
     private Integer id;
     private List<StatusCountDto> statusCountDtos;
     private List<StatusWaitingInfoDto> statusWaitingInfoDtos;

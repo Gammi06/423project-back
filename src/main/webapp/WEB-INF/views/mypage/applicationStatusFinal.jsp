@@ -12,8 +12,8 @@
                 <div class="asf_menu">
                     <p class="asf_title">지원 현황</p>
                     <ul>
-                        <li class="asf_position"><a href="/applicationstatusall">지원한 포지션</a></li>
-                        <li class="asf_proposal"><a href="/proposal">받은 요청</a></li>
+                        <li class="asf_position"><a href="/applicationstatusall/${principal.id}">지원한 포지션</a></li>
+                        <li class="asf_proposal"><a href="/proposal/${principal.id}">받은 요청</a></li>
                     </ul>
                 </div>
 
@@ -21,19 +21,19 @@
                     <div class="asf_counts">
                         <c:forEach var="statusCountDtos" items="${statusFinalDto.statusCountDtos}">
                             <div class="asf_count_all">
-                                <a href="/applicationstatusall">
+                                <a href="/applicationstatusall/${principal.id}">
                                     <p class="asf_all_count">${statusCountDtos.statusAll}</p>
                                     <p class="asf_all_text">전체</p>
                                 </a>
                             </div>
                             <div class="asf_count_c">
-                                <a href="/applicationstatus">
+                                <a href="/applicationstatus/${principal.id}">
                                     <p class="asf_count">${statusCountDtos.statusC}</p>
                                     <p class="asf_text">지원 완료</p>
                                 </a>
                             </div>
                             <div class="asf_count_final">
-                                <a href="/applicationstatusfinal">
+                                <a href="/applicationstatusfinal/${principal.id}">
                                     <p class="asf_final_count">${statusCountDtos.statusFinal}</p>
                                     <p class="asf_final_text">최종합격</p>
                                 </a>
@@ -42,8 +42,8 @@
                     </div>
 
                     <div class="asf_search">
-                        <form name="searchFinal">
-                            <input type="text" placeholder="회사명 검색" name="keyword">
+                        <form name="searchFinal" action="/applicationstatusfinal/${statusFinalDto.id}">
+                            <input type="text" placeholder="회사명 검색" name="keyword" value="${statusFinalDto.keyword}">
                             <button class="btn_search" type="submit"></button>
                         </form>
                     </div>

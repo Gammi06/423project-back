@@ -16,17 +16,19 @@ public class CompanysService {
 	private final WantedsService wantedsService;
 
 	public CompanyDetailWithWantedsListDto findByIdToDetailWithWantedsList(Integer id) {
-		if(findByIdToDetail(id) == null) return null;
+		if (findByIdToDetail(id) == null)
+			return null;
 		CompanyDetailWithWantedsListDto companyDetailWithWantedsListDtoPS = new CompanyDetailWithWantedsListDto();
 		companyDetailWithWantedsListDtoPS.setCompanyDetailDto(findByIdToDetail(id));
 		companyDetailWithWantedsListDtoPS.setWantedsListDtos(wantedsService.findAllByCompanyId(id));
 		return companyDetailWithWantedsListDtoPS;
 	}
-	
+
 	public CompanyDetailDto findByIdToDetail(Integer id) {
-		 CompanyDetailDto companyDetailDtoPS = companysDao.findByIdToDetail(id);
-		 if(companyDetailDtoPS == null) return null;
-		 return companyDetailDtoPS;
+		CompanyDetailDto companyDetailDtoPS = companysDao.findByIdToDetail(id);
+		if (companyDetailDtoPS == null)
+			return null;
+		return companyDetailDtoPS;
 	}
 
 	public void 회사정보등록(CompanysInsertReqDto companysInsertReqDto) {

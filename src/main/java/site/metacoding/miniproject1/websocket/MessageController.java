@@ -42,7 +42,6 @@ public class MessageController {
     @MessageMapping("/private-message")
     @SendToUser("/topic/private-messages")
     public PushMessage getPrivateMessage(Message message, String id) throws Exception {
-        Thread.sleep(1000);
         notificationService.sendPrivateNotification(id);
         return new PushMessage(HtmlUtils.htmlEscape(
                 "Sending private message to user " + id + " : " + message.getMessageContent()));

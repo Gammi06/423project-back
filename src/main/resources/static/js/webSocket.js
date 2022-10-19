@@ -68,7 +68,6 @@ function sendApplicationAlarm() {
     stompClient.send("/ws/applicationalarm");
 }
 
-
 function sendPrivateMessage() {
     console.log("sending private message");
     stompClient.send("/ws/private-message", {}, JSON.stringify({ 'messageContent': $("#private-message").val() }));
@@ -116,6 +115,10 @@ function resetApplicationNotificationCount() {
     updateApplicationNotificationDisplay();
 }
 
+$("#btnLogin").click(function () {
+    login();
+});
+
 $(".btn_proposal").click(function () {
     sendProposalAlarm();
 });
@@ -141,6 +144,3 @@ $(".application_notifications").click(function () {
 });
 
 connect();
-setTimeout(function () {
-    sendFirstAlarm();
-}, 2000);
