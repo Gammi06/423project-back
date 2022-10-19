@@ -8,7 +8,6 @@ import site.metacoding.miniproject1.web.dto.response.companys.CompanyDetailDto;
 import site.metacoding.miniproject1.web.dto.response.companys.CompanyDetailWithWantedsListDto;
 import site.metacoding.miniproject1.domain.companys.Companys;
 import site.metacoding.miniproject1.web.dto.request.companys.CompanysInsertReqDto;
-import site.metacoding.miniproject1.web.dto.response.SubscribesRespListDto;
 
 @RequiredArgsConstructor
 @Service

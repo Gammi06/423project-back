@@ -6,19 +6,19 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import site.metacoding.miniproject1.domain.applicationStatus.ApplicationStatusDao;
-import site.metacoding.miniproject1.web.dto.response.CompanyInfoDto;
-import site.metacoding.miniproject1.web.dto.response.InfoAllDto;
-import site.metacoding.miniproject1.web.dto.response.InfoCountDto;
-import site.metacoding.miniproject1.web.dto.response.RequestsDto;
-import site.metacoding.miniproject1.web.dto.response.RequestsInfoDto;
-import site.metacoding.miniproject1.web.dto.response.StatusAllDto;
-import site.metacoding.miniproject1.web.dto.response.StatusCountDto;
-import site.metacoding.miniproject1.web.dto.response.StatusFinalDto;
-import site.metacoding.miniproject1.web.dto.response.StatusFinalInfoDto;
-import site.metacoding.miniproject1.web.dto.response.StatusInfoDto;
-import site.metacoding.miniproject1.web.dto.response.StatusWaitingDto;
-import site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto;
-import site.metacoding.miniproject1.web.dto.response.UserInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.InfoAllDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.InfoCountDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.RequestsDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.RequestsInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusAllDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusCountDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusFinalDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusFinalInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusWaitingDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusWaitingInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.UserInfoDto;
 
 @RequiredArgsConstructor
 @Service

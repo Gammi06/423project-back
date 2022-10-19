@@ -28,17 +28,17 @@
 				<button class="btn_menu">메뉴</button>
 				<ul class="dropdown_menu">
 					<li class="menu_top">포지션 목록</li>
-					<li><a class="dropdown_item" href="#">백앤드 개발자</a></li>
-					<li><a class="dropdown_item" href="#">웹 퍼블리셔</a></li>
-					<li><a class="dropdown_item" href="#">프론트앤드 개발자</a></li>
+					<li><a class="dropdown_item" href="/wanteds">백앤드 개발자</a></li>
+					<li><a class="dropdown_item" href="/wanteds">웹 퍼블리셔</a></li>
+					<li><a class="dropdown_item" href="/wanteds">프론트앤드 개발자</a></li>
 					<li class="menu_bottom">구직은 구해줘용과 함께</li>
 				</ul>
 			</div>
 			<h1 class="logo">
-				<a href="#">구해줘용</a>
+				<a href="/">구해줘용</a>
 			</h1>
 			<ul class="gnb">
-				<li><a href="#">채용</a></li>
+				<li><a href="/wanteds">채용</a></li>
 				<li><a href="#">이력서</a></li>
 			</ul>
 			<ul class="login">

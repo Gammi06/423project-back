@@ -2,15 +2,16 @@ package site.metacoding.miniproject1.domain.applicationStatus;
 
 import java.util.List;
 
-import site.metacoding.miniproject1.web.dto.response.CompanyInfoDto;
-import site.metacoding.miniproject1.web.dto.response.InfoCountDto;
-import site.metacoding.miniproject1.web.dto.response.RequestsInfoDto;
-import site.metacoding.miniproject1.web.dto.response.StatusCountDto;
-import site.metacoding.miniproject1.web.dto.response.StatusFinalInfoDto;
-import site.metacoding.miniproject1.web.dto.response.StatusInfoDto;
-import site.metacoding.miniproject1.web.dto.response.StatusWaitingInfoDto;
-import site.metacoding.miniproject1.web.dto.response.UserInfoDto;
 import org.apache.ibatis.annotations.Param;
+
+import site.metacoding.miniproject1.web.dto.response.mypage.CompanyInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.InfoCountDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.RequestsInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusCountDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusFinalInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.StatusWaitingInfoDto;
+import site.metacoding.miniproject1.web.dto.response.mypage.UserInfoDto;
 
 public interface ApplicationStatusDao {
 	// 기본기능

@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
-import site.metacoding.miniproject1.web.dto.response.PushMessage;
+import site.metacoding.miniproject1.web.dto.response.mypage.PushMessage;
+
 
 @Service
 public class NotificationService {

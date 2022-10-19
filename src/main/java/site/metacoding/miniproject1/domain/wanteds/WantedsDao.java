@@ -21,9 +21,8 @@ public interface WantedsDao {
 	public List<WantedsListDto> findAllHot();
 	public List<WantedsListDto> findAllByposition(Integer positionCodeId);
 	public List<WantedsListDto> findAllLike(Integer userId);
-	public List<WantedsListDto> findAllToSort(@Param("state")Integer state,
-			@Param("startNum")Integer startNum,@Param("keywordDto")KeywordDto keywordDto);
+	public List<WantedsListDto> findAllToSort(@Param("keywordDto")KeywordDto keywordDto);
 	public List<WantedsListDto> findAllByCompanyId(Integer id);
 	public WantedDetailDto findByIdToDetail(Integer id);
-	public PagingDto paging(@Param("page")Integer page, @Param("keywordDto")KeywordDto keywordDto);
+	public PagingDto paging(@Param("keywordDto")KeywordDto keywordDto);
 }
