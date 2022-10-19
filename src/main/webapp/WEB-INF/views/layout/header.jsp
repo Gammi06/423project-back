@@ -12,7 +12,11 @@
             <link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/footer.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet">
+            <link href="${pageContext.request.contextPath}/css/companypage_recruit_manage.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/companypage_manage.css" rel="stylesheet">
+            <link href="${pageContext.request.contextPath}/css/companypage_recommend.css" rel="stylesheet">
+            <link href="${pageContext.request.contextPath}/css/companypage_company_detail.css" rel="stylesheet">
+            <link href="${pageContext.request.contextPath}/css/companypage_add_wanted.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/wanted.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/wanted-detail.css" rel="stylesheet">
             <link href="${pageContext.request.contextPath}/css/company-detail.css" rel="stylesheet">

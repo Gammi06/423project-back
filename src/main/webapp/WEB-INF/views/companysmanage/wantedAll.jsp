@@ -32,10 +32,10 @@
 					</div>
 					<div class="cp_status">
 						<ul>
-							<li><a href="#">
+							<li><a href="companysmanage/wantedAll">
 									<div class="cp_status_li1"><span>채용관리</span></div>
 								</a></li>
-							<li><a href="companypage_company_detail.html">
+							<li><a href="companysmanage/companyDetail">
 									<div class="cp_status_li2"><span>회사정보</span></div>
 								</a></li>
 						</ul>
