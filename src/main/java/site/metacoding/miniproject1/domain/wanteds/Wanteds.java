@@ -11,7 +11,8 @@ import lombok.Setter;
 @Getter
 public class Wanteds {
 	private Integer id;
-	private String positionCodeName;
+	private Integer positionCodeId;
+	private String position_code_name;
 	private Integer careerCodeId;
 	private String pay;
 	private Integer companyId;

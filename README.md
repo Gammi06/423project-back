@@ -539,6 +539,37 @@ INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 3, NOW());
 INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 4, NOW());
 INSERT INTO subscribes(user_id, company_id, created) VALUES(11, 5, NOW());
 
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(1, 1, 0 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(2, 1, 1 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(3, 1, 2 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(4, 1, 0 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(5, 1, 1 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(6, 1, 2 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(7, 1, 0 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(8, 1, 1 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(9, 1, 2 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(10, 1, 0 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(11, 1, 1 , NOW());
+INSERT INTO application_status(wanted_id, resume_id, state, created)
+VALUES(12, 1, 2 , NOW());
+
+INSERT INTO requests(resume_id, wanted_id, status, created) VALUES(1, 1, '마감',  NOW());
+INSERT INTO requests(resume_id, wanted_id, status, created) VALUES(1, 3, '마감', NOW());
+INSERT INTO requests(resume_id, wanted_id, status, created) VALUES(1, 13, '모집중', NOW());
+INSERT INTO requests(resume_id, wanted_id, status, created) VALUES(1, 15, '모집중',NOW());
+INSERT INTO requests(resume_id, wanted_id, status, created) VALUES(1, 23, '모집중',NOW());
+
 UPDATE users SET company_id = 1 WHERE id = 2;
 UPDATE users SET company_id = 2 WHERE id = 6;
 UPDATE users SET company_id = 3 WHERE id = 7;

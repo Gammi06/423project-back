@@ -1,0 +1,385 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.wanted_detail_wrap {
+    width: 1200px;
+    margin: 0 auto;
+    font-family: 'Pretendard-Regular';
+}
+
+/*///////////////////////// explain /////////////////////////*/
+.wanted_detail_wrap .explain {
+    font-family: 'Pretendard-Regular';
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.wanted_detail_wrap .explain .intro_wanted {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .left {
+	margin-top: 30px;
+    width: 490px;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .left .picture{
+    width: 700px;
+    width: 490px;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .left .picture img {
+    width: 700px;
+    height: 490px;
+    overflow: hidden;
+    position: relative;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .left .text {
+    width: 700px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.wanted_detail_wrap .explain .skills {
+    margin-top: 20px;
+    width: 700px;
+}
+
+.wanted_detail_wrap .explain .skills ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.wanted_detail_wrap .explain .skills ul li {
+    background-color: #f4f4f4;
+    border-radius: 30px;
+    padding: 10px 30px;
+    font-size: 14px;
+    color: #888;
+    display: block;
+    margin-right: 10px;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .right_default{
+    margin-top: 30px;
+    width: 222px;
+    height: 406px;
+    padding: 25px;
+    border: 1px solid #bbb;
+    color: #333;
+    position: relative;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .text {
+    width: 100%;
+    color: #191819;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .text h2 {
+    height: 85px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #191819;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .text h3 {
+    margin-bottom: 10px;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .text h3 a:hover {
+    color: #33ffcc;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .text strong {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .buttons {
+    width: 100%;
+    height: 150px;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .buttons .default {
+    position: absolute;
+    bottom: 5%;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .buttons .default a {
+    display: block;
+    height: 100%;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .buttons .default ul .apply {
+    width: 162px;
+    background-color: #33ffcc;
+    padding: 13px 30px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .buttons ul .subscribe {
+    margin-top: 13px;
+    width: 162px;
+    background-color: #f2f2f2;
+    padding: 13px 30px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.wanted_detail_wrap .explain .intro_wanted .right .buttons ul .liked {
+    margin-top: 13px;
+    width: 162px;
+    background-color: #f2f2f2;
+    padding: 13px 30px;
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+.wanted_detail_wrap .right_apply {
+    margin-top: 30px;
+    width: 270px;
+    border: 1px solid #bbb;
+}
+
+.wanted_detail_wrap .right_apply .apply_head {
+    border-bottom: 1px solid #bbb;
+    padding: 25px;
+    position: relative;
+}
+
+.wanted_detail_wrap .right_apply .apply_head h2 {
+    font-size: 18px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+    text-align: center;
+}
+
+.wanted_detail_wrap .right_apply .apply_head p {
+    position: absolute;
+    right: 10%;
+    top: 40%;
+}
+
+.wanted_detail_wrap .right_apply .apply_head p a {
+    color: #888;
+}
+
+.wanted_detail_wrap .right_apply .apply_click {
+    padding: 25px;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_info ul li {
+    display: flex;
+    border-bottom: 1px solid #bbb;
+    padding: 15px 0;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_info h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_info h3 {
+    color: #888;
+    width: 70px;
+    display: block;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_choice h2 {
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_choice ul {
+    margin-top: 10px;
+    overflow: overlay;
+    height: 100px;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_choice ul li {
+    background-color: #f2f2f2;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_choice ul li .check {
+    line-height: 30px;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_choice ul li .resumes {
+    width: 150px;
+}
+
+.wanted_detail_wrap .right_apply .apply_click .apply_choice ul li strong {
+    font-size: 16px;
+    font-weight: bold;
+}
+.wanted_detail_wrap .right_apply .apply_click .apply_choice ul li p {
+    font-size: 14px;
+    color: #888;
+}
+
+.wanted_detail_wrap .right_apply .apply_button {
+    border-top: 1px solid #bbb;
+    padding: 25px;
+}
+
+.wanted_detail_wrap .right_apply .apply_button button {
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #33ffcc;
+}
+.wanted_detail_wrap .right_apply .apply_button button a {
+    display: block;
+    height: 100%;
+}
+
+.wanted_detail_wrap .right_apply .apply_button button:hover {
+    background-color: rgb(46, 214, 172);
+}
+
+.wanted_detail_wrap .explain .notice {
+    margin-top: 20px;
+    background-color: #f4f4f4;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.wanted_detail_wrap .explain .notice .text {
+    font-size: 12px;
+    color: #888;
+}
+
+.wanted_detail_wrap .right .follow {
+    position: sticky;
+    top: 30px
+}
+
+.wanted_detail_wrap .right .right_default p {
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+
+/*///////////////////////// wanteds /////////////////////////*/
+.wanted_detail_wrap .container {
+	padding-top : 50px;	
+}
+
+.wanted_detail_wrap .container h3 {
+    margin-top: 50px;
+    font-family: 'GmarketSansMedium';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.wanted_detail_wrap .wanteds {
+    width: 1000px;
+    margin: 0 auto;
+    font-family: 'Pretendard-Regular';
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.wanted_detail_wrap .container  {
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+}
+
+.wanted_detail_wrap .container .wanteds .wanted {
+    width: 100%;
+    padding: 10px;
+    width: 230px;
+    height: 330px;
+    margin-bottom: 20px;
+}
+
+.wanted_detail_wrap .container .wanteds .picture {
+    width: 230px;
+    height: 175px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.wanted_detail_wrap .container .wanteds .picture img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wanted_detail_wrap .container .wanteds .wanted_text .title h2 {
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 10px;
+    width: 230px;
+    height: 40px;
+    line-height: 20px;
+    text-overflow: clip;
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+  	display: block;     /* ie6이상 현재요소를 블럭처리합니다. */
+}
+
+.wanted_detail_wrap .container .wanteds .wanted_text .content p {
+    font-size: 13px;
+    color: #888;
+    width: 230px;
+    height: 40px;
+    line-height: 16px;
+    text-overflow: ellipsis;  /* 위에 설정한 100px 보다 길면 말줄임표처럼 표시합니다. */
+  	white-space: nowrap;    /* 줄바꿈을 하지 않습니다. */
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+  	display: block;     /* ie6이상 현재요소를 블럭처리합니다. */
+}
+
+.wanted_detail_wrap .container .wanteds .company_intro .company_region {
+    font-size: 13px;
+    color: #888;
+    padding: 10px 0;
+    width: 230px;
+    height: 10px;
+}
+
+.wanted_detail_wrap .container .wanteds .company_intro .company_name {
+    font-size: 13px;
+}
