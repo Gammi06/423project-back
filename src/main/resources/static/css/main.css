@@ -1,0 +1,408 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'RixInooAriDuriR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.content {
+    margin-top: 30px;
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+}
+
+.content_inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+	cursor:pointer;
+}
+
+/*///////////////////////////     container     ///////////////////////////*/
+.content_inner .container {
+    border-radius: 8px;
+    width: 1000px;
+    margin: 0 auto;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content_inner .container img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content_inner .intro {
+    width: 1000px;
+    height: 300px;
+    margin-top: 30px;
+}
+
+.content_inner .intro .title{
+    width: 290px;
+    height: 145px;
+    background-color: #fff;
+    border-radius: 8px;
+    position: absolute;
+    bottom: -20%;
+    left: 1.5%;
+    transform: translateY(-50%);
+}
+
+.content_inner .intro .title .wanted_info {
+    width: 100%;
+    height: 30%;
+    border-bottom: 1px solid #bbb;
+    padding: 30px 0;
+}
+
+.content_inner .intro .title .wanted_info strong {
+    line-height: 30px;
+    padding: 0 25px;
+    width: 240px;
+    display: block;
+    text-overflow: ellipsis;  /* 위에 설정한 100px 보다 길면 말줄임표처럼 표시합니다. */
+  	white-space: nowrap;    /* 줄바꿈을 하지 않습니다. */
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+  	display: block;     /* ie6이상 현재요소를 블럭처리합니다. */
+}
+
+.content_inner .intro .title .wanted_info p {
+    line-height: 20px;
+    padding: 0 25px;
+    width: 240px;
+    text-overflow: ellipsis;  /* 위에 설정한 100px 보다 길면 말줄임표처럼 표시합니다. */
+  	white-space: nowrap;    /* 줄바꿈을 하지 않습니다. */
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+  	display: block;     /* ie6이상 현재요소를 블럭처리합니다. */
+}
+
+.content_inner .intro .title .wanted_link {
+    padding: 10px 25px;
+    font-weight: bold;
+    color: #0000ee;
+}
+
+.container .title  strong{
+    font-size: 20px;
+    font-weight: bold;
+    color: #191819;
+}
+
+.container .title p {
+    font-size: 14px;
+    color: #888;
+}
+
+/*///////////////////////////     intro_title     ///////////////////////////*/
+.content .intro_title {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.intro_title strong {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: #191819;
+    line-height: 20px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.intro_title p {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+}
+
+/*///////////////////////////     wanteds     ///////////////////////////*/
+.content .wanteds {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.content .wanted {
+    width: 100%;
+    padding: 10px;
+    width: 230px;
+    height: 330px;
+}
+
+.content .wanteds .picture {
+    width: 230px;
+    height: 175px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.content .wanteds .picture img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content .wanteds .wanted_text .title h2 {
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 10px;
+    width: 230px;
+    height: 40px;
+    line-height: 20px;
+    text-overflow: clip;
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+  	display: block;     /* ie6이상 현재요소를 블럭처리합니다. */
+}
+
+.content .wanteds .wanted_text .content_text p {
+    font-size: 13px;
+    color: #888;
+    width: 230px;
+    height: 40px;
+    line-height: 16px;
+    padding-top: 10px;
+    text-overflow: ellipsis;  /* 위에 설정한 100px 보다 길면 말줄임표처럼 표시합니다. */
+  	white-space: nowrap;    /* 줄바꿈을 하지 않습니다. */
+  	overflow: hidden;    /* 내용이 길면 감춤니다 */
+  	display: block;     /* ie6이상 현재요소를 블럭처리합니다. */
+}
+
+.content .wanteds .company_intro .company_region {
+    font-size: 13px;
+    color: #888;
+    padding: 10px 0;
+    width: 230px;
+    height: 10px;
+}
+
+.content .wanteds .company_intro .company_name {
+    font-size: 13px;
+}
+
+/*///////////////////////////     more     ///////////////////////////*/
+.content .more {
+    width: 1000px;
+    margin: 0 auto;
+    height: 100px;
+    padding: 50px 0 80px 0;
+}
+
+.content .more h2 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.content .more h2 a{
+    background-color: #f2f2f2;
+    width: 230px;
+    padding: 15px 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+}
+
+.content .more h2 a:hover{
+    background-color: #bbb;
+}
+
+/*///////////////////////////     ads     ///////////////////////////*/
+
+.banner_1 {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%) ;
+}
+
+.banner_2 {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+
+.ads {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.banner_1 .ads .join_ads {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.banner_1 .ads .join_ads .title {
+    font-size: 30px;
+    display: flex;
+    padding-top: 50px;
+}
+
+.banner_1 .ads .join_ads .title .logo {
+    font-family: 'RixInooAriDuriR';
+    line-height: 30px;
+}
+
+.banner_1 .ads .join_ads .title .text {
+    font-family: 'GmarketSansMedium';
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.banner_1 .ads .join_ads .content {
+    margin-top: 10px;
+}
+
+.banner_2 .ads .metacoding{
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.banner_2 .ads .metacoding .title {
+    font-family: 'GmarketSansMedium';
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 30px;
+    color: #f4f4f4;
+    padding-top: 50px;
+}
+
+.banner_2 .ads .metacoding .content {
+    margin-top: 10px;
+    color: #f4f4f4;
+}
+
+.banner_1 .ads .join_ads .link {
+    position: absolute;
+    top: 70%; left: 0;
+    text-align: center;
+}
+
+.banner_2 .ads .metacoding .link {
+    position: absolute;
+    top: 60%; left: 0;
+    text-align: center;
+}
+
+.banner_1 .ads .join_ads a {
+    font-family: 'GmarketSansMedium';
+    padding: 10px 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid #0000ee;
+    color: #0000ee;
+    width: 230px;
+    display: block;
+    line-height: 25px;
+    text-align: center;
+    margin-top:10px
+}
+
+.banner_2 .ads .metacoding a {
+    font-family: 'GmarketSansMedium';
+    padding: 10px 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid #f4f4f4;
+    color: #f4f4f4;
+    width: 230px;
+    display: block;
+    line-height: 25px;
+}
+
+.banner_1 .ads .join_ads a:hover{
+    background-color: #0000ee;
+    color: #f2f2f2;
+}
+
+.banner_2 .ads .metacoding a:hover {
+    background-color:  #f4f4f4;
+    color: #191819;
+}
+
+/*///////////////////////////     service     ///////////////////////////*/
+.customer .service {
+	font-family: 'GmarketSansMedium';
+    margin: 0 auto;
+    width: 1000px;
+    height: 300px;
+}
+
+.customer .service .service_title {
+    padding: 80px 0 40px 0;
+}
+
+.customer .service .service_title strong {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    color: #191819;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.customer .service .service_nav {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.customer .service .service_nav .buttons {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.customer .service .service_nav .buttons li {
+    display: block;
+    width: 300px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.customer .service .service_nav .buttons li a {
+    font-size: 16px;
+    display: block;
+    height: 100%;
+    padding: 30px 0;
+    font-weight: bold;
+}
+
+.customer .service .service_nav .buttons li a:hover {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+ 
+/*///////////////////////////     scroll     ///////////////////////////*/

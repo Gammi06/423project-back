@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="mp_acc_setting">
                                     <button>
-                                        <a href="#">계정 설정하기</a>
+                                        <a href="/users/as/${principal.id}">계정 설정하기</a>
                                     </button>
                                 </div>
                             </c:forEach>
@@ -58,6 +58,13 @@
                             <a href="/logout">로그아웃</a>
                         </button>
                     </div>
+                    <div class="btn_proposal"><button>
+                            <a href="#">제안하기</a>
+                        </button></div>
+                    <div class="btn_application"><button>
+                            <a href="#">지원하기</a>
+                        </button></div>
+                    <p class="application_notifications"></p>
                 </div>
 
                 <div class="mp_contents">

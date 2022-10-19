@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 public class Likes {
 	private Integer id;
-	private Integer user_id;
-	private Integer wanted_id;
+	private Integer userId;
+	private Integer wantedId;
 	private Timestamp created;
 }
