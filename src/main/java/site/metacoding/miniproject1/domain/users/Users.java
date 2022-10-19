@@ -1,5 +1,6 @@
 package site.metacoding.miniproject1.domain.users;
 
+import java.sql.Blob;
 import java.sql.Timestamp;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties.User;

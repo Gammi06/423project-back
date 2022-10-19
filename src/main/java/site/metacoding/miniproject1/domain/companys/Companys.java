@@ -1,5 +1,6 @@
 package site.metacoding.miniproject1.domain.companys;
 
+import java.sql.Blob;
 import java.sql.Timestamp;
 
 import lombok.Getter;
