@@ -20,6 +20,6 @@ public class Wanteds {
 	private String detail;
 	private Integer viewCount;
 	private Timestamp created;
-	private Timestamp enddate;
+	private Timestamp endDate;
 	private Boolean checked;
 }
