@@ -54,9 +54,6 @@ body::-webkit-scrollbar {
 
 
 /*------.applicant_title시작------*/
-.applicant_title{
-}
-
 .applicant_title div{
     display: flex;
     justify-content: space-between;
@@ -162,6 +159,7 @@ body::-webkit-scrollbar {
 /*------.applicant_subtitle끝------*/
 
 
+
 .applicant_container .applicant_table{
     display: -webkit-flex;
     display: flex;
@@ -170,6 +168,7 @@ body::-webkit-scrollbar {
     margin-bottom: 50px;
     align-items: baseline;
 }
+
 
 
 /*------.applicant_table1시작------*/
@@ -292,6 +291,7 @@ body::-webkit-scrollbar {
 .applicant_table1 .table1_row3 .row3_bottom div{
     font-size: 13px;
 }
+
 /*------------------------------------------------*/
 
 .applicant_table1 .table1_row4{
@@ -353,6 +353,7 @@ body::-webkit-scrollbar {
 .applicant_table1 .table1_row4 .row4_bottom div{
     font-size: 13px;
 }
+
 /*------------------------------------------------*/
 
 .applicant_table1 .table1_row5{
@@ -414,6 +415,7 @@ body::-webkit-scrollbar {
 .applicant_table1 .table1_row5 .row5_bottom div{
     font-size: 13px;
 }
+
 /*------------------------------------------------*/
 
 .applicant_table1 .table1_row6{
@@ -476,7 +478,6 @@ body::-webkit-scrollbar {
     font-size: 13px;
 }
 /*------.applicant_table1끝------*/
-
 
 
 
